@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using LibraryManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,21 @@ namespace LibraryManagement
 {
     public partial class Form_Main : Form
     {
-        public Form_Main()
+        private AccountDTO loginacc;
+
+        public AccountDTO Loginacc
+        {
+            get
+            {
+                return loginacc;
+            }
+
+            set
+            {
+                loginacc = value;
+            }
+        }
+        public Form_Main(AccountDTO acc)
         {
             InitializeComponent();
             bt_timkiemsach.Visible = false;
@@ -28,13 +44,11 @@ namespace LibraryManagement
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
 
+            this.loginacc = acc;
+            Label_Nhom_NguoiDung.Text = AccountDAO.Instance.TenNhomNguoiDung(acc.Username);
+            
         }
 
-        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form_info_user f = new Form_info_user();
-            f.Show();
-        }
 
         private void panel_docgia_Paint(object sender, PaintEventArgs e)
         {
@@ -239,5 +253,20 @@ namespace LibraryManagement
             Form_Admin f = new Form_Admin();
             f.ShowDialog();
         }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_info_user f = new Form_info_user(loginacc);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
+
 }

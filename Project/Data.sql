@@ -198,11 +198,17 @@ CREATE TABLE CHUC_NANG
 	TenManHinhDuocLoad			Nvarchar(30) NOT NULL
 )
 GO
+
+
 CREATE TABLE NHOM_NGUOI_DUNG (
 	 MaNhom						Int NOT NULL PRIMARY KEY, 
 	 TenNhom					NVARCHAR(30) NOT NULL,	
 )
 GO
+
+INSERT INTO dbo.NHOM_NGUOI_DUNG ( MaNhom, TenNhom ) VALUES  ( 1, N'Admin')
+INSERT INTO dbo.NHOM_NGUOI_DUNG ( MaNhom, TenNhom ) VALUES  ( 2, N'Thủ Thư')
+INSERT INTO dbo.NHOM_NGUOI_DUNG ( MaNhom, TenNhom ) VALUES  ( 3, N'Độc Giả')
 
 CREATE TABLE PHAN_QUYEN (
 	MaNhom						Int NOT NULL,
@@ -219,6 +225,8 @@ CREATE TABLE NGUOI_DUNG(
 	FOREIGN KEY (MaNhom) REFERENCES dbo.NHOM_NGUOI_DUNG(MaNhom)
 )
 GO
+INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'admin', N'admin', 1 )
+INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'staff', N'staff', 2 )
 
 
 CREATE TRIGGER tg_capnhatngayhethan
@@ -258,26 +266,56 @@ BEGIN
 			WHERE @Madocgia=Madocgia;
 		END 
 END 
+
+
 GO
 
-	
-	DECLARE cursorDate CURSOR FOR
-	SELECT   dbo.DOC_GIA.Madocgia,  dbo.DOC_GIA.Ngayhethan 
-	FROM dbo.DOC_GIA
-	OPEN cursorDate
-	DECLARE  @Madocgia CHAR(6), @Ngayhethan DATE
-	FETCH NEXT FROM cursorDate INTO @Madocgia,@Ngayhethan
-	WHILE @@FETCH_STATUS = 0
-	BEGIN
-		IF(@Ngayhethan<GETDATE())
-			BEGIN
-				UPDATE dbo.DOC_GIA
-				SET dbo.DOC_GIA.tinhtrang='2'
-				WHERE dbo.DOC_GIA.Madocgia=@Madocgia;
-			END 
-		FETCH NEXT FROM cursorDate INTO @Madocgia,@Ngayhethan
-    END 
-	CLOSE cursorDate
-	DEALLOCATE cursorDate
 
-	SELECT * FROM dbo.DOC_GIA
+
+CREATE PROC usp_login
+@username NVARCHAR(100),@password NVARCHAR(100)
+AS 
+BEGIN
+	SELECT * FROM dbo.NGUOI_DUNG WHERE dbo.NGUOI_DUNG.TenDangNhap = @username AND dbo.NGUOI_DUNG.MatKhau = @password;
+END 
+
+GO
+
+CREATE PROC usp_check_login
+@username NVARCHAR(100)
+AS
+BEGIN
+	SELECT dbo.NGUOI_DUNG.TenDangNhap FROM dbo.NGUOI_DUNG WHERE dbo.NGUOI_DUNG.TenDangNhap = @username ;
+END 
+
+GO
+
+CREATE PROC usp_nhomnguoidung
+@username NVARCHAR(100)
+AS 
+BEGIN
+	SELECT dbo.NHOM_NGUOI_DUNG.TenNhom 
+	FROM dbo.NHOM_NGUOI_DUNG,dbo.NGUOI_DUNG 
+	WHERE dbo.NHOM_NGUOI_DUNG.MaNhom=dbo.NGUOI_DUNG.MaNhom 
+	AND dbo.NGUOI_DUNG.TenDangNhap = @username;
+END
+
+GO
+
+CREATE PROC usp_UpdateAccount
+@username NVARCHAR(100), @password NVARCHAR(100), @newpassword NVARCHAR(100)
+AS
+BEGIN
+	DECLARE @isrightpass INT = 1;
+	SELECT @isrightpass = COUNT (*) FROM dbo.NGUOI_DUNG WHERE TenDangNhap=@username AND MatKhau= @password;
+	IF (@isrightpass >= 1)
+	BEGIN
+		IF(@newpassword!=NULL OR @newpassword!='')
+		BEGIN
+			UPDATE dbo.NGUOI_DUNG SET MatKhau = @newpassword WHERE TenDangNhap = @username;
+        END 
+	END 
+END 
+
+GO 
+

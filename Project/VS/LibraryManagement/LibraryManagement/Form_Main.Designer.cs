@@ -43,9 +43,11 @@
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Label_user = new System.Windows.Forms.Label();
+            this.Label_Nhom_NguoiDung = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.bt_tk_sachtratre = new System.Windows.Forms.Button();
+            this.bt_tk_theloai = new System.Windows.Forms.Button();
             this.bt_lapphieuthu = new System.Windows.Forms.Button();
             this.bt_timkiemphieuthu = new System.Windows.Forms.Button();
             this.bt_lapphieutra = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.bt_themsach = new System.Windows.Forms.Button();
             this.bt_timkiemdocgia = new System.Windows.Forms.Button();
             this.bt_timkiemsach = new System.Windows.Forms.Button();
-            this.bt_tk_theloai = new System.Windows.Forms.Button();
-            this.bt_tk_sachtratre = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Main)).BeginInit();
             this.MenuStrip_Main.SuspendLayout();
@@ -195,14 +195,14 @@
             this.tàiKhoảnToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip_Main.Name = "MenuStrip_Main";
-            this.MenuStrip_Main.Size = new System.Drawing.Size(1411, 32);
+            this.MenuStrip_Main.Size = new System.Drawing.Size(1411, 28);
             this.MenuStrip_Main.TabIndex = 1;
             this.MenuStrip_Main.Text = "Menu";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(74, 28);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -227,27 +227,27 @@
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.Label_user);
+            this.panel2.Controls.Add(this.Label_Nhom_NguoiDung);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(3, 34);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 69);
             this.panel2.TabIndex = 2;
             // 
-            // Label_user
+            // Label_Nhom_NguoiDung
             // 
-            this.Label_user.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Label_user.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_user.Location = new System.Drawing.Point(97, 5);
-            this.Label_user.Name = "Label_user";
-            this.Label_user.Size = new System.Drawing.Size(239, 57);
-            this.Label_user.TabIndex = 1;
-            this.Label_user.Text = "Tên Tài Khoản";
-            this.Label_user.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Nhom_NguoiDung.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Label_Nhom_NguoiDung.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Nhom_NguoiDung.Location = new System.Drawing.Point(97, 5);
+            this.Label_Nhom_NguoiDung.Name = "Label_Nhom_NguoiDung";
+            this.Label_Nhom_NguoiDung.Size = new System.Drawing.Size(239, 57);
+            this.Label_Nhom_NguoiDung.TabIndex = 1;
+            this.Label_Nhom_NguoiDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -280,6 +280,30 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1051, 750);
             this.panel_main.TabIndex = 3;
+            // 
+            // bt_tk_sachtratre
+            // 
+            this.bt_tk_sachtratre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_tk_sachtratre.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_tk_sachtratre.Location = new System.Drawing.Point(575, 281);
+            this.bt_tk_sachtratre.Name = "bt_tk_sachtratre";
+            this.bt_tk_sachtratre.Size = new System.Drawing.Size(408, 154);
+            this.bt_tk_sachtratre.TabIndex = 11;
+            this.bt_tk_sachtratre.Text = "Thống Kê Sách Trả Trễ";
+            this.bt_tk_sachtratre.UseVisualStyleBackColor = true;
+            this.bt_tk_sachtratre.Click += new System.EventHandler(this.bt_tk_sachtratre_Click);
+            // 
+            // bt_tk_theloai
+            // 
+            this.bt_tk_theloai.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_tk_theloai.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_tk_theloai.Location = new System.Drawing.Point(88, 281);
+            this.bt_tk_theloai.Name = "bt_tk_theloai";
+            this.bt_tk_theloai.Size = new System.Drawing.Size(408, 154);
+            this.bt_tk_theloai.TabIndex = 10;
+            this.bt_tk_theloai.Text = "Tình Hình Mượn Sách Theo Thể Loại";
+            this.bt_tk_theloai.UseVisualStyleBackColor = true;
+            this.bt_tk_theloai.Click += new System.EventHandler(this.bt_tk_theloai_Click);
             // 
             // bt_lapphieuthu
             // 
@@ -401,30 +425,6 @@
             this.bt_timkiemsach.UseVisualStyleBackColor = true;
             this.bt_timkiemsach.Click += new System.EventHandler(this.bt_timkiemsach_Click);
             // 
-            // bt_tk_theloai
-            // 
-            this.bt_tk_theloai.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_tk_theloai.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_tk_theloai.Location = new System.Drawing.Point(88, 281);
-            this.bt_tk_theloai.Name = "bt_tk_theloai";
-            this.bt_tk_theloai.Size = new System.Drawing.Size(408, 154);
-            this.bt_tk_theloai.TabIndex = 10;
-            this.bt_tk_theloai.Text = "Tình Hình Mượn Sách Theo Thể Loại";
-            this.bt_tk_theloai.UseVisualStyleBackColor = true;
-            this.bt_tk_theloai.Click += new System.EventHandler(this.bt_tk_theloai_Click);
-            // 
-            // bt_tk_sachtratre
-            // 
-            this.bt_tk_sachtratre.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_tk_sachtratre.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_tk_sachtratre.Location = new System.Drawing.Point(575, 281);
-            this.bt_tk_sachtratre.Name = "bt_tk_sachtratre";
-            this.bt_tk_sachtratre.Size = new System.Drawing.Size(408, 154);
-            this.bt_tk_sachtratre.TabIndex = 11;
-            this.bt_tk_sachtratre.Text = "Thống Kê Sách Trả Trễ";
-            this.bt_tk_sachtratre.UseVisualStyleBackColor = true;
-            this.bt_tk_sachtratre.Click += new System.EventHandler(this.bt_tk_sachtratre_Click);
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -468,7 +468,7 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label Label_user;
+        private System.Windows.Forms.Label Label_Nhom_NguoiDung;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_ThongKe;
         private System.Windows.Forms.Panel panel_main;

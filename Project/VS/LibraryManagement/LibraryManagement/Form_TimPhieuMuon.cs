@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace LibraryManagement
         public Form_TimPhieuMuon()
         {
             InitializeComponent();
+            loadphieumuon();
         }
 
         private void button_tpm_thoat_Click(object sender, EventArgs e)
@@ -26,6 +28,12 @@ namespace LibraryManagement
         {
             Form_ChiTietPhieuMuon f = new Form_ChiTietPhieuMuon();
             f.ShowDialog();
+        }
+        void loadphieumuon()
+        {
+            string query = "Select * from DOC_GiA";
+
+            dataGridView_phieumuon.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }
