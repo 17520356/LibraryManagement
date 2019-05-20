@@ -35,23 +35,20 @@
             this.button_ad_xoa = new System.Windows.Forms.Button();
             this.button_ad_luu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.txt_cts_ngonngu = new System.Windows.Forms.TextBox();
+            this.button_ad_them = new System.Windows.Forms.Button();
             this.txt_cts_masach = new System.Windows.Forms.TextBox();
-            this.label_ad_sltheloai = new System.Windows.Forms.Label();
             this.label_ad_tentheloai = new System.Windows.Forms.Label();
             this.label_ad_loaisach = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_cts_thongtinsach = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button_ad_them = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,17 +114,23 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.numericUpDown1);
             this.panel3.Controls.Add(this.txt_cts_ngonngu);
             this.panel3.Controls.Add(this.button_ad_them);
             this.panel3.Controls.Add(this.txt_cts_masach);
-            this.panel3.Controls.Add(this.label_ad_sltheloai);
             this.panel3.Controls.Add(this.label_ad_tentheloai);
             this.panel3.Controls.Add(this.label_ad_loaisach);
             this.panel3.Location = new System.Drawing.Point(0, 126);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1070, 595);
             this.panel3.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Location = new System.Drawing.Point(6, 255);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1052, 337);
+            this.panel5.TabIndex = 8;
             // 
             // txt_cts_ngonngu
             // 
@@ -137,6 +140,18 @@
             this.txt_cts_ngonngu.Size = new System.Drawing.Size(789, 44);
             this.txt_cts_ngonngu.TabIndex = 6;
             // 
+            // button_ad_them
+            // 
+            this.button_ad_them.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_ad_them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ad_them.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ad_them.Location = new System.Drawing.Point(185, 175);
+            this.button_ad_them.Name = "button_ad_them";
+            this.button_ad_them.Size = new System.Drawing.Size(726, 67);
+            this.button_ad_them.TabIndex = 11;
+            this.button_ad_them.Text = "Thêm";
+            this.button_ad_them.UseVisualStyleBackColor = false;
+            // 
             // txt_cts_masach
             // 
             this.txt_cts_masach.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,17 +159,6 @@
             this.txt_cts_masach.Name = "txt_cts_masach";
             this.txt_cts_masach.Size = new System.Drawing.Size(789, 44);
             this.txt_cts_masach.TabIndex = 2;
-            // 
-            // label_ad_sltheloai
-            // 
-            this.label_ad_sltheloai.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_ad_sltheloai.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ad_sltheloai.Location = new System.Drawing.Point(4, 178);
-            this.label_ad_sltheloai.Name = "label_ad_sltheloai";
-            this.label_ad_sltheloai.Size = new System.Drawing.Size(518, 62);
-            this.label_ad_sltheloai.TabIndex = 6;
-            this.label_ad_sltheloai.Text = "Số Lượng";
-            this.label_ad_sltheloai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_ad_tentheloai
             // 
@@ -210,33 +214,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(256, 189);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(258, 40);
-            this.numericUpDown1.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Location = new System.Drawing.Point(6, 255);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1052, 337);
-            this.panel5.TabIndex = 8;
-            // 
-            // button_ad_them
-            // 
-            this.button_ad_them.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_ad_them.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ad_them.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ad_them.Location = new System.Drawing.Point(576, 176);
-            this.button_ad_them.Name = "button_ad_them";
-            this.button_ad_them.Size = new System.Drawing.Size(469, 67);
-            this.button_ad_them.TabIndex = 11;
-            this.button_ad_them.Text = "Thêm";
-            this.button_ad_them.UseVisualStyleBackColor = false;
-            // 
             // Form_quidinh_theloai
             // 
             this.AcceptButton = this.button_ad_them;
@@ -248,7 +225,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form_quidinh_theloai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay Đổi Thể Loại";
@@ -258,7 +235,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,14 +249,12 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txt_cts_ngonngu;
         private System.Windows.Forms.TextBox txt_cts_masach;
-        private System.Windows.Forms.Label label_ad_sltheloai;
         private System.Windows.Forms.Label label_ad_tentheloai;
         private System.Windows.Forms.Label label_ad_loaisach;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_cts_thongtinsach;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button_ad_them;
     }
 }

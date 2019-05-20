@@ -146,9 +146,16 @@ CREATE TABLE PHIEU_THU
 GO 
 CREATE TABLE THAM_SO
 (
-	Tenthamso				NvarChar(50),
+	Tenthamso			NvarChar(50),
 	Giatri				Int,
 )
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'tuoitoithieu', 18)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'tuoitoida', 55)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'thoihanthe', 6)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'soluongtheloai', 3)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'khoangcachnamxuatban', 8)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'soluongsachtoida', 5)
+INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'songaymuontoida', 4)
 GO
 CREATE TABLE BAOCAO_MUONSACH_THELOAI
 (
@@ -318,4 +325,15 @@ BEGIN
 END 
 
 GO 
+ CREATE PROC update_quidinh_docgia
+ @thamso NVARCHAR(100), @giatri INT 
+ AS
+ BEGIN
+	UPDATE dbo.THAM_SO SET Giatri=@giatri WHERE Tenthamso= @thamso;
+ END
+
+GO 
+EXEC dbo.update_quidinh_docgia @thamso = N'tuoitoithieu', -- nvarchar(100)
+    @giatri = 20 -- int
+
 

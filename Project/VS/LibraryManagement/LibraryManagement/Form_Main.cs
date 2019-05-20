@@ -54,6 +54,7 @@ namespace LibraryManagement
         {
 
         }
+
         private void picture_Main_Click(object sender, EventArgs e)
         {
             bt_timkiemsach.Visible = false;
@@ -156,6 +157,7 @@ namespace LibraryManagement
             bt_tk_theloai.Visible = false;
             panel_main.BackColor = Color.PaleGoldenrod;
         }
+
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
             bt_tk_sachtratre.Visible = true;
@@ -174,14 +176,12 @@ namespace LibraryManagement
             panel_main.BackColor = Color.Pink;
         }
 
-
         private void bt_timkiemsach_Click(object sender, EventArgs e)
         {
             Form_TimSach f = new Form_TimSach();
             f.ShowDialog();
         }
 
-      
         private void bt_themsach_Click(object sender, EventArgs e)
         {
             Form_ThemSach f = new Form_ThemSach();
@@ -251,7 +251,9 @@ namespace LibraryManagement
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_Admin f = new Form_Admin();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
