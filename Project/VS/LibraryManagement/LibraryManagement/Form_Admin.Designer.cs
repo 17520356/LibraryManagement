@@ -29,7 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Admin));
-            this.tabControl_Admin = new System.Windows.Forms.TabControl();
+            this.tabPage_nhanvien = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button_thoat = new System.Windows.Forms.Button();
+            this.button_tk_xoa = new System.Windows.Forms.Button();
+            this.button_tk_sua = new System.Windows.Forms.Button();
+            this.button_tk_them = new System.Windows.Forms.Button();
+            this.panel_timkiemdocgia = new System.Windows.Forms.Panel();
+            this.dataGridView_taikhoan = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label_tk = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDown_manhom = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txt_tendangnhap = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_tennhom = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tab_quidinh = new System.Windows.Forms.TabPage();
             this.tabControl_quidinh = new System.Windows.Forms.TabControl();
             this.tabPage_docgia = new System.Windows.Forms.TabPage();
@@ -57,9 +80,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown_slmax = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.tabPage_nhanvien = new System.Windows.Forms.TabPage();
-            this.tabPage_dangkynv = new System.Windows.Forms.TabPage();
-            this.tabControl_Admin.SuspendLayout();
+            this.tabControl_Admin = new System.Windows.Forms.TabControl();
+            this.tabPage_nhanvien.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel_timkiemdocgia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_taikhoan)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_manhom)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.tab_quidinh.SuspendLayout();
             this.tabControl_quidinh.SuspendLayout();
             this.tabPage_docgia.SuspendLayout();
@@ -72,20 +105,295 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_daymax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_slmax)).BeginInit();
+            this.tabControl_Admin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl_Admin
+            // tabPage_nhanvien
             // 
-            this.tabControl_Admin.Controls.Add(this.tab_quidinh);
-            this.tabControl_Admin.Controls.Add(this.tabPage_nhanvien);
-            this.tabControl_Admin.Controls.Add(this.tabPage_dangkynv);
-            this.tabControl_Admin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl_Admin.Location = new System.Drawing.Point(3, 2);
-            this.tabControl_Admin.Name = "tabControl_Admin";
-            this.tabControl_Admin.Padding = new System.Drawing.Point(15, 3);
-            this.tabControl_Admin.SelectedIndex = 0;
-            this.tabControl_Admin.Size = new System.Drawing.Size(1407, 788);
-            this.tabControl_Admin.TabIndex = 0;
+            this.tabPage_nhanvien.Controls.Add(this.panel6);
+            this.tabPage_nhanvien.Controls.Add(this.panel10);
+            this.tabPage_nhanvien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_nhanvien.Location = new System.Drawing.Point(4, 50);
+            this.tabPage_nhanvien.Name = "tabPage_nhanvien";
+            this.tabPage_nhanvien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_nhanvien.Size = new System.Drawing.Size(1399, 734);
+            this.tabPage_nhanvien.TabIndex = 1;
+            this.tabPage_nhanvien.Text = "Quản Lý Tài Khoản";
+            this.tabPage_nhanvien.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel_timkiemdocgia);
+            this.panel6.Location = new System.Drawing.Point(351, 6);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1042, 722);
+            this.panel6.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.button_thoat);
+            this.panel8.Controls.Add(this.button_tk_xoa);
+            this.panel8.Controls.Add(this.button_tk_sua);
+            this.panel8.Controls.Add(this.button_tk_them);
+            this.panel8.Location = new System.Drawing.Point(6, 636);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1032, 79);
+            this.panel8.TabIndex = 1;
+            // 
+            // button_thoat
+            // 
+            this.button_thoat.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_thoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_thoat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_thoat.Location = new System.Drawing.Point(780, 5);
+            this.button_thoat.Name = "button_thoat";
+            this.button_thoat.Size = new System.Drawing.Size(232, 67);
+            this.button_thoat.TabIndex = 14;
+            this.button_thoat.Text = "Thoát";
+            this.button_thoat.UseVisualStyleBackColor = false;
+            this.button_thoat.Click += new System.EventHandler(this.button_thoat_Click);
+            // 
+            // button_tk_xoa
+            // 
+            this.button_tk_xoa.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_tk_xoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_tk_xoa.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_tk_xoa.Location = new System.Drawing.Point(526, 5);
+            this.button_tk_xoa.Name = "button_tk_xoa";
+            this.button_tk_xoa.Size = new System.Drawing.Size(232, 67);
+            this.button_tk_xoa.TabIndex = 13;
+            this.button_tk_xoa.Text = "Xóa";
+            this.button_tk_xoa.UseVisualStyleBackColor = false;
+            this.button_tk_xoa.Click += new System.EventHandler(this.button_tk_xoa_Click);
+            // 
+            // button_tk_sua
+            // 
+            this.button_tk_sua.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_tk_sua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_tk_sua.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_tk_sua.Location = new System.Drawing.Point(270, 5);
+            this.button_tk_sua.Name = "button_tk_sua";
+            this.button_tk_sua.Size = new System.Drawing.Size(232, 67);
+            this.button_tk_sua.TabIndex = 12;
+            this.button_tk_sua.Text = "Sửa";
+            this.button_tk_sua.UseVisualStyleBackColor = false;
+            this.button_tk_sua.Click += new System.EventHandler(this.button_tk_sua_Click);
+            // 
+            // button_tk_them
+            // 
+            this.button_tk_them.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_tk_them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_tk_them.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_tk_them.Location = new System.Drawing.Point(17, 5);
+            this.button_tk_them.Name = "button_tk_them";
+            this.button_tk_them.Size = new System.Drawing.Size(232, 67);
+            this.button_tk_them.TabIndex = 11;
+            this.button_tk_them.Text = "Thêm";
+            this.button_tk_them.UseVisualStyleBackColor = false;
+            this.button_tk_them.Click += new System.EventHandler(this.button_tk_them_Click);
+            // 
+            // panel_timkiemdocgia
+            // 
+            this.panel_timkiemdocgia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_timkiemdocgia.Controls.Add(this.dataGridView_taikhoan);
+            this.panel_timkiemdocgia.Location = new System.Drawing.Point(6, 3);
+            this.panel_timkiemdocgia.Name = "panel_timkiemdocgia";
+            this.panel_timkiemdocgia.Size = new System.Drawing.Size(1032, 627);
+            this.panel_timkiemdocgia.TabIndex = 1;
+            // 
+            // dataGridView_taikhoan
+            // 
+            this.dataGridView_taikhoan.AllowUserToAddRows = false;
+            this.dataGridView_taikhoan.AllowUserToDeleteRows = false;
+            this.dataGridView_taikhoan.AllowUserToOrderColumns = true;
+            this.dataGridView_taikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_taikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_taikhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView_taikhoan.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView_taikhoan.MultiSelect = false;
+            this.dataGridView_taikhoan.Name = "dataGridView_taikhoan";
+            this.dataGridView_taikhoan.ReadOnly = true;
+            this.dataGridView_taikhoan.RowTemplate.Height = 28;
+            this.dataGridView_taikhoan.Size = new System.Drawing.Size(1028, 623);
+            this.dataGridView_taikhoan.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.panel13);
+            this.panel10.Location = new System.Drawing.Point(5, 6);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(340, 722);
+            this.panel10.TabIndex = 4;
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.label_tk);
+            this.panel11.Location = new System.Drawing.Point(7, 5);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(325, 70);
+            this.panel11.TabIndex = 7;
+            // 
+            // label_tk
+            // 
+            this.label_tk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_tk.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tk.Location = new System.Drawing.Point(0, 0);
+            this.label_tk.Name = "label_tk";
+            this.label_tk.Size = new System.Drawing.Size(321, 66);
+            this.label_tk.TabIndex = 0;
+            this.label_tk.Text = "Thông Tin";
+            this.label_tk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.panel1);
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.panel7);
+            this.panel13.Controls.Add(this.panel5);
+            this.panel13.Location = new System.Drawing.Point(7, 81);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(323, 634);
+            this.panel13.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.numericUpDown_manhom);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Location = new System.Drawing.Point(3, 329);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 218);
+            this.panel1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(4, 118);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(302, 85);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "1: Admin 2:Thủ Thư 3: Độc Giả";
+            // 
+            // numericUpDown_manhom
+            // 
+            this.numericUpDown_manhom.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_manhom.Location = new System.Drawing.Point(9, 52);
+            this.numericUpDown_manhom.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown_manhom.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_manhom.Name = "numericUpDown_manhom";
+            this.numericUpDown_manhom.Size = new System.Drawing.Size(297, 49);
+            this.numericUpDown_manhom.TabIndex = 1;
+            this.numericUpDown_manhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown_manhom.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(6, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(303, 49);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Mã Nhóm:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(3, 553);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(310, 67);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Đặt Lại Mật Khẩu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.txt_tendangnhap);
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(313, 157);
+            this.panel7.TabIndex = 1;
+            // 
+            // txt_tendangnhap
+            // 
+            this.txt_tendangnhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tendangnhap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tendangnhap.Font = new System.Drawing.Font("Times New Roman", 18F);
+            this.txt_tendangnhap.Location = new System.Drawing.Point(4, 76);
+            this.txt_tendangnhap.Name = "txt_tendangnhap";
+            this.txt_tendangnhap.Size = new System.Drawing.Size(306, 49);
+            this.txt_tendangnhap.TabIndex = 0;
+            this.txt_tendangnhap.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(-2, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(308, 49);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Tên Đăng Nhập";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.txt_tennhom);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(3, 166);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(313, 157);
+            this.panel5.TabIndex = 1;
+            // 
+            // txt_tennhom
+            // 
+            this.txt_tennhom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_tennhom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_tennhom.Font = new System.Drawing.Font("Times New Roman", 18F);
+            this.txt_tennhom.Location = new System.Drawing.Point(3, 74);
+            this.txt_tennhom.Name = "txt_tennhom";
+            this.txt_tennhom.ReadOnly = true;
+            this.txt_tennhom.Size = new System.Drawing.Size(306, 49);
+            this.txt_tennhom.TabIndex = 0;
+            this.txt_tennhom.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(3, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(303, 49);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Tên Nhóm:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tab_quidinh
             // 
@@ -457,26 +765,17 @@
             this.label7.Text = "Số Lượng Sách Mượn Tối Đa";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tabPage_nhanvien
+            // tabControl_Admin
             // 
-            this.tabPage_nhanvien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage_nhanvien.Location = new System.Drawing.Point(4, 50);
-            this.tabPage_nhanvien.Name = "tabPage_nhanvien";
-            this.tabPage_nhanvien.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_nhanvien.Size = new System.Drawing.Size(1399, 734);
-            this.tabPage_nhanvien.TabIndex = 1;
-            this.tabPage_nhanvien.Text = "Quản Lý Nhân Viên";
-            this.tabPage_nhanvien.UseVisualStyleBackColor = true;
-            // 
-            // tabPage_dangkynv
-            // 
-            this.tabPage_dangkynv.Location = new System.Drawing.Point(4, 50);
-            this.tabPage_dangkynv.Name = "tabPage_dangkynv";
-            this.tabPage_dangkynv.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_dangkynv.Size = new System.Drawing.Size(1399, 734);
-            this.tabPage_dangkynv.TabIndex = 2;
-            this.tabPage_dangkynv.Text = "Đăng Ký Nhân Viên";
-            this.tabPage_dangkynv.UseVisualStyleBackColor = true;
+            this.tabControl_Admin.Controls.Add(this.tab_quidinh);
+            this.tabControl_Admin.Controls.Add(this.tabPage_nhanvien);
+            this.tabControl_Admin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_Admin.Location = new System.Drawing.Point(3, 2);
+            this.tabControl_Admin.Name = "tabControl_Admin";
+            this.tabControl_Admin.Padding = new System.Drawing.Point(15, 3);
+            this.tabControl_Admin.SelectedIndex = 0;
+            this.tabControl_Admin.Size = new System.Drawing.Size(1407, 788);
+            this.tabControl_Admin.TabIndex = 0;
             // 
             // Form_Admin
             // 
@@ -491,7 +790,20 @@
             this.Name = "Form_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Trị Admin";
-            this.tabControl_Admin.ResumeLayout(false);
+            this.tabPage_nhanvien.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel_timkiemdocgia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_taikhoan)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_manhom)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.tab_quidinh.ResumeLayout(false);
             this.tabControl_quidinh.ResumeLayout(false);
             this.tabPage_docgia.ResumeLayout(false);
@@ -504,20 +816,35 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_daymax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_slmax)).EndInit();
+            this.tabControl_Admin.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl_Admin;
-        private System.Windows.Forms.TabPage tabPage_dangkynv;
+        private System.Windows.Forms.TabPage tabPage_nhanvien;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button_thoat;
+        private System.Windows.Forms.Button button_tk_xoa;
+        private System.Windows.Forms.Button button_tk_sua;
+        private System.Windows.Forms.Button button_tk_them;
+        private System.Windows.Forms.Panel panel_timkiemdocgia;
+        private System.Windows.Forms.DataGridView dataGridView_taikhoan;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label_tk;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox txt_tendangnhap;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txt_tennhom;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tab_quidinh;
         private System.Windows.Forms.TabControl tabControl_quidinh;
         private System.Windows.Forms.TabPage tabPage_docgia;
-        private System.Windows.Forms.TabPage tabPage_Sach;
-        private System.Windows.Forms.TabPage tabPage_nhanvien;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button_out;
         private System.Windows.Forms.Button button_update;
         private System.Windows.Forms.NumericUpDown numericUpDown_thedocgia;
@@ -526,6 +853,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown_tuoitoithieu;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabPage_Sach;
+        private System.Windows.Forms.Button button_theloai;
         private System.Windows.Forms.Button button_sach_out;
         private System.Windows.Forms.Button button_sach_update;
         private System.Windows.Forms.Label label6;
@@ -533,12 +862,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown_sltheloai;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button_theloai;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button_muon_thoat;
         private System.Windows.Forms.Button button_muon_capnhat;
         private System.Windows.Forms.NumericUpDown numericUpDown_daymax;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numericUpDown_slmax;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabControl tabControl_Admin;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_manhom;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -250,7 +250,7 @@ namespace LibraryManagement
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Admin f = new Form_Admin();
+            Form_Admin f = new Form_Admin(loginacc);
             this.Hide();
             f.ShowDialog();
             this.Show();

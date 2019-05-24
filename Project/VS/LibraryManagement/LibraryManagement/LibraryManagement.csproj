@@ -50,6 +50,7 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ParaDAO.cs" />
+    <Compile Include="DAO\TypeDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\User_DTO.cs" />
     <Compile Include="fLogin.cs">

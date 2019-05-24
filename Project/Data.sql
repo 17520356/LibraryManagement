@@ -7,21 +7,23 @@ GO
 
 CREATE TABLE LOAI_DG
 (
-	Maloaidg			Char(6) NOT NULL PRIMARY KEY,
+	Maloaidg			Int IDENTITY PRIMARY KEY,
 	Tenloai				Nvarchar(15) NOT NULL,
 	Ghichu				Nvarchar(15)
 )
-
+INSERT INTO dbo.LOAI_DG ( Tenloai)VALUES  ( N'X')
+INSERT INTO dbo.LOAI_DG ( Tenloai)VALUES  ( N'Y')
 GO
+
 CREATE TABLE DOC_GIA
 (
-	Madocgia			Char(6) NOT NULL PRIMARY KEY,
-	Maloaidg			Char(6) NOT NULL,
+	Madocgia			Int IDENTITY PRIMARY KEY,
+	Maloaidg			Int NOT NULL,
 	Hoten				Nvarchar(25) NOT NULL,
 	Ngaysinh			Date,
 	Diachi				Nvarchar(40),
 	Sodienthoai			Char(15),
-	Gioitinh			Char(20),
+	Gioitinh			INT ,--1 Nam 0 Nữ
 	Ngaylapthe			Date NOT NULL DEFAULT GETDATE(),
 	Ngayhethan			DATE ,
 	Email				Char(20),
@@ -31,22 +33,33 @@ CREATE TABLE DOC_GIA
 		FOREIGN KEY (Maloaidg) REFERENCES LOAI_DG(Maloaidg)
 ) 
 
+
 GO
+
 CREATE TABLE TINHTRANG_SACH
 (
-	Matinhtrang			Char(6) NOT NULL PRIMARY KEY,--0: không thể cho mượn --1: có thể cho mượn
+	Matinhtrang			INT IDENTITY PRIMARY KEY, --1: có thể cho mượn  --2: không thể cho mượn
 	Tinhtrang			Nvarchar(20)
 )
+GO 
+INSERT INTO dbo.TINHTRANG_SACH ( Tinhtrang )VALUES  ( N'Có Thể Cho Mượn')
+INSERT INTO dbo.TINHTRANG_SACH ( Tinhtrang )VALUES  ( N'Không Thể Cho Mượn')
 GO
+
 CREATE TABLE THE_LOAI
 (
-	Matheloai			Char(6) NOT NULL PRIMARY KEY,
+	Matheloai			INT IDENTITY PRIMARY KEY,
 	Ten					Nvarchar(20),
 )
+INSERT INTO dbo.THE_LOAI ( Ten ) VALUES  ( N'A')
+INSERT INTO dbo.THE_LOAI ( Ten ) VALUES  ( N'B')
+INSERT INTO dbo.THE_LOAI ( Ten ) VALUES  ( N'C')
+
 GO
+
 CREATE TABLE TAC_GIA
 (
-	Matacgia			Char(6) NOT NULL PRIMARY KEY,
+	Matacgia			INT IDENTITY PRIMARY KEY,
 	Tentacgia			Nvarchar(20) NOT NULL,
 	Diachi				Nvarchar(30),
 	Sodienthoai			char(15),
@@ -54,42 +67,59 @@ CREATE TABLE TAC_GIA
 	Ghichu				Nvarchar(30)
 )
 GO
+
 CREATE TABLE NHA_XUAT_BAN
 (
-	MaNXB				Char(6) NOT NULL PRIMARY KEY,
+	MaNXB				INT IDENTITY PRIMARY KEY,
 	TenNXB				Nvarchar(30) NOT NULL,
 	Diachi				Nvarchar(30),
 	Email				Nvarchar(15)
 
 )
+GO 
+
 CREATE TABLE NGON_NGU
 (
-	Mangonngu			Char(6) NOT NULL PRIMARY KEY,
+	Mangonngu			INT IDENTITY PRIMARY KEY,
 	Ngonngu				Nvarchar(15),
 )
 GO
+
 CREATE TABLE DAUSACH
 (
-	Madausach			Char(6) NOT NULL PRIMARY KEY,
+	Madausach			INT IDENTITY PRIMARY KEY,
 	Tendausach			Nvarchar(50),
-	Matheloai			Char(6) NOT NULL,
-	Matacgia			Char(6) NOT NULL,
-	MaNXB				Char(6) NOT NULL,
-	Mangonngu			Char(6) NOT NULL,
+	Matheloai			INT  NOT NULL,
+	MaNXB				INT  NOT NULL,
+	Mangonngu			INT NOT NULL,
 	Trigia				Money,
 	Soluong				Int,
 	Namxuatban			Int,
 		FOREIGN KEY (Matheloai) REFERENCES THE_LOAI (Matheloai),
-		FOREIGN KEY (Matacgia) REFERENCES TAC_GIA (Matacgia),
 		FOREIGN KEY (MaNXB) REFERENCES NHA_XUAT_BAN(MaNXB),
 		FOREIGN KEY (Mangonngu) REFERENCES NGON_NGU(Mangonngu)
 )
 GO
+
+CREATE TABLE TACGIA_DAUSACH
+(
+	Matacgia			INT NOT NULL,
+	Madausach			INT NOT NULL,
+	PRIMARY KEY(Matacgia,Madausach),
+		FOREIGN KEY (Matacgia) REFERENCES TAC_GIA(Matacgia),
+		FOREIGN KEY (Madausach) REFERENCES DAUSACH(Madausach)
+)
+
+
+
+
+GO
+
 CREATE TABLE CUONSACH
 (
-	Masach				Char(6) NOT NULL PRIMARY KEY,
-	Madausach			Char(6) NOT NULL,
-	Matinhtrang			Char(6) NOT NULL,
+	Masach				INT IDENTITY PRIMARY KEY,
+	Madausach			INT NOT NULL,
+	Matinhtrang			INT NOT NULL,
 	Ngaynhap			Date NOT NULL DEFAULT GETDATE(),
 	
 		FOREIGN KEY (Matinhtrang) REFERENCES TINHTRANG_SACH(Matinhtrang),
@@ -100,50 +130,59 @@ GO
 
 CREATE TABLE PHIEU_MUON
 (
-	Maphieumuon			Char(6) NOT NULL PRIMARY KEY,
-	Madocgia			Char(6) NOT NULL,
+	Maphieumuon			INT IDENTITY PRIMARY KEY,
+	Madocgia			INT NOT NULL,
 	Ngaymuon			Date NOT NULL DEFAULT GETDATE(),
+	
 		FOREIGN KEY (Madocgia) REFERENCES DOC_GIA(Madocgia)
 )
 GO
+
 CREATE TABLE CHITIET_PHIEUMUON
 (
-	Maphieumuon			Char(6) NOT NULL ,
-	Masach				Char(6) NOT NULL ,
+	Maphieumuon			INT NOT NULL ,
+	Masach				INT NOT NULL ,
 	Ngayhethan			Date,
+	tinhtrang			INT, -- 1: đã trả -- 0 : chưa trả
 		PRIMARY KEY (Maphieumuon,Masach),
 		FOREIGN KEY (Masach) REFERENCES CUONSACH(Masach),
 		FOREIGN KEY (Maphieumuon) REFERENCES PHIEU_MUON(Maphieumuon)
 )
 GO
+
 CREATE TABLE PHIEU_TRA
 (
-	Maphieutra			Char(6) NOT NULL PRIMARY KEY, --thêm mã phiếu mượn
-	Madocgia			Char(6) NOT NULL,
+	Maphieutra			INT IDENTITY PRIMARY KEY, --thêm mã phiếu mượn
+	Madocgia			INT NOT NULL,
+	Maphieumuon			INT NOT NULL,
 	Ngaytra				Date NOT NULL DEFAULT GETDATE(),
 	Tienphat			money,
-		FOREIGN KEY (Madocgia) REFERENCES DOC_GIA(Madocgia)
+		FOREIGN KEY (Madocgia) REFERENCES DOC_GIA(Madocgia),
+		FOREIGN KEY (Maphieumuon) REFERENCES dbo.PHIEU_MUON(Maphieumuon)
 )
 GO
+
 CREATE TABLE CHITIET_PHIEUTRA
 (
-	Maphieutra			Char(6) NOT NULL,
-	Masach				Char(6) NOT NULL,
+	Maphieutra			int NOT NULL,
+	Masach				INT NOT NULL,
 	Tienphattungsach	Money,
 		PRIMARY KEY(Maphieutra,Masach),
 		FOREIGN KEY (Masach) REFERENCES CUONSACH(Masach),
 		FOREIGN KEY (Maphieutra) REFERENCES PHIEU_TRA(Maphieutra)
 )
 GO
+
 CREATE TABLE PHIEU_THU
 (
-	Maphieuthu			Char(6) NOT NULL PRIMARY KEY,
-	Madocgia			Char(6) NOT NULL,
+	Maphieuthu			INT IDENTITY PRIMARY KEY,
+	Madocgia			INT NOT NULL,
 	Ngaythu				date	NOT NULL DEFAULT GETDATE(),
 	Sotienthu			Money,	
 		FOREIGN KEY (Madocgia) REFERENCES DOC_GIA (Madocgia)
 )
 GO 
+
 CREATE TABLE THAM_SO
 (
 	Tenthamso			NvarChar(50),
@@ -157,9 +196,10 @@ INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'khoangcachnamxuatban', 8)
 INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'soluongsachtoida', 5)
 INSERT dbo.THAM_SO ( Tenthamso, Giatri )VALUES  ( N'songaymuontoida', 4)
 GO
+
 CREATE TABLE BAOCAO_MUONSACH_THELOAI
 (
-	Mabaocaotheotheloai			Char(6) NOT NULL PRIMARY KEY,
+	Mabaocaotheotheloai			INT IDENTITY PRIMARY KEY,
 	Thang						Int,
 	Nam							Int,
 	Tongluotmuon				Int,
@@ -167,10 +207,11 @@ CREATE TABLE BAOCAO_MUONSACH_THELOAI
 )
 
 GO 
+
 CREATE TABLE CHITIET_BAOCAO_THELOAI
 (
-	Mabaocaotheotheloai			Char(6) NOT NULL,
-	Matheloai					Char(6) NOT NULL,
+	Mabaocaotheotheloai			INT NOT NULL,
+	Matheloai					INT  NOT NULL,
 	Luotmuon					Int,
 	Tile						float,
 		PRIMARY KEY (Mabaocaotheotheloai,Matheloai),
@@ -178,19 +219,21 @@ CREATE TABLE CHITIET_BAOCAO_THELOAI
 		FOREIGN KEY (Mabaocaotheotheloai) REFERENCES BAOCAO_MUONSACH_THELOAI(Mabaocaotheotheloai)
 )
 GO
+
 CREATE TABLE BAOCAO_SACH_TRATRE
 (
-	Mabaocaosachtratre			Char(6) NOT NULL PRIMARY KEY,
+	Mabaocaosachtratre			INT IDENTITY PRIMARY KEY,
 	Ngay						Int,
 	Thang						Int,
 	Nam							Int,
 
 )
 GO
+
 CREATE TABLE CHITIET_BAOCAO_TRATRE
 (
-	Mabaocaosachtratre			Char(6) NOT NULL,
-	Masach						Char(6) NOT NULL,
+	Mabaocaosachtratre			INT  NOT NULL,
+	Masach						INT NOT NULL,
 	Ngaymuon					Date,
 	Songaytratre				Int,
 		PRIMARY KEY(Mabaocaosachtratre,Masach),
@@ -198,6 +241,7 @@ CREATE TABLE CHITIET_BAOCAO_TRATRE
 		FOREIGN KEY (Masach) REFERENCES CUONSACH(Masach)
 )
 GO
+
 CREATE TABLE CHUC_NANG
 (
 	MaChucNang					Int Identity NOT NULL PRIMARY KEY,
@@ -205,7 +249,6 @@ CREATE TABLE CHUC_NANG
 	TenManHinhDuocLoad			Nvarchar(30) NOT NULL
 )
 GO
-
 
 CREATE TABLE NHOM_NGUOI_DUNG (
 	 MaNhom						Int NOT NULL PRIMARY KEY, 
@@ -225,6 +268,7 @@ CREATE TABLE PHAN_QUYEN (
 		FOREIGN KEY (MaChucNang) REFERENCES dbo.CHUC_NANG(MaChucNang)
 )
 GO
+
 CREATE TABLE NGUOI_DUNG(
 	TenDangNhap					Nvarchar(30) NOT NULL PRIMARY KEY,
 	MatKhau						Nvarchar(30) NOT NULL,
@@ -232,9 +276,12 @@ CREATE TABLE NGUOI_DUNG(
 	FOREIGN KEY (MaNhom) REFERENCES dbo.NHOM_NGUOI_DUNG(MaNhom)
 )
 GO
+
+
 INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'admin', N'admin', 1 )
 INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'staff', N'staff', 2 )
 
+GO 
 
 CREATE TRIGGER tg_capnhatngayhethan
 ON dbo.DOC_GIA
@@ -254,9 +301,9 @@ BEGIN
 		END
 END
 
+
 GO 
-DROP TRIGGER dbo.tg_capnhatngayhethan
-GO 
+
 CREATE TRIGGER tg_capnhattinhtrangdocgiakhihethan
 ON dbo.DOC_GIA
 FOR INSERT,UPDATE
@@ -276,8 +323,6 @@ END
 
 
 GO
-
-
 
 CREATE PROC usp_login
 @username NVARCHAR(100),@password NVARCHAR(100)
@@ -333,7 +378,18 @@ GO
  END
 
 GO 
-EXEC dbo.update_quidinh_docgia @thamso = N'tuoitoithieu', -- nvarchar(100)
-    @giatri = 20 -- int
 
 
+
+
+
+UPDATE dbo.NGUOI_DUNG SET MatKhau ='admin' WHERE TenDangNhap='admin'
+
+INSERT dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'',N'1',0)
+
+SELECT MaNhom FROM dbo.NGUOI_DUNG WHERE TenDangNhap='admin'
+UPDATE dbo.NGUOI_DUNG SET MaNhom='' WHERE TenDangNhap=''
+
+SELECT * FROM dbo.NGUOI_DUNG
+
+DELETE dbo.NGUOI_DUNG WHERE TenDangNhap='docgia2'

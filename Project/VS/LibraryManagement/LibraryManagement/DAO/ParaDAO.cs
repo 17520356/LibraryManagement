@@ -30,7 +30,12 @@ namespace LibraryManagement.DAO
             string rs =DataProvider.Instance.ExecuteReader("SELECT giatri FROM dbo.THAM_SO WHERE Tenthamso = '"+thamso+"';");
             return rs;
         }
-   
+        public string update_quidinh(string thamso, int giatri)
+        {
+            string rs = DataProvider.Instance.ExecuteReader("EXEC dbo.update_quidinh_docgia @thamso = N'"+thamso+"', @giatri = '" + giatri + "'");
+            return rs;
+        }
+
     }
   
 }
