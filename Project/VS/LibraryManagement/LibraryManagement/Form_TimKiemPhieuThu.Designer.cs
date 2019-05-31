@@ -60,8 +60,8 @@
             this.txt_conlai = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txt_ngaythu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker_ngaythu = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -425,24 +425,12 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txt_ngaythu);
+            this.panel9.Controls.Add(this.dateTimePicker_ngaythu);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Location = new System.Drawing.Point(6, 543);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(330, 100);
             this.panel9.TabIndex = 15;
-            // 
-            // txt_ngaythu
-            // 
-            this.txt_ngaythu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_ngaythu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_ngaythu.Font = new System.Drawing.Font("Times New Roman", 18F);
-            this.txt_ngaythu.Location = new System.Drawing.Point(4, 48);
-            this.txt_ngaythu.Name = "txt_ngaythu";
-            this.txt_ngaythu.ReadOnly = true;
-            this.txt_ngaythu.Size = new System.Drawing.Size(323, 49);
-            this.txt_ngaythu.TabIndex = 0;
-            this.txt_ngaythu.TabStop = false;
             // 
             // label6
             // 
@@ -451,10 +439,20 @@
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(2, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(325, 49);
+            this.label6.Size = new System.Drawing.Size(325, 41);
             this.label6.TabIndex = 0;
             this.label6.Text = "Ngày Thu";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker_ngaythu
+            // 
+            this.dateTimePicker_ngaythu.Enabled = false;
+            this.dateTimePicker_ngaythu.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_ngaythu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_ngaythu.Location = new System.Drawing.Point(7, 46);
+            this.dateTimePicker_ngaythu.Name = "dateTimePicker_ngaythu";
+            this.dateTimePicker_ngaythu.Size = new System.Drawing.Size(315, 49);
+            this.dateTimePicker_ngaythu.TabIndex = 1;
             // 
             // Form_TimKiemPhieuThu
             // 
@@ -489,7 +487,6 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -527,7 +524,7 @@
         private System.Windows.Forms.TextBox txt_hoten;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txt_ngaythu;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_ngaythu;
     }
 }

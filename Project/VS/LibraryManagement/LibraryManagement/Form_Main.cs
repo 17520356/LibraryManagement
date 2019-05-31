@@ -231,7 +231,9 @@ namespace LibraryManagement
         private void bt_timkiemphieuthu_Click(object sender, EventArgs e)
         {
             Form_TimKiemPhieuThu f = new Form_TimKiemPhieuThu();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_lapphieuthu_Click(object sender, EventArgs e)

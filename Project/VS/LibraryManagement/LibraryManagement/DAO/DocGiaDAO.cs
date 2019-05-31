@@ -79,8 +79,8 @@ namespace LibraryManagement.DAO
         public int delete_docgia(int madocgia)
         {
             int sosachmuon = Convert.ToInt32(DataProvider.Instance.ExecuteReader("	SELECT Sosachmuon FROM dbo.DOC_GIA WHERE Madocgia='" + madocgia + "' "));
-            string tongno =DataProvider.Instance.ExecuteReader("SELECT Tongno FROM dbo.DOC_GIA WHERE Madocgia='" + madocgia + "' ");
-            if ((sosachmuon == 0) || (tongno != ""))
+            float tongno =(float)Convert.ToDouble(DataProvider.Instance.ExecuteReader("SELECT Tongno FROM dbo.DOC_GIA WHERE Madocgia='" + madocgia + "' "));
+            if ((sosachmuon == 0) &&(tongno == 0))
             {
                 int rs = DataProvider.Instance.ExecuteNonQuery("EXEC dbo.delete_docgia @madocgia = " + madocgia + "");
                 if (rs > 0)

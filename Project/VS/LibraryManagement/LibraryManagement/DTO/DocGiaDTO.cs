@@ -219,7 +219,8 @@ namespace LibraryManagement.DTO
             var ngaysinhTemp = row["ngaysinh"];
             if(ngaysinhTemp.ToString()!="")
                 this.Ngaysinh = (DateTime?)ngaysinhTemp;
-            this.gioitinh = (int)row["gioitinh"];
+            if(gioitinh.ToString() !="")
+                this.gioitinh = (int)row["gioitinh"];
             this.Ngaylapthe = (DateTime)row["ngaylapthe"];
             this.Ngayhethan = (DateTime)row["ngayhethan"];
             this.Email = row["email"].ToString();
