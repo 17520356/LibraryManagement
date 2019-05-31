@@ -5,6 +5,9 @@ GO
 SET DATEFORMAT DMY
 GO
 
+--DATABASE
+GO 
+/*
 CREATE TABLE LOAI_DG
 (
 	Maloaidg			Int IDENTITY PRIMARY KEY,
@@ -281,14 +284,18 @@ GO
 INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'admin', N'admin', 1 )
 INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'staff', N'staff', 2 )
 
-GO 
+GO */
 
+GO 
+--TRIGGER -
+GO 
+/*
 CREATE TRIGGER tg_capnhatngayhethan
 ON dbo.DOC_GIA
 FOR INSERT,UPDATE
 AS 
 BEGIN
-	DECLARE @Ngayhethan DATE,@Ngaylapthe DATE,@Madocgia CHAR(6);
+	DECLARE @Ngayhethan DATE,@Ngaylapthe DATE,@Madocgia INT ;
 	
 	SELECT @Ngaylapthe = Inserted.Ngaylapthe,@Ngayhethan=Inserted.Ngayhethan,@Madocgia=Inserted.Madocgia
 	FROM Inserted
@@ -309,7 +316,7 @@ ON dbo.DOC_GIA
 FOR INSERT,UPDATE
 AS
 BEGIN
-	DECLARE @Ngayhethan DATE, @Madocgia CHAR(6);
+	DECLARE @Ngayhethan DATE, @Madocgia INT ;
 	
 	SELECT @Ngayhethan=Inserted.Ngayhethan,@Madocgia=Inserted.Madocgia
 	FROM Inserted
@@ -319,10 +326,18 @@ BEGIN
 			SET tinhtrang='2'
 			WHERE @Madocgia=Madocgia;
 		END 
+	ELSE 
+		BEGIN 
+			UPDATE dbo.DOC_GIA
+			SET tinhtrang='1'
+			WHERE @Madocgia=Madocgia;
+		END 
 END 
-
-
 GO
+*/
+GO 
+--PROCEDURE
+GO 
 
 CREATE PROC usp_login
 @username NVARCHAR(100),@password NVARCHAR(100)
@@ -370,7 +385,8 @@ BEGIN
 END 
 
 GO 
- CREATE PROC update_quidinh_docgia
+
+CREATE PROC update_quidinh_docgia
  @thamso NVARCHAR(100), @giatri INT 
  AS
  BEGIN
@@ -379,17 +395,58 @@ GO
 
 GO 
 
+CREATE PROC update_docgia
+@madocgia INT,@hoten NVARCHAR(100),@maloaidg INT ,@ngaysinh DATE,@gioitinh INT,@diachi NVARCHAR(100),@sodt CHAR(15), @email CHAR(20)
+AS
+BEGIN 
+	UPDATE dbo.DOC_GIA SET Hoten=@hoten,Maloaidg=@maloaidg,Gioitinh=@gioitinh,Diachi=@diachi,Sodienthoai=@sodt,Email=@email,Ngaysinh=@ngaysinh
+	WHERE Madocgia=@madocgia
+END 
+
+	
+GO 
+
+CREATE PROC delete_docgia
+@madocgia int 
+AS
+BEGIN
+	DECLARE @checkphieumuon INT , @checkphieutra INT ,@checkphieuthu INT
+		
+	SELECT @checkphieumuon=COUNT(*) FROM dbo.PHIEU_MUON WHERE dbo.PHIEU_MUON.Madocgia=@madocgia
+	SELECT @checkphieutra=COUNT(*) FROM dbo.PHIEU_TRA WHERE dbo.PHIEU_TRA.Madocgia=@madocgia
+	SELECT @checkphieuthu=COUNT(*) FROM dbo.PHIEU_THU WHERE dbo.PHIEU_THU.Madocgia=@madocgia
+
+	IF (@checkphieumuon>0)				--Có Phiếu Mượn
+	BEGIN	
+		DELETE dbo.CHITIET_PHIEUMUON FROM dbo.CHITIET_PHIEUMUON,dbo.PHIEU_MUON WHERE dbo.CHITIET_PHIEUMUON.Maphieumuon=dbo.PHIEU_MUON.Maphieumuon AND Madocgia=@madocgia
+		DELETE dbo.PHIEU_MUON WHERE Madocgia=@madocgia
+	END 
+	IF(@checkphieutra>0)			--Có Phiếu Trả
+	BEGIN 
+		DELETE dbo.CHITIET_PHIEUTRA FROM dbo.CHITIET_PHIEUTRA,dbo.PHIEU_TRA WHERE dbo.CHITIET_PHIEUTRA.Maphieutra=dbo.PHIEU_TRA.Maphieutra AND Madocgia=@madocgia
+		DELETE dbo.PHIEU_TRA WHERE Madocgia=@madocgia
+	END 		
+	IF(@checkphieuthu>0)		--Có Phiếu Thu
+	BEGIN
+		DELETE dbo.PHIEU_THU WHERE Madocgia=@madocgia
+	END
+	DELETE dbo.DOC_GIA WHERE Madocgia=@madocgia
+END 
+
+GO
+
+CREATE PROC insert_docgia
+@hoten NVARCHAR(100),@maloaidg INT ,@ngaysinh DATE,@gioitinh INT,@diachi NVARCHAR(100),@sodt CHAR(15), @email CHAR(20)
+AS
+BEGIN
+	INSERT dbo.DOC_GIA (Hoten, Maloaidg  , Ngaysinh ,Diachi ,  Sodienthoai , Gioitinh ,Email )VALUES  (@hoten, @maloaidg ,@ngaysinh,@diachi,@sodt,@gioitinh,@email)
+END
+ 
+GO 
 
 
 
 
-UPDATE dbo.NGUOI_DUNG SET MatKhau ='admin' WHERE TenDangNhap='admin'
+SELECT Maphieuthu [Mã Phiếu Thu],Hoten [Họ Tên],Tongno[Tổng Nợ],Sotienthu [Số Tiền Thu],ngaythu [Ngày Thu] FROM dbo.PHIEU_THU,dbo.DOC_GIA WHERE DOC_GIA.Madocgia=dbo.PHIEU_THU.Madocgia
 
-INSERT dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'',N'1',0)
 
-SELECT MaNhom FROM dbo.NGUOI_DUNG WHERE TenDangNhap='admin'
-UPDATE dbo.NGUOI_DUNG SET MaNhom='' WHERE TenDangNhap=''
-
-SELECT * FROM dbo.NGUOI_DUNG
-
-DELETE dbo.NGUOI_DUNG WHERE TenDangNhap='docgia2'

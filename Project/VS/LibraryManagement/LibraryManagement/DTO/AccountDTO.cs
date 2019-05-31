@@ -51,6 +51,7 @@ namespace LibraryManagement.DTO
                 type = value;
             }
         }
+
         public AccountDTO(string username,int type, string password = null)
         {
             this.Username = username;

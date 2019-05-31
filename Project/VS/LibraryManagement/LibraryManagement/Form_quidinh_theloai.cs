@@ -19,16 +19,13 @@ namespace LibraryManagement
             InitializeComponent();
             load();
         }
+
+        #region method
         void load()
         {
             dataGridView_theloai.DataSource = theloai;
             loaddata();
             biding_theloai();
-        }
-
-        private void button_ad_huy_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         void loaddata()
         {
@@ -38,14 +35,21 @@ namespace LibraryManagement
         }
         void biding_theloai()
         {
-            txt_maloaisach.DataBindings.Add(new Binding("Text", dataGridView_theloai.DataSource, "Mã Thể Loại",true,DataSourceUpdateMode.Never));
+            txt_maloaisach.DataBindings.Add(new Binding("Text", dataGridView_theloai.DataSource, "Mã Thể Loại", true, DataSourceUpdateMode.Never));
             txt_tentheloai.DataBindings.Add(new Binding("Text", dataGridView_theloai.DataSource, "Tên Thể Loại", true, DataSourceUpdateMode.Never));
         }
+        #endregion
 
+        #region event
+        private void button_ad_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+       
         private void button_ad_them_Click(object sender, EventArgs e)
         {
 
-            int maloaisach = Convert.ToInt32(txt_maloaisach.Text);
+         
             string tentheloaisach = txt_tentheloai.Text;
             if (txt_tentheloai.Text != "")
             {
@@ -98,21 +102,25 @@ namespace LibraryManagement
 
         private void button_ad_xoa_Click(object sender, EventArgs e)
         {
-            if ((txt_maloaisach.Text != "")&&(txt_tentheloai.Text!=""))
+            if ((txt_maloaisach.Text != "") && (txt_tentheloai.Text != ""))
             {
-                int maloaisach = Convert.ToInt32(txt_maloaisach.Text);
-                if (TypeDAO.Instance.checkdelete(maloaisach) == true)
-                    MessageBox.Show("Không thể xóa do đang tồn tại sách thuộc thể loại này!!");
-                else
+                if (MessageBox.Show("Xóa Thể Loại " + txt_tentheloai.Text + "", "Thông Báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (TypeDAO.Instance.delete_theloai(maloaisach) == true)
-                        MessageBox.Show("Xóa Thành Công!!");
+                    int maloaisach = Convert.ToInt32(txt_maloaisach.Text);
+                    if (TypeDAO.Instance.checkdelete(maloaisach) == true)
+                        MessageBox.Show("Không thể xóa do đang tồn tại sách thuộc thể loại này!!");
                     else
-                        MessageBox.Show("Xóa Thất Bại!!");
-                    txt_tentheloai.ResetText();
-                    loaddata();
+                    {
+                        if (TypeDAO.Instance.delete_theloai(maloaisach) == true)
+                            MessageBox.Show("Xóa Thành Công!!");
+                        else
+                            MessageBox.Show("Xóa Thất Bại!!");
+                        txt_tentheloai.ResetText();
+                        loaddata();
+                    }
                 }
             }
         }
+        #endregion
     }
 }

@@ -191,13 +191,17 @@ namespace LibraryManagement
         private void bt_timkiemdocgia_Click(object sender, EventArgs e)
         {
             Form_TimDocGia f = new Form_TimDocGia();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_themdocgia_Click(object sender, EventArgs e)
         {
             Form_ThemDocGia f = new Form_ThemDocGia();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_timphieumuon_Click(object sender, EventArgs e)
@@ -233,7 +237,9 @@ namespace LibraryManagement
         private void bt_lapphieuthu_Click(object sender, EventArgs e)
         {
             Form_LapPhieuThu f = new Form_LapPhieuThu();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_tk_theloai_Click(object sender, EventArgs e)

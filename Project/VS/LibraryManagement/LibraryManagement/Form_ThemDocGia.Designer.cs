@@ -34,12 +34,14 @@
             this.button_tdg_them = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dateTimePicker_tdg_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.txt_tdg_ten = new System.Windows.Forms.TextBox();
             this.label_tdg_ten = new System.Windows.Forms.Label();
             this.radioButton_tdg_nu = new System.Windows.Forms.RadioButton();
             this.radioButton_tdg_nam = new System.Windows.Forms.RadioButton();
-            this.cmb_tdg_loaidg = new System.Windows.Forms.ComboBox();
             this.txt_tdg_email = new System.Windows.Forms.TextBox();
             this.txt_tdg_sodt = new System.Windows.Forms.TextBox();
             this.txt_tdg_diachi = new System.Windows.Forms.TextBox();
@@ -57,6 +59,7 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +99,7 @@
             this.button_tdg_them.TabIndex = 10;
             this.button_tdg_them.Text = "Thêm";
             this.button_tdg_them.UseVisualStyleBackColor = false;
+            this.button_tdg_them.Click += new System.EventHandler(this.button_tdg_them_Click);
             // 
             // panel1
             // 
@@ -109,12 +113,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dateTimePicker_tdg_ngaysinh);
             this.panel3.Controls.Add(this.txt_tdg_ten);
             this.panel3.Controls.Add(this.label_tdg_ten);
             this.panel3.Controls.Add(this.radioButton_tdg_nu);
             this.panel3.Controls.Add(this.radioButton_tdg_nam);
-            this.panel3.Controls.Add(this.cmb_tdg_loaidg);
             this.panel3.Controls.Add(this.txt_tdg_email);
             this.panel3.Controls.Add(this.txt_tdg_sodt);
             this.panel3.Controls.Add(this.txt_tdg_diachi);
@@ -130,6 +134,38 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1070, 465);
             this.panel3.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(735, 133);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(309, 75);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(192, -3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(111, 79);
+            this.radioButton2.TabIndex = 11;
+            this.radioButton2.Text = "Y";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.Checked = true;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(17, -3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(116, 79);
+            this.radioButton1.TabIndex = 6;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "X";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker_tdg_ngaysinh
             // 
@@ -180,21 +216,6 @@
             this.radioButton_tdg_nam.TabStop = true;
             this.radioButton_tdg_nam.Text = "Nam";
             this.radioButton_tdg_nam.UseVisualStyleBackColor = true;
-            // 
-            // cmb_tdg_loaidg
-            // 
-            this.cmb_tdg_loaidg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_tdg_loaidg.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_tdg_loaidg.FormattingEnabled = true;
-            this.cmb_tdg_loaidg.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
-            this.cmb_tdg_loaidg.Location = new System.Drawing.Point(733, 145);
-            this.cmb_tdg_loaidg.Name = "cmb_tdg_loaidg";
-            this.cmb_tdg_loaidg.Size = new System.Drawing.Size(312, 44);
-            this.cmb_tdg_loaidg.TabIndex = 4;
-            this.cmb_tdg_loaidg.Text = "asdsadsadsa";
             // 
             // txt_tdg_email
             // 
@@ -358,6 +379,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -373,7 +395,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton radioButton_tdg_nu;
         private System.Windows.Forms.RadioButton radioButton_tdg_nam;
-        private System.Windows.Forms.ComboBox cmb_tdg_loaidg;
         private System.Windows.Forms.TextBox txt_tdg_email;
         private System.Windows.Forms.TextBox txt_tdg_sodt;
         private System.Windows.Forms.TextBox txt_tdg_diachi;
@@ -391,5 +412,8 @@
         private System.Windows.Forms.TextBox txt_tdg_ten;
         private System.Windows.Forms.Label label_tdg_ten;
         private System.Windows.Forms.Label label_tdg_sodt;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

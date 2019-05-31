@@ -18,7 +18,7 @@ namespace LibraryManagement
 
         private AccountDTO acc;
 
-        public AccountDTO Acc1
+        public AccountDTO Acc
         {
             get
             {
@@ -38,6 +38,7 @@ namespace LibraryManagement
             this.acc = acc;
             load();
         }
+        #region method
         void load()
         {
             dataGridView_taikhoan.DataSource = Binding_acc;
@@ -45,7 +46,7 @@ namespace LibraryManagement
             load_acc();
             bindinh_acc();
         }
-        //qui dinh
+
         void load_quidinh()
         {
             int tuoitoithieu = Convert.ToInt32(ParaDAO.Instance.load_quidinhDAO("tuoitoithieu"));
@@ -70,14 +71,25 @@ namespace LibraryManagement
             numericUpDown_daymax.Value = songaymuontoida;
         }
 
-        private void button_theloai_Click(object sender, EventArgs e)
+        //quan ly tai khoan
+        void load_acc()
         {
-            this.Hide();
-            Form_quidinh_theloai f = new Form_quidinh_theloai();
-            f.ShowDialog();
-            this.Show();
+            DataTable data = AccountDAO.Instance.Load_acc();
+            Binding_acc.DataSource = data;
         }
 
+        void bindinh_acc()
+        {
+            txt_tendangnhap.DataBindings.Add(new Binding("Text", dataGridView_taikhoan.DataSource, "Tên Đăng Nhập", true, DataSourceUpdateMode.Never));
+            txt_tennhom.DataBindings.Add(new Binding("Text", dataGridView_taikhoan.DataSource, "Tên Nhóm", true, DataSourceUpdateMode.Never));
+            numericUpDown_manhom.DataBindings.Add(new Binding("value", dataGridView_taikhoan.DataSource, "Mã Nhóm", true, DataSourceUpdateMode.Never));
+        }
+
+        #endregion
+
+        #region event
+      
+        //button_out
         private void button_out_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -92,7 +104,22 @@ namespace LibraryManagement
         {
             this.Close();
         }
-        
+
+        private void button_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //--
+        private void button_theloai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_quidinh_theloai f = new Form_quidinh_theloai();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        //button_update
         private void button_update_Click(object sender, EventArgs e)
         {
             int Ntuoitoithieu = Convert.ToInt32(numericUpDown_tuoitoithieu.Value);
@@ -134,20 +161,7 @@ namespace LibraryManagement
             MessageBox.Show("Cập Nhật Thành Công");
         }
 
-        //quan ly tai khoan
-        void load_acc()
-        {
-            DataTable data = AccountDAO.Instance.Load_acc();
-            Binding_acc.DataSource = data;
-        }
-
-        void bindinh_acc()
-        {
-                txt_tendangnhap.DataBindings.Add(new Binding("Text", dataGridView_taikhoan.DataSource, "Tên Đăng Nhập", true, DataSourceUpdateMode.Never));
-                txt_tennhom.DataBindings.Add(new Binding("Text", dataGridView_taikhoan.DataSource, "Tên Nhóm", true, DataSourceUpdateMode.Never));
-                numericUpDown_manhom.DataBindings.Add(new Binding("value", dataGridView_taikhoan.DataSource, "Mã Nhóm", true, DataSourceUpdateMode.Never));
-        }
-
+        //reset pass
         private void button1_Click(object sender, EventArgs e)
         {
             if (txt_tendangnhap.Text != "")
@@ -156,21 +170,18 @@ namespace LibraryManagement
                 if (AccountDAO.Instance.reset_pass(tendangnhap) == true)
                     MessageBox.Show("Đặt Lại Mật Khẩu Thành Công!");
                 load_acc();
-               
-            }
-        }//reset pass
 
-        private void button_thoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            }
         }
+
+      
 
         private void button_tk_them_Click(object sender, EventArgs e)
         {
             int manhom = Convert.ToInt32(numericUpDown_manhom.Value.ToString());
             string tendangnhap = txt_tendangnhap.Text;
             if (tendangnhap != "")
-            {  
+            {
                 {
                     if (AccountDAO.Instance.check_acc(tendangnhap) == true)
                     {
@@ -179,14 +190,14 @@ namespace LibraryManagement
                     }
                     else
                     {
-                        if (AccountDAO.Instance.insert_acc(tendangnhap,manhom) == true)
+                        if (AccountDAO.Instance.insert_acc(tendangnhap, manhom) == true)
                             MessageBox.Show("Thêm Mới Thành Công!!");
                         else
                             MessageBox.Show("Thêm Mới Thất Bại!!");
-                    
+
 
                     }
-                  
+
                 }
             }
             load_acc();
@@ -194,11 +205,11 @@ namespace LibraryManagement
 
         private void button_tk_sua_Click(object sender, EventArgs e)
         {
-            
+
             string tendangnhap = txt_tendangnhap.Text;
             int Nmanhom = Convert.ToInt32(numericUpDown_manhom.Value.ToString());
-            int manhom = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT MaNhom FROM dbo.NGUOI_DUNG WHERE TenDangNhap = '"+tendangnhap+"'"));
-            if((tendangnhap!="")&&(Nmanhom!=manhom))
+            int manhom = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT MaNhom FROM dbo.NGUOI_DUNG WHERE TenDangNhap = '" + tendangnhap + "'"));
+            if ((tendangnhap != "") && (Nmanhom != manhom))
             {
                 if (acc.Username == tendangnhap)
                     MessageBox.Show("Không Thể Sửa Tài Khoản Đang Đăng Nhập!");
@@ -235,5 +246,9 @@ namespace LibraryManagement
             }
             load_acc();
         }
+        #endregion
+
+
+
     }
 }

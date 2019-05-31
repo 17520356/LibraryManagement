@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,10 @@ namespace LibraryManagement.DAO
 
         public bool insert_theloai(string tentheloai)
         {
-           int rs = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.THE_LOAi ( Ten )	VALUES  ( N'"+tentheloai+"')");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT  * FROM dbo.THE_LOAI");
+            if(data.Rows.Count<=0)
+               DataProvider.Instance.ExecuteNonQuery("DBCC CHECKIDENT ('dbo.THE_LOAI', RESEED," + getmax() + ")");
+            int rs = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.THE_LOAi ( Ten )	VALUES  ( N'"+tentheloai+"')");
             return rs > 0;
         }
 
@@ -47,7 +51,7 @@ namespace LibraryManagement.DAO
         public bool delete_theloai(int matheloai)
         {
             int rs = DataProvider.Instance.ExecuteNonQuery("DELETE FROM dbo.THE_LOAI WHERE Matheloai='"+matheloai+"'");
-            int rss = DataProvider.Instance.ExecuteNonQuery("DBCC CHECKIDENT ('dbo.THE_LOAI', RESEED," + getmax() + ")");
+            DataProvider.Instance.ExecuteNonQuery("DBCC CHECKIDENT ('dbo.THE_LOAI', RESEED," + getmax() + ")");
             return rs > 0;
         }
 
@@ -59,8 +63,13 @@ namespace LibraryManagement.DAO
 
         public int getmax()
         {
-            int rs= Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT MAX(Matheloai) FROM dbo.THE_LOAI"));
-            return rs;
+            string temp= DataProvider.Instance.ExecuteReader("SELECT MAX(Matheloai) FROM dbo.THE_LOAI");
+            if(temp!="")
+            {
+                int rs = Convert.ToInt32(temp);
+                return rs ;
+            }
+            return 0;
         }
 
     }
