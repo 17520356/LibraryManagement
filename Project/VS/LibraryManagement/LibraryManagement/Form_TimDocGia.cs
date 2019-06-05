@@ -45,6 +45,7 @@ namespace LibraryManagement
         }
         void LoadDocGia()
         {
+            dataGridView_docgia.DataSource = docgia_Data;
             docgia_Data.DataSource = DocGiaDAO.Instance.loaddata();
         }
         void Bindingdocgia()
@@ -64,13 +65,6 @@ namespace LibraryManagement
             LoadDocGia();
         }
 
-        private void button_dg_phieutra_Click(object sender, EventArgs e)
-        {
-            Form_LapPhieuTra f = new Form_LapPhieuTra();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
 
         private void button_dg_xemchitiet_Click(object sender, EventArgs e)
         {
@@ -114,5 +108,16 @@ namespace LibraryManagement
             }
         }
         #endregion
+
+        private void button_sachdangmuon_Click(object sender, EventArgs e)
+            
+        {
+            int id = Convert.ToInt32(txt_madocgia.Text);
+            DataTable data = DataProvider.Instance.ExecuteQuery("SachDangMuon @madocgia = N'"+id+"'");
+            if (data.Rows.Count > 0)
+                dataGridView_docgia.DataSource = data;
+            else
+                MessageBox.Show("Độc Giả Không Có Sách Đang Mượn!");
+        }
     }
 }

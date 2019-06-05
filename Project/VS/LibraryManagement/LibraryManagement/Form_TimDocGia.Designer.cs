@@ -37,7 +37,7 @@
             this.label_tk = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button_dg_xemtatca = new System.Windows.Forms.Button();
-            this.button_dg_phieutra = new System.Windows.Forms.Button();
+            this.button_sachdangmuon = new System.Windows.Forms.Button();
             this.button_dg_lapphieumuon = new System.Windows.Forms.Button();
             this.button_xoadocgia = new System.Windows.Forms.Button();
             this.panel_timkiemdocgia = new System.Windows.Forms.Panel();
@@ -106,7 +106,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(535, 22);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 54);
+            this.comboBox1.Size = new System.Drawing.Size(232, 45);
             this.comboBox1.TabIndex = 8;
             // 
             // textBox_dg
@@ -114,7 +114,7 @@
             this.textBox_dg.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_dg.Location = new System.Drawing.Point(237, 22);
             this.textBox_dg.Name = "textBox_dg";
-            this.textBox_dg.Size = new System.Drawing.Size(273, 53);
+            this.textBox_dg.Size = new System.Drawing.Size(273, 46);
             this.textBox_dg.TabIndex = 1;
             // 
             // button_dg_timkiem
@@ -145,7 +145,7 @@
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.button_dg_xemtatca);
-            this.panel7.Controls.Add(this.button_dg_phieutra);
+            this.panel7.Controls.Add(this.button_sachdangmuon);
             this.panel7.Controls.Add(this.button_dg_lapphieumuon);
             this.panel7.Controls.Add(this.button_xoadocgia);
             this.panel7.Location = new System.Drawing.Point(6, 690);
@@ -155,53 +155,53 @@
             // 
             // button_dg_xemtatca
             // 
-            this.button_dg_xemtatca.BackColor = System.Drawing.Color.Orange;
+            this.button_dg_xemtatca.BackColor = System.Drawing.Color.LimeGreen;
             this.button_dg_xemtatca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_dg_xemtatca.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dg_xemtatca.Location = new System.Drawing.Point(3, 5);
+            this.button_dg_xemtatca.Location = new System.Drawing.Point(16, 5);
             this.button_dg_xemtatca.Name = "button_dg_xemtatca";
-            this.button_dg_xemtatca.Size = new System.Drawing.Size(261, 67);
+            this.button_dg_xemtatca.Size = new System.Drawing.Size(231, 67);
             this.button_dg_xemtatca.TabIndex = 8;
-            this.button_dg_xemtatca.Text = "Xem Tất Cả";
+            this.button_dg_xemtatca.Text = "Xem Độc Giả";
             this.button_dg_xemtatca.UseVisualStyleBackColor = false;
             this.button_dg_xemtatca.Click += new System.EventHandler(this.button_dg_xemtatca_Click);
             // 
-            // button_dg_phieutra
+            // button_sachdangmuon
             // 
-            this.button_dg_phieutra.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_dg_phieutra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_dg_phieutra.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dg_phieutra.Location = new System.Drawing.Point(780, 5);
-            this.button_dg_phieutra.Name = "button_dg_phieutra";
-            this.button_dg_phieutra.Size = new System.Drawing.Size(232, 67);
-            this.button_dg_phieutra.TabIndex = 14;
-            this.button_dg_phieutra.Text = "Lập Phiếu Trả";
-            this.button_dg_phieutra.UseVisualStyleBackColor = false;
-            this.button_dg_phieutra.Click += new System.EventHandler(this.button_dg_phieutra_Click);
+            this.button_sachdangmuon.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_sachdangmuon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_sachdangmuon.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_sachdangmuon.Location = new System.Drawing.Point(504, 5);
+            this.button_sachdangmuon.Name = "button_sachdangmuon";
+            this.button_sachdangmuon.Size = new System.Drawing.Size(274, 67);
+            this.button_sachdangmuon.TabIndex = 14;
+            this.button_sachdangmuon.Text = "Sách Đang Mượn";
+            this.button_sachdangmuon.UseVisualStyleBackColor = false;
+            this.button_sachdangmuon.Click += new System.EventHandler(this.button_sachdangmuon_Click);
             // 
             // button_dg_lapphieumuon
             // 
             this.button_dg_lapphieumuon.BackColor = System.Drawing.Color.LimeGreen;
             this.button_dg_lapphieumuon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_dg_lapphieumuon.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_dg_lapphieumuon.Location = new System.Drawing.Point(526, 5);
+            this.button_dg_lapphieumuon.Location = new System.Drawing.Point(253, 6);
             this.button_dg_lapphieumuon.Name = "button_dg_lapphieumuon";
-            this.button_dg_lapphieumuon.Size = new System.Drawing.Size(232, 67);
+            this.button_dg_lapphieumuon.Size = new System.Drawing.Size(245, 67);
             this.button_dg_lapphieumuon.TabIndex = 13;
-            this.button_dg_lapphieumuon.Text = "Lập Phiếu Mượn";
+            this.button_dg_lapphieumuon.Text = "Lịch Sử Giao Dịch";
             this.button_dg_lapphieumuon.UseVisualStyleBackColor = false;
             this.button_dg_lapphieumuon.Click += new System.EventHandler(this.button_dg_lapphieumuon_Click);
             // 
             // button_xoadocgia
             // 
-            this.button_xoadocgia.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_xoadocgia.BackColor = System.Drawing.Color.Orange;
             this.button_xoadocgia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_xoadocgia.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_xoadocgia.Location = new System.Drawing.Point(278, 7);
+            this.button_xoadocgia.Location = new System.Drawing.Point(784, 5);
             this.button_xoadocgia.Name = "button_xoadocgia";
-            this.button_xoadocgia.Size = new System.Drawing.Size(232, 67);
+            this.button_xoadocgia.Size = new System.Drawing.Size(228, 67);
             this.button_xoadocgia.TabIndex = 12;
-            this.button_xoadocgia.Text = "Xóa";
+            this.button_xoadocgia.Text = "Xóa Độc Giả";
             this.button_xoadocgia.UseVisualStyleBackColor = false;
             this.button_xoadocgia.Click += new System.EventHandler(this.button_xoadocgia_Click);
             // 
@@ -221,12 +221,15 @@
             this.dataGridView_docgia.AllowUserToDeleteRows = false;
             this.dataGridView_docgia.AllowUserToOrderColumns = true;
             this.dataGridView_docgia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_docgia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView_docgia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView_docgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_docgia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_docgia.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_docgia.MultiSelect = false;
             this.dataGridView_docgia.Name = "dataGridView_docgia";
             this.dataGridView_docgia.ReadOnly = true;
+            this.dataGridView_docgia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView_docgia.RowTemplate.Height = 28;
             this.dataGridView_docgia.Size = new System.Drawing.Size(1028, 570);
             this.dataGridView_docgia.TabIndex = 0;
@@ -285,7 +288,7 @@
             this.txt_madocgia.Location = new System.Drawing.Point(4, 56);
             this.txt_madocgia.Name = "txt_madocgia";
             this.txt_madocgia.ReadOnly = true;
-            this.txt_madocgia.Size = new System.Drawing.Size(314, 49);
+            this.txt_madocgia.Size = new System.Drawing.Size(314, 42);
             this.txt_madocgia.TabIndex = 0;
             this.txt_madocgia.TabStop = false;
             // 
@@ -318,7 +321,7 @@
             this.txt_sosachdangmuon.Location = new System.Drawing.Point(4, 55);
             this.txt_sosachdangmuon.Name = "txt_sosachdangmuon";
             this.txt_sosachdangmuon.ReadOnly = true;
-            this.txt_sosachdangmuon.Size = new System.Drawing.Size(314, 49);
+            this.txt_sosachdangmuon.Size = new System.Drawing.Size(314, 42);
             this.txt_sosachdangmuon.TabIndex = 0;
             this.txt_sosachdangmuon.TabStop = false;
             // 
@@ -351,7 +354,7 @@
             this.txt_ngayhethan.Location = new System.Drawing.Point(4, 54);
             this.txt_ngayhethan.Name = "txt_ngayhethan";
             this.txt_ngayhethan.ReadOnly = true;
-            this.txt_ngayhethan.Size = new System.Drawing.Size(314, 49);
+            this.txt_ngayhethan.Size = new System.Drawing.Size(314, 42);
             this.txt_ngayhethan.TabIndex = 0;
             this.txt_ngayhethan.TabStop = false;
             // 
@@ -384,7 +387,7 @@
             this.txt_ngaylapthe.Location = new System.Drawing.Point(4, 58);
             this.txt_ngaylapthe.Name = "txt_ngaylapthe";
             this.txt_ngaylapthe.ReadOnly = true;
-            this.txt_ngaylapthe.Size = new System.Drawing.Size(314, 49);
+            this.txt_ngaylapthe.Size = new System.Drawing.Size(314, 42);
             this.txt_ngaylapthe.TabIndex = 0;
             this.txt_ngaylapthe.TabStop = false;
             // 
@@ -417,7 +420,7 @@
             this.txt_hoten.Location = new System.Drawing.Point(4, 56);
             this.txt_hoten.Name = "txt_hoten";
             this.txt_hoten.ReadOnly = true;
-            this.txt_hoten.Size = new System.Drawing.Size(314, 49);
+            this.txt_hoten.Size = new System.Drawing.Size(314, 42);
             this.txt_hoten.TabIndex = 0;
             this.txt_hoten.TabStop = false;
             // 
@@ -456,7 +459,7 @@
             // Form_TimDocGia
             // 
             this.AcceptButton = this.button_dg_timkiem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1411, 789);
@@ -506,7 +509,7 @@
         private System.Windows.Forms.Label label_tk;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button_dg_timkiem;
-        private System.Windows.Forms.Button button_dg_phieutra;
+        private System.Windows.Forms.Button button_sachdangmuon;
         private System.Windows.Forms.DataGridView dataGridView_docgia;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox comboBox1;

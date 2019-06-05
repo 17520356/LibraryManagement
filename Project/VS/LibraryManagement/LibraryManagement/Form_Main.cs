@@ -31,6 +31,7 @@ namespace LibraryManagement
         public Form_Main(AccountDTO acc)
         {
             InitializeComponent();
+            #region visible
             bt_timkiemsach.Visible = false;
             bt_themsach.Visible = false;
             bt_timkiemdocgia.Visible = false;
@@ -43,7 +44,8 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
-
+            button_themdausach.Visible = false;
+            #endregion
             this.loginacc = acc;
             Label_Nhom_NguoiDung.Text = AccountDAO.Instance.TenNhomNguoiDung(acc.Username);
             
@@ -69,6 +71,7 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.WhiteSmoke;
         }
 
@@ -86,6 +89,7 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.Silver; 
         }
 
@@ -93,6 +97,7 @@ namespace LibraryManagement
         {
             bt_timkiemsach.Visible = true;
             bt_themsach.Visible = true;
+            button_themdausach.Visible = true;
             bt_timkiemdocgia.Visible = false;
             bt_themdocgia.Visible = false;
             bt_timkiemphieuthu.Visible = false;
@@ -103,6 +108,7 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+
             panel_main.BackColor = Color.SandyBrown;
 
         }
@@ -121,6 +127,7 @@ namespace LibraryManagement
             bt_lapphieutra.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.Cyan;
         }
 
@@ -138,6 +145,7 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.SpringGreen;
         }
 
@@ -155,6 +163,7 @@ namespace LibraryManagement
             bt_lapphieumuon.Visible = false;
             bt_tk_sachtratre.Visible = false;
             bt_tk_theloai.Visible = false;
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.PaleGoldenrod;
         }
 
@@ -172,20 +181,24 @@ namespace LibraryManagement
             bt_lapphieutra.Visible = false;
             bt_timphieumuon.Visible = false;
             bt_lapphieumuon.Visible = false;
-           
+            button_themdausach.Visible = false;
             panel_main.BackColor = Color.Pink;
         }
 
         private void bt_timkiemsach_Click(object sender, EventArgs e)
         {
             Form_TimSach f = new Form_TimSach();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_themsach_Click(object sender, EventArgs e)
         {
             Form_ThemSach f = new Form_ThemSach();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_timkiemdocgia_Click(object sender, EventArgs e)

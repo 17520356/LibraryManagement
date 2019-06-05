@@ -59,3 +59,4 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimSach.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources

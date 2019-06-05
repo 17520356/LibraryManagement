@@ -58,6 +58,7 @@
             this.bt_themsach = new System.Windows.Forms.Button();
             this.bt_timkiemdocgia = new System.Windows.Forms.Button();
             this.bt_timkiemsach = new System.Windows.Forms.Button();
+            this.button_themdausach = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Main)).BeginInit();
             this.MenuStrip_Main.SuspendLayout();
@@ -195,14 +196,14 @@
             this.tàiKhoảnToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip_Main.Name = "MenuStrip_Main";
-            this.MenuStrip_Main.Size = new System.Drawing.Size(1411, 33);
+            this.MenuStrip_Main.Size = new System.Drawing.Size(1411, 30);
             this.MenuStrip_Main.TabIndex = 1;
             this.MenuStrip_Main.Text = "Menu";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -212,20 +213,20 @@
             this.thôngTinTàiKhoảnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(109, 26);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(304, 30);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông Tin Tài Khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(304, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -264,6 +265,7 @@
             this.panel_main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_main.BackgroundImage")));
             this.panel_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_main.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_main.Controls.Add(this.button_themdausach);
             this.panel_main.Controls.Add(this.bt_tk_sachtratre);
             this.panel_main.Controls.Add(this.bt_tk_theloai);
             this.panel_main.Controls.Add(this.bt_lapphieuthu);
@@ -425,9 +427,20 @@
             this.bt_timkiemsach.UseVisualStyleBackColor = true;
             this.bt_timkiemsach.Click += new System.EventHandler(this.bt_timkiemsach_Click);
             // 
+            // button_themdausach
+            // 
+            this.button_themdausach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_themdausach.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_themdausach.Location = new System.Drawing.Point(327, 460);
+            this.button_themdausach.Name = "button_themdausach";
+            this.button_themdausach.Size = new System.Drawing.Size(408, 154);
+            this.button_themdausach.TabIndex = 12;
+            this.button_themdausach.Text = "Thêm Đầu Sách";
+            this.button_themdausach.UseVisualStyleBackColor = true;
+            // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1411, 789);
@@ -484,5 +497,6 @@
         private System.Windows.Forms.Button bt_timphieumuon;
         private System.Windows.Forms.Button bt_tk_sachtratre;
         private System.Windows.Forms.Button bt_tk_theloai;
+        private System.Windows.Forms.Button button_themdausach;
     }
 }

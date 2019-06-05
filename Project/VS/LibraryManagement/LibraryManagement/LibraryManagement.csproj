@@ -51,9 +51,11 @@
     <Compile Include="DAO\DocGiaDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ParaDAO.cs" />
+    <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DAO\TypeDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\DocGiaDTO.cs" />
+    <Compile Include="DTO\SachDTO.cs" />
     <Compile Include="DTO\User_DTO.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -132,6 +134,12 @@
     </Compile>
     <Compile Include="Form_quidinh_theloai.Designer.cs">
       <DependentUpon>Form_quidinh_theloai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ThemDauSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ThemDauSach.Designer.cs">
+      <DependentUpon>Form_ThemDauSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ThemDocGia.cs">
       <SubType>Form</SubType>
@@ -227,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_quidinh_theloai.resx">
       <DependentUpon>Form_quidinh_theloai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ThemDauSach.resx">
+      <DependentUpon>Form_ThemDauSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ThemDocGia.resx">
       <DependentUpon>Form_ThemDocGia.cs</DependentUpon>
