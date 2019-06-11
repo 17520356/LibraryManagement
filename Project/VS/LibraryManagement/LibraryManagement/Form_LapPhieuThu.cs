@@ -45,12 +45,10 @@ namespace LibraryManagement
             {
                 cmb_madg.DisplayMember = "Mã Độc Giả";
                 cmb_madg.ValueMember = "Mã Độc Giả";
-                cmb_madg.Text = "";
                 cmb_madg.DataSource = data;
 
                 comboBox_ten.DisplayMember = "Họ Tên";
                 comboBox_ten.ValueMember = "Mã Độc Giả";
-                comboBox_ten.Text = "";
                 comboBox_ten.DataSource = data;
 
                 cmb_madg.SelectedIndex = 0;
@@ -85,8 +83,9 @@ namespace LibraryManagement
 
         void capnhatphieuthu(float sotienthu)
         {
+            
+            int themphieuthu = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.PHIEU_THU ( Madocgia , Ngaythu , Sotienthu , Tongnolucthu  )VALUES  ("+docgia.Madocgia+" , '"+dateTimePicker_lpthu_ngaythu.Value+"' , "+sotienthu+" ,"+docgia.Tongno+" )");
             int capnhattongno = DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DOC_GIA SET Tongno -='" + sotienthu + "' WHERE Madocgia='" + docgia.Madocgia + "'");
-            int themphieuthu = DataProvider.Instance.ExecuteNonQuery("INSERT dbo.PHIEU_THU(Madocgia, Ngaythu, Sotienthu)VALUES(" + docgia.Madocgia + ", GETDATE(),"+sotienthu+")");
             if ((capnhattongno > 0)&&(themphieuthu>0))
                 MessageBox.Show("Lập Phiếu Thu Thành Công");
             else
@@ -105,10 +104,6 @@ namespace LibraryManagement
 
         private void cmb_madg_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            //int temp = Convert.ToInt32(cmb_madg.SelectedValue.ToString());
-            //docgia = DocGiaDAO.Instance.GetDocGiabyID(temp);
-            //txt_lpthu_tongno.Text = docgia.Tongno;
             string temp = cmb_madg.SelectedValue.ToString();
             loadtongno(temp);
             txt_lpthu_sotienthu.ResetText();
@@ -116,7 +111,17 @@ namespace LibraryManagement
         }
 
         private float sotienthu=0;
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button_lpthu_Click(object sender, EventArgs e)
+        {
+            if (sotienthu!=0)
+            {
+                capnhatphieuthu(sotienthu);
+                sotienthu = 0;
+            }
+        }
+
+        private void txt_lpthu_sotienthu_TextChanged(object sender, EventArgs e)
         {
             float temp, conlai;
             float tongno = (float)Convert.ToDouble(docgia.Tongno);
@@ -145,16 +150,7 @@ namespace LibraryManagement
                 }
             }
         }
-        private void button_lpthu_Click(object sender, EventArgs e)
-        {
-            if (sotienthu!=0)
-            {
-                capnhatphieuthu(sotienthu);
-                sotienthu = 0;
-            }
-        }
-        #endregion
-    
 
+        #endregion
     }
 }

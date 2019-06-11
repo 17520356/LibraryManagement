@@ -85,10 +85,23 @@ namespace LibraryManagement
         #region event
         private void button_xemchitiet_Click(object sender, EventArgs e)
         {
-            Form_ChiTietSach f = new Form_ChiTietSach();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            int id;
+            if ((txt_masach.Visible == true) && (txt_masach.Text != ""))
+            {
+                id = Convert.ToInt32(txt_masach.Text);
+                Form_ChiTietSach f = new Form_ChiTietSach(id);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            if ((textBox1.Visible == true) && (textBox1.Text != ""))
+            {
+                id = Convert.ToInt32(textBox1.Text);
+                Form_ChiTietDauSach f = new Form_ChiTietDauSach(id);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
 
         private void bt_xemsach_Click(object sender, EventArgs e)

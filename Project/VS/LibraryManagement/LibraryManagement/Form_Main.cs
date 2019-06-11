@@ -226,7 +226,9 @@ namespace LibraryManagement
         private void bt_lapphieumuon_Click(object sender, EventArgs e)
         {
             Form_LapPhieuMuon f = new Form_LapPhieuMuon();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_timkiemphieutra_Click(object sender, EventArgs e)
@@ -288,6 +290,14 @@ namespace LibraryManagement
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_themdausach_Click(object sender, EventArgs e)
+        {
+            Form_ThemDauSach f = new Form_ThemDauSach();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
     }

@@ -51,11 +51,14 @@
     <Compile Include="DAO\DocGiaDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ParaDAO.cs" />
+    <Compile Include="DAO\PhieuMuonDAO.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DAO\TypeDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\DocGiaDTO.cs" />
+    <Compile Include="DTO\LapPhieuMuonDTO.cs" />
     <Compile Include="DTO\SachDTO.cs" />
+    <Compile Include="DTO\TacGiaDTO.cs" />
     <Compile Include="DTO\User_DTO.cs" />
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
@@ -69,6 +72,12 @@
     <Compile Include="Form_Admin.Designer.cs">
       <DependentUpon>Form_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ChiTietDauSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ChiTietDauSach.Designer.cs">
+      <DependentUpon>Form_ChiTietDauSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ChiTietDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,12 +89,6 @@
     </Compile>
     <Compile Include="Form_ChiTietPhieuMuon.Designer.cs">
       <DependentUpon>Form_ChiTietPhieuMuon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_ChiTietPhieuThu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ChiTietPhieuThu.Designer.cs">
-      <DependentUpon>Form_ChiTietPhieuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_ChiTietPhieuTra.cs">
       <SubType>Form</SubType>
@@ -203,14 +206,14 @@
     <EmbeddedResource Include="Form_Admin.resx">
       <DependentUpon>Form_Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_ChiTietDauSach.resx">
+      <DependentUpon>Form_ChiTietDauSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ChiTietDocGia.resx">
       <DependentUpon>Form_ChiTietDocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ChiTietPhieuMuon.resx">
       <DependentUpon>Form_ChiTietPhieuMuon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_ChiTietPhieuThu.resx">
-      <DependentUpon>Form_ChiTietPhieuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ChiTietPhieuTra.resx">
       <DependentUpon>Form_ChiTietPhieuTra.cs</DependentUpon>

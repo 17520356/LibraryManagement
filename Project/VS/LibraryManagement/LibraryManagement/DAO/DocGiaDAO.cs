@@ -54,13 +54,13 @@ namespace LibraryManagement.DAO
             return rs > 0;
         }
 
-        public bool insert_docgia(string hoten ,int maloaidg ,DateTime ngaysinh, int gioitinh, string diachi = null, string sodt = null, string email = null)
+        public bool insert_docgia(string hoten ,int maloaidg ,DateTime ngaysinh, int gioitinh,DateTime ngaylapthe,DateTime ngayhethan, string diachi = null, string sodt = null, string email = null)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT  * FROM dbo.DOC_GIA");
             if(data.Rows.Count<=0)
                 DataProvider.Instance.ExecuteNonQuery("DBCC CHECKIDENT ('dbo.DOC_GIA', RESEED," + getmax() + ")");
-            string query = "insert_docgia @hoten , @maloaidg , @ngaysinh , @gioitinh , @diachi , @sodt , @email ";
-            int rs = DataProvider.Instance.ExecuteNonQuery(query,new object[] {hoten,maloaidg,ngaysinh,gioitinh,diachi,sodt,email });
+            string query = "insert_docgia @hoten , @maloaidg , @ngaysinh , @gioitinh , @diachi , @sodt , @email , @ngaylapthe , @ngayhethan ";
+            int rs = DataProvider.Instance.ExecuteNonQuery(query,new object[] {hoten,maloaidg,ngaysinh,gioitinh,diachi,sodt,email,ngaylapthe,ngayhethan });
             return rs > 0;
             
         }

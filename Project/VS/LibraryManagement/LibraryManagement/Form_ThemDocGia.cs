@@ -53,7 +53,9 @@ namespace LibraryManagement
             {
                 if (tendg != "")
                 {
-                    if (DocGiaDAO.Instance.insert_docgia(tendg, loaidg, ngaysinh, gioitinh, diachi, sodt, email) == true)
+                    int thoihan = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT Giatri FROM dbo.THAM_SO WHERE Tenthamso='thoihanthe'"));
+                    DateTime ngayhethan = DateTime.Now.AddMonths(thoihan);
+                    if (DocGiaDAO.Instance.insert_docgia(tendg, loaidg, ngaysinh, gioitinh,DateTime.Now,ngayhethan, diachi, sodt, email) == true)
                         MessageBox.Show("Thêm Mới Thành Công");
                     txt_tdg_ten.ResetText();
                     txt_tdg_diachi.ResetText();

@@ -30,6 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ThemSach));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox_trigia = new System.Windows.Forms.TextBox();
+            this.textBox_namxb = new System.Windows.Forms.TextBox();
+            this.textBox_ngonngu = new System.Windows.Forms.TextBox();
+            this.textBox_nhaxb = new System.Windows.Forms.TextBox();
+            this.textBox_theloai = new System.Windows.Forms.TextBox();
+            this.numericUpDown_soluong = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePicker_ngaynhap = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,24 +49,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.bt_them = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_thoat = new System.Windows.Forms.Button();
-            this.dateTimePicker_ngaynhap = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown_soluong = new System.Windows.Forms.NumericUpDown();
-            this.textBox_theloai = new System.Windows.Forms.TextBox();
-            this.textBox_nhaxb = new System.Windows.Forms.TextBox();
-            this.textBox_ngonngu = new System.Windows.Forms.TextBox();
-            this.textBox_namxb = new System.Windows.Forms.TextBox();
-            this.textBox_trigia = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_soluong)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_soluong)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -82,6 +82,113 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(566, 821);
             this.panel3.TabIndex = 6;
+            // 
+            // textBox_trigia
+            // 
+            this.textBox_trigia.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_trigia.Location = new System.Drawing.Point(211, 743);
+            this.textBox_trigia.Name = "textBox_trigia";
+            this.textBox_trigia.ReadOnly = true;
+            this.textBox_trigia.Size = new System.Drawing.Size(318, 45);
+            this.textBox_trigia.TabIndex = 15;
+            // 
+            // textBox_namxb
+            // 
+            this.textBox_namxb.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_namxb.Location = new System.Drawing.Point(211, 642);
+            this.textBox_namxb.Name = "textBox_namxb";
+            this.textBox_namxb.ReadOnly = true;
+            this.textBox_namxb.Size = new System.Drawing.Size(318, 45);
+            this.textBox_namxb.TabIndex = 14;
+            // 
+            // textBox_ngonngu
+            // 
+            this.textBox_ngonngu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ngonngu.Location = new System.Drawing.Point(211, 544);
+            this.textBox_ngonngu.Name = "textBox_ngonngu";
+            this.textBox_ngonngu.ReadOnly = true;
+            this.textBox_ngonngu.Size = new System.Drawing.Size(318, 45);
+            this.textBox_ngonngu.TabIndex = 13;
+            // 
+            // textBox_nhaxb
+            // 
+            this.textBox_nhaxb.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nhaxb.Location = new System.Drawing.Point(211, 440);
+            this.textBox_nhaxb.Name = "textBox_nhaxb";
+            this.textBox_nhaxb.ReadOnly = true;
+            this.textBox_nhaxb.Size = new System.Drawing.Size(318, 45);
+            this.textBox_nhaxb.TabIndex = 12;
+            // 
+            // textBox_theloai
+            // 
+            this.textBox_theloai.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_theloai.Location = new System.Drawing.Point(211, 329);
+            this.textBox_theloai.Name = "textBox_theloai";
+            this.textBox_theloai.ReadOnly = true;
+            this.textBox_theloai.Size = new System.Drawing.Size(318, 45);
+            this.textBox_theloai.TabIndex = 11;
+            // 
+            // numericUpDown_soluong
+            // 
+            this.numericUpDown_soluong.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_soluong.Location = new System.Drawing.Point(408, 232);
+            this.numericUpDown_soluong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_soluong.Name = "numericUpDown_soluong";
+            this.numericUpDown_soluong.Size = new System.Drawing.Size(121, 45);
+            this.numericUpDown_soluong.TabIndex = 10;
+            this.numericUpDown_soluong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dateTimePicker_ngaynhap
+            // 
+            this.dateTimePicker_ngaynhap.CalendarFont = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_ngaynhap.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_ngaynhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_ngaynhap.Location = new System.Drawing.Point(211, 120);
+            this.dateTimePicker_ngaynhap.Name = "dateTimePicker_ngaynhap";
+            this.dateTimePicker_ngaynhap.Size = new System.Drawing.Size(318, 45);
+            this.dateTimePicker_ngaynhap.TabIndex = 9;
+            this.dateTimePicker_ngaynhap.ValueChanged += new System.EventHandler(this.dateTimePicker_ngaynhap_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 721);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(537, 88);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Trị Giá:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 620);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(537, 88);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Năm Xuất Bản:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 522);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(537, 88);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Ngôn Ngữ :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -181,39 +288,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 522);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(537, 88);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Ngôn Ngữ :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 620);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(537, 88);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Năm Xuất Bản:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 721);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(537, 88);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Trị Giá:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // bt_them
             // 
             this.bt_them.BackColor = System.Drawing.Color.LimeGreen;
@@ -241,6 +315,7 @@
             // 
             this.button_thoat.BackColor = System.Drawing.Color.Orange;
             this.button_thoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_thoat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_thoat.Location = new System.Drawing.Point(293, 8);
             this.button_thoat.Name = "button_thoat";
@@ -250,85 +325,12 @@
             this.button_thoat.UseVisualStyleBackColor = false;
             this.button_thoat.Click += new System.EventHandler(this.button_thoat_Click);
             // 
-            // dateTimePicker_ngaynhap
-            // 
-            this.dateTimePicker_ngaynhap.CalendarFont = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngaynhap.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngaynhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_ngaynhap.Location = new System.Drawing.Point(211, 120);
-            this.dateTimePicker_ngaynhap.Name = "dateTimePicker_ngaynhap";
-            this.dateTimePicker_ngaynhap.Size = new System.Drawing.Size(318, 45);
-            this.dateTimePicker_ngaynhap.TabIndex = 9;
-            this.dateTimePicker_ngaynhap.ValueChanged += new System.EventHandler(this.dateTimePicker_ngaynhap_ValueChanged);
-            // 
-            // numericUpDown_soluong
-            // 
-            this.numericUpDown_soluong.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_soluong.Location = new System.Drawing.Point(408, 232);
-            this.numericUpDown_soluong.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown_soluong.Name = "numericUpDown_soluong";
-            this.numericUpDown_soluong.Size = new System.Drawing.Size(121, 45);
-            this.numericUpDown_soluong.TabIndex = 10;
-            this.numericUpDown_soluong.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // textBox_theloai
-            // 
-            this.textBox_theloai.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_theloai.Location = new System.Drawing.Point(211, 329);
-            this.textBox_theloai.Name = "textBox_theloai";
-            this.textBox_theloai.ReadOnly = true;
-            this.textBox_theloai.Size = new System.Drawing.Size(318, 45);
-            this.textBox_theloai.TabIndex = 11;
-            // 
-            // textBox_nhaxb
-            // 
-            this.textBox_nhaxb.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_nhaxb.Location = new System.Drawing.Point(211, 440);
-            this.textBox_nhaxb.Name = "textBox_nhaxb";
-            this.textBox_nhaxb.ReadOnly = true;
-            this.textBox_nhaxb.Size = new System.Drawing.Size(318, 45);
-            this.textBox_nhaxb.TabIndex = 12;
-            // 
-            // textBox_ngonngu
-            // 
-            this.textBox_ngonngu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ngonngu.Location = new System.Drawing.Point(211, 544);
-            this.textBox_ngonngu.Name = "textBox_ngonngu";
-            this.textBox_ngonngu.ReadOnly = true;
-            this.textBox_ngonngu.Size = new System.Drawing.Size(318, 45);
-            this.textBox_ngonngu.TabIndex = 13;
-            // 
-            // textBox_namxb
-            // 
-            this.textBox_namxb.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_namxb.Location = new System.Drawing.Point(211, 642);
-            this.textBox_namxb.Name = "textBox_namxb";
-            this.textBox_namxb.ReadOnly = true;
-            this.textBox_namxb.Size = new System.Drawing.Size(318, 45);
-            this.textBox_namxb.TabIndex = 14;
-            // 
-            // textBox_trigia
-            // 
-            this.textBox_trigia.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_trigia.Location = new System.Drawing.Point(211, 743);
-            this.textBox_trigia.Name = "textBox_trigia";
-            this.textBox_trigia.ReadOnly = true;
-            this.textBox_trigia.Size = new System.Drawing.Size(318, 45);
-            this.textBox_trigia.TabIndex = 15;
-            // 
             // Form_ThemSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.CancelButton = this.button_thoat;
             this.ClientSize = new System.Drawing.Size(580, 1001);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -341,10 +343,10 @@
             this.Text = "Thêm Sách";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_soluong)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_soluong)).EndInit();
             this.ResumeLayout(false);
 
         }

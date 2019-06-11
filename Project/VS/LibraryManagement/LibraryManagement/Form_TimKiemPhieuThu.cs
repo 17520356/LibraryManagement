@@ -25,7 +25,7 @@ namespace LibraryManagement
         #region method
         void loaddata()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT Maphieuthu [Mã Phiếu Thu],Hoten [Họ Tên],Tongno[Tổng Nợ],Sotienthu [Số Tiền Thu],ngaythu [Ngày Thu] FROM dbo.PHIEU_THU,dbo.DOC_GIA WHERE DOC_GIA.Madocgia=dbo.PHIEU_THU.Madocgia");
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthiphieuthu");
             if (data.Rows.Count > 0)
             {
                 phieuthu.DataSource = data;
@@ -38,22 +38,15 @@ namespace LibraryManagement
             {
                 txt_maphiethu.DataBindings.Add(new Binding("Text", phieuthu, "Mã Phiếu Thu", true, DataSourceUpdateMode.Never));
                 txt_hoten.DataBindings.Add(new Binding("Text", phieuthu, "Họ Tên", true, DataSourceUpdateMode.Never));
-                txt_tongno.DataBindings.Add(new Binding("Text", phieuthu, "Tổng Nợ", true, DataSourceUpdateMode.Never));
+                txt_tongno.DataBindings.Add(new Binding("Text", phieuthu, "Tổng Nợ Lúc Thu", true, DataSourceUpdateMode.Never));
                 txt_sotienthu.DataBindings.Add(new Binding("Text", phieuthu, "Số Tiền Thu", true, DataSourceUpdateMode.Never));
+                txt_conlai.DataBindings.Add(new Binding("Text", phieuthu, "Còn Lại", true, DataSourceUpdateMode.Never));
                 dateTimePicker_ngaythu.DataBindings.Add(new Binding("Value", phieuthu, "Ngày Thu", true, DataSourceUpdateMode.Never));
             }
         }
         #endregion
 
         #region event
-        private void button_tpthu_xemchitiet_Click(object sender, EventArgs e)
-        {
-            
-            Form_ChiTietPhieuThu f = new Form_ChiTietPhieuThu();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
-        }
 
         private void button_tpthu_thoat_Click(object sender, EventArgs e)
         {
@@ -65,10 +58,36 @@ namespace LibraryManagement
         {
             loaddata();
         }
+        public int getmax()
+        {
+            string temp = DataProvider.Instance.ExecuteReader("SELECT MAX(Maphieuthu) FROM dbo.PHIEU_THU");
+            if (temp != "")
+            {
+                int rs = Convert.ToInt32(temp);
+                return rs;
+            }
+            return 0;
+        }
+        bool xoaphieuthu(int maphieuthu)
+        {
+            int rs = DataProvider.Instance.ExecuteNonQuery("DELETE dbo.PHIEU_THU WHERE Maphieuthu='"+maphieuthu+"'");
+            DataProvider.Instance.ExecuteNonQuery("DBCC CHECKIDENT ('dbo.PHIEU_THU', RESEED," + getmax() + ")");
+            return rs > 0;
 
+        }
         private void button_tpthu_xoa_Click(object sender, EventArgs e)
         {
-
+            int maphieuthu=0;
+            if(ktphieuthu==true)
+            {
+                maphieuthu = Convert.ToInt32(txt_maphiethu.Text);
+                if (MessageBox.Show("Bạn muốn xóa phiếu thu "+maphieuthu+" thuộc độc giả "+txt_hoten.Text+"?", "Thông Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    if (xoaphieuthu(maphieuthu) == true)
+                        MessageBox.Show("Xóa thành công!");
+                    loaddata();
+                }
+            }
         }
     }
 }

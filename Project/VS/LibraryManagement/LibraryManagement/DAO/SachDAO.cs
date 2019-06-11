@@ -29,6 +29,42 @@ namespace LibraryManagement.DAO
 
         public SachDAO() { }
 
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+
+        public List<TacGiaDTO> hienthitacgia(int matacgia)
+        {
+            List<TacGiaDTO> danhsachtg = new List<TacGiaDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.TAC_GIA WHERE Matacgia='" + matacgia + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                TacGiaDTO tacgia = new TacGiaDTO(item);
+                danhsachtg.Add(tacgia);
+            }
+
+            return danhsachtg;
+        }
+
+        public List<TacGiaDTO> tacgia_dausach(int madausach)
+        {
+            List<TacGiaDTO> danhsach = new List<TacGiaDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.TAC_GIA,dbo.TACGIA_DAUSACH WHERE TAC_GIA.Matacgia=TACGIA_DAUSACH.Matacgia AND Madausach='"+madausach+"'");
+            foreach(DataRow item in data.Rows )
+            {
+                TacGiaDTO tacgia = new TacGiaDTO(item);
+                danhsach.Add(tacgia);
+            }
+            return danhsach;
+        }
+        //Sách
+
         public int getmaxsach()
         {
             string temp = DataProvider.Instance.ExecuteReader("SELECT MAX(Masach) FROM dbo.CUONSACH");
@@ -83,19 +119,62 @@ namespace LibraryManagement.DAO
             
         }
 
+        public SachDTO GetBookByID(int masach)
+        {
+            string query = "SELECT * FROM dbo.CUONSACH WHERE Masach='"+masach+"'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                return new SachDTO(item);
+            }
+            return null;
+        }
+
+
+        //Đầu Sách
+        public bool kiemtratendausach(string tendausach)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.DAUSACH WHERE Tendausach=N'" + tendausach + "'");
+            if (data.Rows.Count > 0)
+                return true;
+            return false;
+        }
+
+        public bool themdausach(string tendausach,int matheloai,int manhasx,int mangonngu,string trigia,DateTime ngayxuatban)
+        {
+            string query = "themdausach @tendausach , @matheloai , @manhaxb , @mangonngu , @trigia , @namxb ";
+            int rs = DataProvider.Instance.ExecuteNonQuery(query,new object[] { tendausach,matheloai,manhasx,mangonngu,trigia,ngayxuatban});
+            if (rs > 0)
+                return true;
+            return false;
+        }
+
+        public bool themtacgia_dausach(int matacgia)
+        {
+            int rs= DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.TACGIA_DAUSACH (Matacgia, Madausach )VALUES ( "+matacgia+", "+getmaxdausach()+")");
+            if (rs > 0)
+                return true;
+            return false;
+        }
+
         public int xoadausach(int madausach)
         {
-            DataTable sach = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.CUONSACH WHERE Madausach='"+madausach+"'");
-            int masach,temp=0;
-            while(sach.Rows.Count>0)
+            DataTable sach = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.CUONSACH WHERE Madausach='" + madausach + "'");
+            int masach, temp = 0;
+            if (sach.Rows.Count > 0)
             {
-                masach = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT TOP(1) Masach FROM dbo.CUONSACH,dbo.DAUSACH WHERE CUONSACH.Madausach=DAUSACH.Madausach AND CUONSACH.Madausach='"+madausach+"'"));
-                temp = xoasach(masach);
-                if ( temp== 1)
-                    sach = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.CUONSACH WHERE Madausach='" + madausach + "'");
-                else
-                    break;
+                while (sach.Rows.Count > 0)
+                {
+                    masach = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT TOP(1) Masach FROM dbo.CUONSACH,dbo.DAUSACH WHERE CUONSACH.Madausach=DAUSACH.Madausach AND CUONSACH.Madausach='" + madausach + "'"));
+                    temp = xoasach(masach);
+                    if (temp == 1)
+                        sach = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.CUONSACH WHERE Madausach='" + madausach + "'");
+                    else
+                        break;
+                }
             }
+            else
+                temp = 1;
             if (temp == 1)
             {
                 DataProvider.Instance.ExecuteNonQuery("DELETE dbo.TACGIA_DAUSACH WHERE Madausach='" + madausach + "'");
@@ -106,18 +185,19 @@ namespace LibraryManagement.DAO
                 return 0;
             }
             return temp;
-           
+
         }
 
-        public SachDTO GetBookByID(int masach)
+        public bool capnhatdausach(int madausach,string tendausach,int matheloai,int manxb,int manngonngu,string trigia,DateTime namxuatban)
         {
-            string query = "SELECT * FROM dbo.CUONSACH WHERE Madausach='"+masach+"'";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                return new SachDTO(item);
-            }
-            return null;
+            string query = "capnhatdausach @madausach , @tendausach , @matheloai , @manxb , @mangonngu , @trigia , @namxuatban";
+            int rs = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madausach, tendausach, matheloai, manxb, manngonngu, trigia, namxuatban });
+            if (rs > 0)
+                return true;
+            return false;
         }
+
+        
     }
 }
+

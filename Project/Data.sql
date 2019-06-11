@@ -115,7 +115,7 @@ CREATE TABLE DAUSACH
 	Mangonngu			INT NOT NULL,
 	Trigia				Money,
 	Soluong				INT DEFAULT 0,
-	Namxuatban			Int,
+	Namxuatban			DATETIME,
 		FOREIGN KEY (Matheloai) REFERENCES THE_LOAI (Matheloai),
 		FOREIGN KEY (MaNXB) REFERENCES NHA_XUAT_BAN(MaNXB),
 		FOREIGN KEY (Mangonngu) REFERENCES NGON_NGU(Mangonngu)
@@ -146,7 +146,16 @@ CREATE TABLE CUONSACH
 	
 )
 GO
-
+CREATE TABLE tinhtrangsachkhimuon
+(
+	matinhtrang INT IDENTITY PRIMARY KEY,
+	tinhtrang	NVARCHAR(30),
+)
+INSERT INTO dbo.tinhtrangsachkhimuon ( tinhtrang )VALUES  (  N'Đã Trả' )
+INSERT INTO dbo.tinhtrangsachkhimuon ( tinhtrang )VALUES  (  N'Chưa Trả' )
+INSERT INTO dbo.tinhtrangsachkhimuon ( tinhtrang )VALUES  (  N'Quá Hạn' )
+INSERT INTO dbo.tinhtrangsachkhimuon ( tinhtrang )VALUES  (  N'Đã Gia Hạn' )
+GO
 CREATE TABLE PHIEU_MUON
 (
 	Maphieumuon			INT IDENTITY PRIMARY KEY,
@@ -162,12 +171,15 @@ CREATE TABLE CHITIET_PHIEUMUON
 	Maphieumuon			INT NOT NULL ,
 	Masach				INT NOT NULL ,
 	Ngayhethan			Date,
-	tinhtrang			INT,			 -- 1: đã trả -- 2: chưa trả 3--quá hạn
+	tinhtrang			INT,			 -- 1: đã trả -- 2: chưa trả 3--quá hạn -- 4 Đã Gia hạn // Thêm 1 bảng tình trạng sách trong phiếu mượn
 		PRIMARY KEY (Maphieumuon,Masach),
 		FOREIGN KEY (Masach) REFERENCES CUONSACH(Masach),
-		FOREIGN KEY (Maphieumuon) REFERENCES PHIEU_MUON(Maphieumuon)
+		FOREIGN KEY (Maphieumuon) REFERENCES PHIEU_MUON(Maphieumuon),
+		FOREIGN KEY(tinhtrang) REFERENCES dbo.tinhtrangsachkhimuon(matinhtrang)
+
 )
 GO
+
 
 CREATE TABLE PHIEU_TRA
 (
@@ -195,7 +207,8 @@ CREATE TABLE PHIEU_THU
 	Maphieuthu			INT IDENTITY PRIMARY KEY,
 	Madocgia			INT NOT NULL,
 	Ngaythu				date	NOT NULL DEFAULT GETDATE(),
-	Sotienthu			Money,	
+	Sotienthu			Money,
+	Tongnolucthu		MONEY,
 		FOREIGN KEY (Madocgia) REFERENCES DOC_GIA (Madocgia)
 )
 GO 
@@ -351,7 +364,7 @@ GO
 */
 GO 
 --PROCEDURE
-GO 
+GO
 /*
 CREATE PROC usp_login
 @username NVARCHAR(100),@password NVARCHAR(100)
@@ -450,10 +463,10 @@ END
 GO
 
 CREATE PROC insert_docgia
-@hoten NVARCHAR(100),@maloaidg INT ,@ngaysinh DATE,@gioitinh INT,@diachi NVARCHAR(100),@sodt CHAR(15), @email CHAR(20)
+@hoten NVARCHAR(100),@maloaidg INT ,@ngaysinh DATE,@gioitinh INT,@diachi NVARCHAR(100),@sodt CHAR(15), @email CHAR(20),@ngaylapthe DATETIME,@ngayhethan DATETIME
 AS
 BEGIN
-	INSERT dbo.DOC_GIA (Hoten, Maloaidg  , Ngaysinh ,Diachi ,  Sodienthoai , Gioitinh ,Email )VALUES  (@hoten, @maloaidg ,@ngaysinh,@diachi,@sodt,@gioitinh,@email)
+	INSERT INTO dbo.DOC_GIA( Hoten, Maloaidg, Ngaysinh, Diachi, Sodienthoai, Gioitinh, Ngaylapthe, Ngayhethan, Email )VALUES  (@hoten,@maloaidg,@ngaysinh,@diachi,@sodt,@gioitinh,@ngaylapthe,@ngayhethan,@email)
 END
  
 GO 
@@ -530,17 +543,111 @@ BEGIN
 END 
 GO
 
-*/
+
 GO
+CREATE PROC phieumuon
+@masach INT,@madausach INT 
+AS
+BEGIN 
+
+	--cursor--Duyệt từng phần tử trong tác giả
+	DECLARE @tentacgia NVARCHAR(100),@ten NVARCHAR(100)=NULL 
+	DECLARE mycursor CURSOR FOR 
+		SELECT Tentacgia
+		FROM dbo.TAC_GIA,dbo.TACGIA_DAUSACH 
+		WHERE TAC_GIA.Matacgia=TACGIA_DAUSACH.Matacgia 
+		AND Madausach=@madausach
+
+	OPEN mycursor
+
+	FETCH NEXT FROM mycursor INTO @tentacgia
+
+	WHILE(@@FETCH_STATUS=0)
+	BEGIN
+	IF(@ten IS NULL)
+		BEGIN 
+		SELECT @ten=@tentacgia
+		END 
+	ELSE
+		BEGIN 
+		SELECT @ten=CONCAT(@ten,', ',@tentacgia)
+		END 
+		FETCH NEXT FROM mycursor
+		INTO @tentacgia
+	END 
+	CLOSE mycursor
+	DEALLOCATE mycursor
+	----------
+	SELECT Masach[Mã Sách],Tendausach [Tên Sách],Ten [Thể Loại],@ten [Tên Tác Giả]
+	FROM dbo.CUONSACH,dbo.DAUSACH,dbo.THE_LOAI
+	WHERE CUONSACH.Madausach=DAUSACH.Madausach 
+	AND DAUSACH.Matheloai=THE_LOAI.Matheloai 
+	AND Masach=@masach
+END 
+GO
+CREATE PROC themphieumuon
+@madocgia INT,@ngaymuon DATETIME
+AS
+BEGIN 
+	INSERT INTO dbo.PHIEU_MUON( Madocgia, Ngaymuon )VALUES  ( @madocgia, @ngaymuon)
+	
+END 
+
+GO 
+
+CREATE PROC themchitietphieumuon
+@maphieumuon INT,@masach INT ,@ngayhethan DATETIME
+AS
+BEGIN
+	INSERT INTO dbo.CHITIET_PHIEUMUON  ( Maphieumuon , Masach ,  Ngayhethan ,  tinhtrang  )VALUES  ( @maphieumuon ,   @masach , @ngayhethan, 1  )
+END 
+GO 
+
+CREATE PROC themdausach
+@tendausach Nvarchar(100),@matheloai INT ,@manhaxb INT, @mangonngu INT ,@trigia CHAR(100),@namxb DATETIME
+AS
+BEGIN
+	INSERT INTO dbo.DAUSACH (Tendausach, Matheloai, MaNXB, Mangonngu, Trigia,Soluong, Namxuatban)VALUES  ( @tendausach , @matheloai, @manhaxb , @mangonngu ,@trigia, 0 , @namxb )
+END
+GO 
+
+GO
+
+CREATE PROC capnhatdausach
+@madausach INT , @tendausach NVARCHAR(100),@matheloai INT,@manxb INT , @mangonngu INT,@trigia CHAR(100),@namxuatban DATETIME
+AS
+BEGIN 
+	UPDATE dbo.DAUSACH SET Tendausach=@tendausach,Matheloai=@matheloai,MaNXB=@manxb,Mangonngu=@mangonngu,Trigia=@trigia,Namxuatban=@namxuatban WHERE Madausach=@madausach
+END 
+
+GO
+alter PROC hienthiphieuthu
+AS
+BEGIN 
+	SELECT Maphieuthu [Mã Phiếu Thu],Hoten [Họ Tên],Tongno[Tổng Nợ],Tongnolucthu[Tổng nợ lúc thu],Sotienthu [Số Tiền Thu],(Tongnolucthu-Sotienthu) [Còn Lại], ngaythu [Ngày Thu] 
+	FROM dbo.PHIEU_THU,dbo.DOC_GIA  
+	WHERE DOC_GIA.Madocgia=dbo.PHIEU_THU.Madocgia
+END 
+
+*/
+
+
 SELECT * FROM dbo.TACGIA_DAUSACH
-SELECT * FROM dbo.DAUSACH
+
 SELECT * FROM dbo.CUONSACH
 SELECT * FROM dbo.PHIEU_MUON
 SELECT * FROM dbo.CHITIET_PHIEUMUON
 SELECT * FROM dbo.PHIEU_TRA
 SELECT * FROM dbo.CHITIET_PHIEUTRA
 SELECT * FROM dbo.DOC_GIA
+SELECT * FROM dbo.TACGIA_DAUSACH ORDER BY Madausach
+SELECT * FROM dbo.DAUSACH
+GO 
 
 
+SELECT * FROM dbo.PHIEU_THU
 
-	
+DELETE dbo.PHIEU_THU WHERE Maphieuthu='5'
+
+SELECT * FROM dbo.PHIEU_MUON,dbo.CHITIET_PHIEUMUON WHERE CHITIET_PHIEUMUON.Maphieumuon=dbo.PHIEU_MUON.Maphieumuon
+

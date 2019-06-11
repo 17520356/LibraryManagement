@@ -46,6 +46,7 @@
             this.Label_Nhom_NguoiDung = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.button_themdausach = new System.Windows.Forms.Button();
             this.bt_tk_sachtratre = new System.Windows.Forms.Button();
             this.bt_tk_theloai = new System.Windows.Forms.Button();
             this.bt_lapphieuthu = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.bt_themsach = new System.Windows.Forms.Button();
             this.bt_timkiemdocgia = new System.Windows.Forms.Button();
             this.bt_timkiemsach = new System.Windows.Forms.Button();
-            this.button_themdausach = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picture_Main)).BeginInit();
             this.MenuStrip_Main.SuspendLayout();
@@ -283,6 +283,18 @@
             this.panel_main.Size = new System.Drawing.Size(1051, 750);
             this.panel_main.TabIndex = 3;
             // 
+            // button_themdausach
+            // 
+            this.button_themdausach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_themdausach.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_themdausach.Location = new System.Drawing.Point(327, 460);
+            this.button_themdausach.Name = "button_themdausach";
+            this.button_themdausach.Size = new System.Drawing.Size(408, 154);
+            this.button_themdausach.TabIndex = 12;
+            this.button_themdausach.Text = "Thêm Đầu Sách";
+            this.button_themdausach.UseVisualStyleBackColor = true;
+            this.button_themdausach.Click += new System.EventHandler(this.button_themdausach_Click);
+            // 
             // bt_tk_sachtratre
             // 
             this.bt_tk_sachtratre.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -426,17 +438,6 @@
             this.bt_timkiemsach.Text = "Tìm Kiếm Sách";
             this.bt_timkiemsach.UseVisualStyleBackColor = true;
             this.bt_timkiemsach.Click += new System.EventHandler(this.bt_timkiemsach_Click);
-            // 
-            // button_themdausach
-            // 
-            this.button_themdausach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_themdausach.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_themdausach.Location = new System.Drawing.Point(327, 460);
-            this.button_themdausach.Name = "button_themdausach";
-            this.button_themdausach.Size = new System.Drawing.Size(408, 154);
-            this.button_themdausach.TabIndex = 12;
-            this.button_themdausach.Text = "Thêm Đầu Sách";
-            this.button_themdausach.UseVisualStyleBackColor = true;
             // 
             // Form_Main
             // 

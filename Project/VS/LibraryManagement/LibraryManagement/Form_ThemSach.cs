@@ -21,7 +21,7 @@ namespace LibraryManagement
         }
         #region method
 
-        void hienthi()
+        public void hienthi()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT Madausach[Mã Đầu Sách],Tendausach[Tên Đầu Sách]FROM dbo.DAUSACH");
             if(data.Rows.Count>0)
@@ -83,6 +83,7 @@ namespace LibraryManagement
         private void bt_them_Click(object sender, EventArgs e)
         {
             int soluong =Convert.ToInt32(numericUpDown_soluong.Value);
+            int soluong_them = soluong;
             if (MessageBox.Show("Bạn muốn thêm  " + soluong + " Sách " + madausach + " - " + tendausach + "", "Thông Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 while (soluong > 0)
@@ -92,8 +93,10 @@ namespace LibraryManagement
                 }
                 if (soluong == 0)
                 {
-                    DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DAUSACH SET Soluong+='" + soluong + "' WHERE Madausach='" + madausach + "'");
+                    DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DAUSACH SET Soluong+='" + soluong_them + "' WHERE Madausach='" + madausach + "'");
                     MessageBox.Show("Thêm Mới Thành Công");
+                    numericUpDown_soluong.ResetText();
+                    dateTimePicker_ngaynhap.ResetText();
                 }
             }
         }

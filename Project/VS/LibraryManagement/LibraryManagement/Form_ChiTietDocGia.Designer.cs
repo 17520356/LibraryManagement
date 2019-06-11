@@ -173,7 +173,7 @@
             this.txt_ngaysinh.Location = new System.Drawing.Point(174, 145);
             this.txt_ngaysinh.Name = "txt_ngaysinh";
             this.txt_ngaysinh.ReadOnly = true;
-            this.txt_ngaysinh.Size = new System.Drawing.Size(340, 44);
+            this.txt_ngaysinh.Size = new System.Drawing.Size(340, 38);
             this.txt_ngaysinh.TabIndex = 21;
             // 
             // dateTimePicker_ngaysinh
@@ -183,7 +183,7 @@
             this.dateTimePicker_ngaysinh.Location = new System.Drawing.Point(174, 145);
             this.dateTimePicker_ngaysinh.MaxDate = new System.DateTime(2019, 5, 28, 0, 0, 0, 0);
             this.dateTimePicker_ngaysinh.Name = "dateTimePicker_ngaysinh";
-            this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(340, 44);
+            this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(340, 38);
             this.dateTimePicker_ngaysinh.TabIndex = 20;
             this.dateTimePicker_ngaysinh.Value = new System.DateTime(2019, 5, 28, 0, 0, 0, 0);
             this.dateTimePicker_ngaysinh.Visible = false;
@@ -207,7 +207,7 @@
             this.txt_tinhtrang.Location = new System.Drawing.Point(705, 370);
             this.txt_tinhtrang.Name = "txt_tinhtrang";
             this.txt_tinhtrang.ReadOnly = true;
-            this.txt_tinhtrang.Size = new System.Drawing.Size(340, 44);
+            this.txt_tinhtrang.Size = new System.Drawing.Size(340, 38);
             this.txt_tinhtrang.TabIndex = 16;
             // 
             // txt_ngaylapthe
@@ -216,7 +216,7 @@
             this.txt_ngaylapthe.Location = new System.Drawing.Point(216, 579);
             this.txt_ngaylapthe.Name = "txt_ngaylapthe";
             this.txt_ngaylapthe.ReadOnly = true;
-            this.txt_ngaylapthe.Size = new System.Drawing.Size(298, 44);
+            this.txt_ngaylapthe.Size = new System.Drawing.Size(298, 38);
             this.txt_ngaylapthe.TabIndex = 15;
             // 
             // numericUpDown_ctdg
@@ -224,8 +224,13 @@
             this.numericUpDown_ctdg.Enabled = false;
             this.numericUpDown_ctdg.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown_ctdg.Location = new System.Drawing.Point(775, 572);
+            this.numericUpDown_ctdg.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown_ctdg.Name = "numericUpDown_ctdg";
-            this.numericUpDown_ctdg.Size = new System.Drawing.Size(95, 53);
+            this.numericUpDown_ctdg.Size = new System.Drawing.Size(95, 46);
             this.numericUpDown_ctdg.TabIndex = 14;
             this.numericUpDown_ctdg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -270,7 +275,7 @@
             this.txt_ctdg_tongno.Location = new System.Drawing.Point(705, 482);
             this.txt_ctdg_tongno.Name = "txt_ctdg_tongno";
             this.txt_ctdg_tongno.ReadOnly = true;
-            this.txt_ctdg_tongno.Size = new System.Drawing.Size(340, 44);
+            this.txt_ctdg_tongno.Size = new System.Drawing.Size(340, 38);
             this.txt_ctdg_tongno.TabIndex = 12;
             // 
             // txt_ctdg_ssdangmuon
@@ -279,7 +284,7 @@
             this.txt_ctdg_ssdangmuon.Location = new System.Drawing.Point(300, 482);
             this.txt_ctdg_ssdangmuon.Name = "txt_ctdg_ssdangmuon";
             this.txt_ctdg_ssdangmuon.ReadOnly = true;
-            this.txt_ctdg_ssdangmuon.Size = new System.Drawing.Size(214, 44);
+            this.txt_ctdg_ssdangmuon.Size = new System.Drawing.Size(214, 38);
             this.txt_ctdg_ssdangmuon.TabIndex = 11;
             // 
             // label_ctdg_tongno
@@ -310,7 +315,7 @@
             this.txt_ctdg_email.Location = new System.Drawing.Point(174, 370);
             this.txt_ctdg_email.Name = "txt_ctdg_email";
             this.txt_ctdg_email.ReadOnly = true;
-            this.txt_ctdg_email.Size = new System.Drawing.Size(340, 44);
+            this.txt_ctdg_email.Size = new System.Drawing.Size(340, 38);
             this.txt_ctdg_email.TabIndex = 9;
             // 
             // txt_ctdg_sodt
@@ -319,7 +324,7 @@
             this.txt_ctdg_sodt.Location = new System.Drawing.Point(705, 259);
             this.txt_ctdg_sodt.Name = "txt_ctdg_sodt";
             this.txt_ctdg_sodt.ReadOnly = true;
-            this.txt_ctdg_sodt.Size = new System.Drawing.Size(340, 44);
+            this.txt_ctdg_sodt.Size = new System.Drawing.Size(340, 38);
             this.txt_ctdg_sodt.TabIndex = 8;
             // 
             // txt_ctdg_diachi
@@ -328,7 +333,7 @@
             this.txt_ctdg_diachi.Location = new System.Drawing.Point(705, 148);
             this.txt_ctdg_diachi.Name = "txt_ctdg_diachi";
             this.txt_ctdg_diachi.ReadOnly = true;
-            this.txt_ctdg_diachi.Size = new System.Drawing.Size(340, 44);
+            this.txt_ctdg_diachi.Size = new System.Drawing.Size(340, 38);
             this.txt_ctdg_diachi.TabIndex = 5;
             // 
             // label_ctdg_email
@@ -370,7 +375,7 @@
             this.txt_ctdg_tendg.Location = new System.Drawing.Point(196, 38);
             this.txt_ctdg_tendg.Name = "txt_ctdg_tendg";
             this.txt_ctdg_tendg.ReadOnly = true;
-            this.txt_ctdg_tendg.Size = new System.Drawing.Size(318, 44);
+            this.txt_ctdg_tendg.Size = new System.Drawing.Size(318, 38);
             this.txt_ctdg_tendg.TabIndex = 2;
             // 
             // label_ctdg_sodt
@@ -540,7 +545,7 @@
             // 
             // Form_ChiTietDocGia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CancelButton = this.button_ctdg_huy;

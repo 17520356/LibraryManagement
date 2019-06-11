@@ -39,7 +39,6 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Admin.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDocGia.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuMuon.resources
-C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuThu.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuTra.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietSach.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_info_user.resources
@@ -60,3 +59,4 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
