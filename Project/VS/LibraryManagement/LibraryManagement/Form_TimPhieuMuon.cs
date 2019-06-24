@@ -13,12 +13,33 @@ namespace LibraryManagement
 {
     public partial class Form_TimPhieuMuon : Form
     {
+        BindingSource bd_phieumuon = new BindingSource();
         public Form_TimPhieuMuon()
         {
             InitializeComponent();
-            loadphieumuon();
+            hienthiphieumuon();
+          
+            if (dataGridView_phieumuon.Rows.Count > 0)
+                binding_pm();
         }
+        #region method
+        void hienthiphieumuon()
+        {
+            string query = "SELECT Maphieumuon[Mã Phiếu Mượn],DOC_GIA.Madocgia[Mã Độc Giả],Hoten [Họ Tên],Ngaymuon[Ngày Mượn] FROM dbo.PHIEU_MUON,dbo.DOC_GIA WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia";
 
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            dataGridView_phieumuon.DataSource = bd_phieumuon;
+            bd_phieumuon.DataSource = data;
+        }
+        void binding_pm()
+        {
+            txt_maphieumuon.DataBindings.Add(new Binding("text", bd_phieumuon, "Mã Phiếu Mượn", true, DataSourceUpdateMode.Never));
+            txt_madocgia.DataBindings.Add(new Binding("text", bd_phieumuon, "Mã Độc Giả", true, DataSourceUpdateMode.Never));
+            txt_hoten.DataBindings.Add(new Binding("text", bd_phieumuon, "Họ Tên", true, DataSourceUpdateMode.Never));
+            txt_ngaymuon.DataBindings.Add(new Binding("text", bd_phieumuon, "Ngày Mượn", true, DataSourceUpdateMode.Never));
+        }
+        #endregion
+        #region event
         private void button_tpm_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,14 +47,23 @@ namespace LibraryManagement
 
         private void button_tpm_xemchitiet_Click(object sender, EventArgs e)
         {
-            Form_ChiTietPhieuMuon f = new Form_ChiTietPhieuMuon();
-            f.ShowDialog();
+            int id;
+            if (txt_maphieumuon.Text != "")
+            {
+                id = Convert.ToInt32(txt_maphieumuon.Text);
+                Form_ChiTietPhieuMuon f = new Form_ChiTietPhieuMuon(id);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
         }
-        void loadphieumuon()
+        private void button_tpm_xemtatca_Click(object sender, EventArgs e)
         {
-            string query = "Select * from DOC_GiA";
-
-            dataGridView_phieumuon.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            hienthiphieumuon();
         }
+
+        #endregion
+
     }
 }
+

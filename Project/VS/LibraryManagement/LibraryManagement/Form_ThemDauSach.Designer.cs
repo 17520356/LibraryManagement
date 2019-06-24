@@ -225,6 +225,7 @@
             // 
             // comboBox_tacgia
             // 
+            this.comboBox_tacgia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_tacgia.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_tacgia.FormattingEnabled = true;
             this.comboBox_tacgia.Location = new System.Drawing.Point(130, 20);

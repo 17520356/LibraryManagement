@@ -31,11 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_LapPhieuMuon));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_tensach = new System.Windows.Forms.ComboBox();
+            this.cmb_masach = new System.Windows.Forms.ComboBox();
             this.bt_xoasach = new System.Windows.Forms.Button();
             this.bt_themsach = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.cmb_hoten = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker_lpm_ngaymuon = new System.Windows.Forms.DateTimePicker();
             this.cmb_lpm_madg = new System.Windows.Forms.ComboBox();
@@ -46,9 +49,6 @@
             this.button_lpm_lapphieumuon = new System.Windows.Forms.Button();
             this.panel_lpm = new System.Windows.Forms.Panel();
             this.listView_sach = new System.Windows.Forms.ListView();
-            this.cmb_hoten = new System.Windows.Forms.ComboBox();
-            this.cmb_masach = new System.Windows.Forms.ComboBox();
-            this.cmb_tensach = new System.Windows.Forms.ComboBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -84,6 +84,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1044, 107);
             this.panel1.TabIndex = 9;
+            // 
+            // cmb_tensach
+            // 
+            this.cmb_tensach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_tensach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_tensach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_tensach.FormattingEnabled = true;
+            this.cmb_tensach.Items.AddRange(new object[] {
+            "asdsads",
+            "asdasdsad",
+            "asdsadsad"});
+            this.cmb_tensach.Location = new System.Drawing.Point(234, 56);
+            this.cmb_tensach.Name = "cmb_tensach";
+            this.cmb_tensach.Size = new System.Drawing.Size(364, 45);
+            this.cmb_tensach.TabIndex = 10;
+            // 
+            // cmb_masach
+            // 
+            this.cmb_masach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_masach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_masach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_masach.FormattingEnabled = true;
+            this.cmb_masach.Items.AddRange(new object[] {
+            "asdsads",
+            "asdasdsad",
+            "asdsadsad"});
+            this.cmb_masach.Location = new System.Drawing.Point(234, 5);
+            this.cmb_masach.Name = "cmb_masach";
+            this.cmb_masach.Size = new System.Drawing.Size(364, 45);
+            this.cmb_masach.TabIndex = 9;
             // 
             // bt_xoasach
             // 
@@ -147,6 +177,21 @@
             this.panel8.Size = new System.Drawing.Size(1044, 115);
             this.panel8.TabIndex = 7;
             // 
+            // cmb_hoten
+            // 
+            this.cmb_hoten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmb_hoten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_hoten.FormattingEnabled = true;
+            this.cmb_hoten.Items.AddRange(new object[] {
+            "asdsads",
+            "asdasdsad",
+            "asdsadsad"});
+            this.cmb_hoten.Location = new System.Drawing.Point(234, 58);
+            this.cmb_hoten.Name = "cmb_hoten";
+            this.cmb_hoten.Size = new System.Drawing.Size(364, 45);
+            this.cmb_hoten.TabIndex = 9;
+            // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -161,6 +206,7 @@
             // dateTimePicker_lpm_ngaymuon
             // 
             this.dateTimePicker_lpm_ngaymuon.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
+            this.dateTimePicker_lpm_ngaymuon.Enabled = false;
             this.dateTimePicker_lpm_ngaymuon.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_lpm_ngaymuon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_lpm_ngaymuon.Location = new System.Drawing.Point(810, 28);
@@ -182,6 +228,7 @@
             this.cmb_lpm_madg.Name = "cmb_lpm_madg";
             this.cmb_lpm_madg.Size = new System.Drawing.Size(364, 45);
             this.cmb_lpm_madg.TabIndex = 1;
+            this.cmb_lpm_madg.SelectedIndexChanged += new System.EventHandler(this.cmb_lpm_madg_SelectedIndexChanged);
             // 
             // label_ctpm_ngaymuon
             // 
@@ -267,51 +314,6 @@
             this.listView_sach.TabIndex = 0;
             this.listView_sach.UseCompatibleStateImageBehavior = false;
             this.listView_sach.View = System.Windows.Forms.View.Details;
-            // 
-            // cmb_hoten
-            // 
-            this.cmb_hoten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_hoten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_hoten.FormattingEnabled = true;
-            this.cmb_hoten.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
-            this.cmb_hoten.Location = new System.Drawing.Point(234, 58);
-            this.cmb_hoten.Name = "cmb_hoten";
-            this.cmb_hoten.Size = new System.Drawing.Size(364, 45);
-            this.cmb_hoten.TabIndex = 9;
-            // 
-            // cmb_masach
-            // 
-            this.cmb_masach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_masach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_masach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_masach.FormattingEnabled = true;
-            this.cmb_masach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
-            this.cmb_masach.Location = new System.Drawing.Point(234, 5);
-            this.cmb_masach.Name = "cmb_masach";
-            this.cmb_masach.Size = new System.Drawing.Size(364, 45);
-            this.cmb_masach.TabIndex = 9;
-            // 
-            // cmb_tensach
-            // 
-            this.cmb_tensach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_tensach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_tensach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_tensach.FormattingEnabled = true;
-            this.cmb_tensach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
-            this.cmb_tensach.Location = new System.Drawing.Point(234, 56);
-            this.cmb_tensach.Name = "cmb_tensach";
-            this.cmb_tensach.Size = new System.Drawing.Size(364, 45);
-            this.cmb_tensach.TabIndex = 10;
             // 
             // columnHeader1
             // 

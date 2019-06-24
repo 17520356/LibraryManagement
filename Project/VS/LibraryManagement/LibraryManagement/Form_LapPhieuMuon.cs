@@ -20,7 +20,7 @@ namespace LibraryManagement
             dateTimePicker_lpm_ngaymuon.Value = DateTime.Today;
             hienthi();
         }
-        private bool check_combobox = false;
+
         #region method
         void hienthi()
         {
@@ -46,23 +46,17 @@ namespace LibraryManagement
                 cmb_tensach.ValueMember = "Masach";
                 cmb_tensach.DataSource = sach;
 
-                check_combobox = true;
+
             }
-        }
-
-
-        #endregion
-        #region event 
-        private void button_lpm_thoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         bool kiemtra(int masach)
         {
-            int thamso = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT Giatri FROM dbo.THAM_SO WHERE Tenthamso='soluongsachtoida'"));
             int madocgia = Convert.ToInt32(cmb_lpm_madg.SelectedValue);
+            int thamso = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT Giatri FROM dbo.THAM_SO WHERE Tenthamso='soluongsachtoida'"));
+
             int sosachmuon = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT Sosachmuon FROM dbo.DOC_GIA WHERE Madocgia='" + madocgia + "'"));
-            if(listView_sach.Items.Count+sosachmuon>=thamso)
+
+            if (listView_sach.Items.Count + sosachmuon >= thamso)
             {
                 MessageBox.Show("Độc Giả đang mượn " + sosachmuon + " sách!\nSố sách mượn không được vượt quá " + thamso + "");
                 return false;
@@ -83,12 +77,25 @@ namespace LibraryManagement
                     }
                 }
             }
+            int tinhtrang = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT tinhtrang FROM dbo.DOC_GIA WHERE Madocgia='" + madocgia + "'"));
+            if (tinhtrang == 2)
+            {
+                MessageBox.Show("Thẻ độc giả đã quá hạn! Không thể mượn.");
+                return false;
+            }
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.kiemtradocgiamuonsachquahan @madocgia = '" + madocgia + "'");
+            if (data.Rows.Count > 0)
+            {
+                MessageBox.Show("Độc giả có sách mượn quá hạn! Không thể mượn");
+                return false;
+            }
             return true;
         }
+
         void themsach()
         {
             int masach = Convert.ToInt32(cmb_masach.SelectedValue);
-           
+
             if (kiemtra(masach) == true)
             {
                 List<LapPhieuMuonDTO> danhsachpm = PhieuMuonDAO.Instance.hienthiphieumuon(masach);
@@ -102,7 +109,15 @@ namespace LibraryManagement
                 }
             }
         }
+
         #endregion
+        #region event 
+        private void button_lpm_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+      
+
 
         private void bt_themsach_Click(object sender, EventArgs e)
         {
@@ -126,19 +141,17 @@ namespace LibraryManagement
             if (listView_sach.Items.Count > 0)
             {
                 int madocgia = Convert.ToInt32(cmb_lpm_madg.SelectedValue);
+
                 DateTime ngaymuon = dateTimePicker_lpm_ngaymuon.Value;
                
                 int thamsongayhethan = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT Giatri FROM dbo.THAM_SO WHERE Tenthamso='songaymuontoida'"));
-                DateTime ngayhethan = ngaymuon.AddDays(thamsongayhethan);
 
-                if (kiemtradocgia(madocgia) == true)
-                    button_lpm_lapphieumuon.Enabled = true;
-                else
-                    button_lpm_lapphieumuon.Enabled = false;
+                DateTime ngayhethan = ngaymuon.AddDays(thamsongayhethan);
 
                 int rs = DataProvider.Instance.ExecuteNonQuery("EXEC dbo.themphieumuon @madocgia = " + madocgia + " , @ngaymuon = '" + ngaymuon + "' ");
 
                 int result = 0;
+
                 if (rs > 0)
                 {
                     int max = PhieuMuonDAO.Instance.getmax_pm();
@@ -158,24 +171,11 @@ namespace LibraryManagement
                 }
             }
         }
-        bool kiemtradocgia(int madocgia)
+
+        private void cmb_lpm_madg_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int tinhtrang = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT tinhtrang FROM dbo.DOC_GIA WHERE Madocgia='"+madocgia+"'"));
-            if(tinhtrang==0)
-            {
-                DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM tinhtrangsachkhimuon T,dbo.CHITIET_PHIEUMUON C,dbo.PHIEU_MUON P WHERE C.Maphieumuon=P.Maphieumuon AND C.tinhtrang=T.matinhtrang AND P.Madocgia='" + madocgia + "' AND T.matinhtrang='3'");
-                if (data.Rows.Count > 0)
-                    MessageBox.Show("Độc Giả hiện đang có sách mượn quá hạn! Không thể lập phiếu mượn.");
-                else
-                    MessageBox.Show("Độc Giả hiện đã mượn tối đa số lượng sách. Không thể lập phiếu mượn");
-                return false;
-            }
-            if(tinhtrang==2)
-            {
-                MessageBox.Show("Thẻ Độc Giả đã quá hạn! Vui lòng gia hạn thẻ trước khi mượn!");
-                return false;
-            }
-            return true;
+            listView_sach.Items.Clear();
         }
+        #endregion
     }
 }

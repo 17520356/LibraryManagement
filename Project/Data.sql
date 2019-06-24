@@ -172,12 +172,16 @@ CREATE TABLE CHITIET_PHIEUMUON
 	Masach				INT NOT NULL ,
 	Ngayhethan			Date,
 	tinhtrang			INT,			 -- 1: đã trả -- 2: chưa trả 3--quá hạn -- 4 Đã Gia hạn // Thêm 1 bảng tình trạng sách trong phiếu mượn
+	giahan				INT DEFAULT'1' --1 chưa gia hạn---2 đã gia hạn
+
 		PRIMARY KEY (Maphieumuon,Masach),
 		FOREIGN KEY (Masach) REFERENCES CUONSACH(Masach),
 		FOREIGN KEY (Maphieumuon) REFERENCES PHIEU_MUON(Maphieumuon),
 		FOREIGN KEY(tinhtrang) REFERENCES dbo.tinhtrangsachkhimuon(matinhtrang)
 
 )
+
+
 GO
 
 
@@ -359,8 +363,9 @@ BEGIN
 			SET tinhtrang='1'
 			WHERE @Madocgia=Madocgia;
 		END 
-END 
+END
 GO
+
 */
 GO 
 --PROCEDURE
@@ -599,7 +604,7 @@ CREATE PROC themchitietphieumuon
 @maphieumuon INT,@masach INT ,@ngayhethan DATETIME
 AS
 BEGIN
-	INSERT INTO dbo.CHITIET_PHIEUMUON  ( Maphieumuon , Masach ,  Ngayhethan ,  tinhtrang  )VALUES  ( @maphieumuon ,   @masach , @ngayhethan, 1  )
+	INSERT INTO dbo.CHITIET_PHIEUMUON  ( Maphieumuon , Masach ,  Ngayhethan ,  tinhtrang  )VALUES  ( @maphieumuon ,   @masach , @ngayhethan, 2  )
 END 
 GO 
 
@@ -628,26 +633,62 @@ BEGIN
 	FROM dbo.PHIEU_THU,dbo.DOC_GIA  
 	WHERE DOC_GIA.Madocgia=dbo.PHIEU_THU.Madocgia
 END 
+GO
+CREATE PROC chitietphieumuon
+@maphieumuon INT 
+AS
+BEGIN 
+	SELECT dbo.CUONSACH.Masach[Mã Sách],dbo.DAUSACH.Tendausach[Tên Sách],Ngayhethan[Ngày Hết hạn],tinhtrangsachkhimuon.tinhtrang[Tình Trạng] 
+	FROM dbo.CHITIET_PHIEUMUON,dbo.tinhtrangsachkhimuon,dbo.CUONSACH,dbo.DAUSACH 
+	WHERE CHITIET_PHIEUMUON.tinhtrang=dbo.tinhtrangsachkhimuon.matinhtrang
+	AND CHITIET_PHIEUMUON.Masach=CUONSACH.Masach
+	AND CUONSACH.Madausach=DAUSACH.Madausach
+	AND Maphieumuon=@maphieumuon
+END 
 
-*/
+GO
 
+CREATE PROC hienthiphieutra
+@madocgia INT 
+AS
+BEGIN 
+	SELECT CHITIET_PHIEUMUON.Masach,Tendausach
+	FROM dbo.PHIEU_MUON,dbo.CHITIET_PHIEUMUON,dbo.CUONSACH,dbo.DAUSACH
+	WHERE CHITIET_PHIEUMUON.Masach=CUONSACH.Masach
+	AND CHITIET_PHIEUMUON.Maphieumuon=PHIEU_MUON.Maphieumuon
+	AND CUONSACH.Madausach=DAUSACH.Madausach
+	AND tinhtrang !='1'
+	AND Madocgia=@madocgia
+END 
 
-SELECT * FROM dbo.TACGIA_DAUSACH
-
-SELECT * FROM dbo.CUONSACH
-SELECT * FROM dbo.PHIEU_MUON
-SELECT * FROM dbo.CHITIET_PHIEUMUON
-SELECT * FROM dbo.PHIEU_TRA
-SELECT * FROM dbo.CHITIET_PHIEUTRA
-SELECT * FROM dbo.DOC_GIA
-SELECT * FROM dbo.TACGIA_DAUSACH ORDER BY Madausach
-SELECT * FROM dbo.DAUSACH
 GO 
 
+CREATE PROC hienthitinhtrangsach
+AS
+BEGIN 
 
-SELECT * FROM dbo.PHIEU_THU
+SELECT CUONSACH.Masach [Mã Sách],Tendausach [Tên Sách],Ngayhethan[Ngày Hết Hạn],tinhtrang[Tình Trạng]
+FROM dbo.CHITIET_PHIEUMUON,dbo.CUONSACH,dbo.DAUSACH 
+WHERE tinhtrang!=1
+AND CHITIET_PHIEUMUON.Masach=CUONSACH.Masach
+AND CUONSACH.Madausach=DAUSACH.Madausach
 
-DELETE dbo.PHIEU_THU WHERE Maphieuthu='5'
+END 
 
-SELECT * FROM dbo.PHIEU_MUON,dbo.CHITIET_PHIEUMUON WHERE CHITIET_PHIEUMUON.Maphieumuon=dbo.PHIEU_MUON.Maphieumuon
+GO
+*/
 
+SELECT * FROM dbo.DOC_GIA
+GO 
+CREATE PROC kiemtradocgiamuonsachquahan
+@madocgia INT 
+AS
+BEGIN 
+	SELECT * FROM dbo.DOC_GIA,dbo.CHITIET_PHIEUMUON,dbo.PHIEU_MUON
+	WHERE CHITIET_PHIEUMUON.Maphieumuon=PHIEU_MUON.Maphieumuon
+	AND DOC_GIA.Madocgia=PHIEU_MUON.Madocgia
+	AND CHITIET_PHIEUMUON.tinhtrang='3'
+	AND dbo.PHIEU_MUON.Madocgia=@madocgia
+END 
+
+EXEC dbo.kiemtradocgiamuonsachquahan @madocgia = 0 -- int

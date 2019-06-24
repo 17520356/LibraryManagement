@@ -158,12 +158,12 @@ namespace LibraryManagement
 
         private void button_cts_thoat_Click(object sender, EventArgs e)
         {
-            if (cmb_tensach.Enabled == false)
+            if (cmb_tensach.Enabled == true)
             {
                 if (MessageBox.Show("Bạn chưa lưu dữ liệu! Bạn có chắc chắn muốn thoát không?\nNếu thoát, các dữ liệu vừa thay đổi sẽ không được cập nhật! ", "Thông Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     this.Close();
             }
-            else
+            if (cmb_tensach.Enabled == false)
                 this.Close();
         }
     }

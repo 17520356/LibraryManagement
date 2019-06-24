@@ -48,10 +48,44 @@ namespace LibraryManagement
             #endregion
             this.loginacc = acc;
             Label_Nhom_NguoiDung.Text = AccountDAO.Instance.TenNhomNguoiDung(acc.Username);
-            
+ 
+            kiemtradocgia();
+            kiemtratinhtrangsach();
+        }
+        #region method
+
+        void kiemtradocgia()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.DOC_GIA");
+            foreach(DataRow item in data.Rows)
+            {
+                DocGiaDTO docgia = new DocGiaDTO(item);
+                if (docgia.Ngayhethan < DateTime.Now)
+                    DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DOC_GIA SET tinhtrang='2' WHERE Madocgia='" + docgia.Madocgia + "'");
+                
+            }
+        }
+        void kiemtratinhtrangsach() // Kiểm tra sách, nếu chưa trả mà quá hạn thì chuyển tình trạng =3
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthitinhtrangsach");
+            int tinhtrang;
+            foreach (DataRow item in data.Rows)
+            {
+                ChiTietPhieuMuonDTO chitietpm = new ChiTietPhieuMuonDTO(item);
+                tinhtrang = Convert.ToInt32(chitietpm.Tinhtrang);
+                if (tinhtrang != 1) 
+                {
+                    if (chitietpm.Ngayhethan < DateTime.Now)
+                        DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.CHITIET_PHIEUMUON SET tinhtrang=3 WHERE Masach='"+chitietpm.Masach+"'");
+                }
+            }
         }
 
+        #endregion
 
+
+
+        #region event
         private void panel_docgia_Paint(object sender, PaintEventArgs e)
         {
 
@@ -220,7 +254,9 @@ namespace LibraryManagement
         private void bt_timphieumuon_Click(object sender, EventArgs e)
         {
             Form_TimPhieuMuon f = new Form_TimPhieuMuon();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_lapphieumuon_Click(object sender, EventArgs e)
@@ -240,7 +276,9 @@ namespace LibraryManagement
         private void bt_lapphieutra_Click(object sender, EventArgs e)
         {
             Form_LapPhieuTra f = new Form_LapPhieuTra();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_timkiemphieuthu_Click(object sender, EventArgs e)
@@ -300,6 +338,7 @@ namespace LibraryManagement
             this.Show();
         }
 
+        #endregion
     }
 
 }

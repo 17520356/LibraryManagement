@@ -60,3 +60,17 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.cache
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.compiled
