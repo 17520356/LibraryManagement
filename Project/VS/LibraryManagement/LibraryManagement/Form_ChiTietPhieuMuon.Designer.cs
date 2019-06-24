@@ -30,17 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ChiTietPhieuMuon));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button_giahan = new System.Windows.Forms.Button();
-            this.cmb_tensach = new System.Windows.Forms.ComboBox();
-            this.cmb_masach = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.cmb_hoten = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker_lpm_ngaymuon = new System.Windows.Forms.DateTimePicker();
-            this.cmb_madg = new System.Windows.Forms.ComboBox();
             this.label_ctpm_ngaymuon = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_lpm = new System.Windows.Forms.Panel();
@@ -51,8 +44,9 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
             this.button_ctpm_huy = new System.Windows.Forms.Button();
+            this.txt_madocgia = new System.Windows.Forms.TextBox();
+            this.txt_hoten = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel_lpm.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -60,92 +54,34 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel_lpm);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1054, 790);
+            this.panel1.Size = new System.Drawing.Size(1054, 666);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.button_giahan);
-            this.panel2.Controls.Add(this.cmb_tensach);
-            this.panel2.Controls.Add(this.cmb_masach);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(3, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 107);
-            this.panel2.TabIndex = 13;
             // 
             // button_giahan
             // 
             this.button_giahan.BackColor = System.Drawing.Color.LimeGreen;
             this.button_giahan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_giahan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_giahan.Location = new System.Drawing.Point(666, 5);
+            this.button_giahan.Location = new System.Drawing.Point(123, 3);
             this.button_giahan.Name = "button_giahan";
-            this.button_giahan.Size = new System.Drawing.Size(346, 97);
+            this.button_giahan.Size = new System.Drawing.Size(337, 67);
             this.button_giahan.TabIndex = 11;
             this.button_giahan.Text = "Gia Hạn";
             this.button_giahan.UseVisualStyleBackColor = false;
             this.button_giahan.Click += new System.EventHandler(this.button_giahan_Click);
             // 
-            // cmb_tensach
-            // 
-            this.cmb_tensach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_tensach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_tensach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_tensach.FormattingEnabled = true;
-            this.cmb_tensach.Location = new System.Drawing.Point(234, 56);
-            this.cmb_tensach.Name = "cmb_tensach";
-            this.cmb_tensach.Size = new System.Drawing.Size(364, 45);
-            this.cmb_tensach.TabIndex = 10;
-            // 
-            // cmb_masach
-            // 
-            this.cmb_masach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_masach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_masach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_masach.FormattingEnabled = true;
-            this.cmb_masach.Location = new System.Drawing.Point(234, 5);
-            this.cmb_masach.Name = "cmb_masach";
-            this.cmb_masach.Size = new System.Drawing.Size(364, 45);
-            this.cmb_masach.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 44);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Tên Sách:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 44);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Mã Sách:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.cmb_hoten);
+            this.panel8.Controls.Add(this.txt_hoten);
+            this.panel8.Controls.Add(this.txt_madocgia);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.dateTimePicker_lpm_ngaymuon);
-            this.panel8.Controls.Add(this.cmb_madg);
             this.panel8.Controls.Add(this.label_ctpm_ngaymuon);
             this.panel8.Controls.Add(this.label1);
             this.panel8.Location = new System.Drawing.Point(3, 3);
@@ -153,23 +89,11 @@
             this.panel8.Size = new System.Drawing.Size(1044, 115);
             this.panel8.TabIndex = 12;
             // 
-            // cmb_hoten
-            // 
-            this.cmb_hoten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_hoten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_hoten.Enabled = false;
-            this.cmb_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_hoten.FormattingEnabled = true;
-            this.cmb_hoten.Location = new System.Drawing.Point(234, 58);
-            this.cmb_hoten.Name = "cmb_hoten";
-            this.cmb_hoten.Size = new System.Drawing.Size(364, 45);
-            this.cmb_hoten.TabIndex = 9;
-            // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 57);
+            this.label2.Location = new System.Drawing.Point(4, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(211, 44);
             this.label2.TabIndex = 8;
@@ -186,18 +110,6 @@
             this.dateTimePicker_lpm_ngaymuon.Name = "dateTimePicker_lpm_ngaymuon";
             this.dateTimePicker_lpm_ngaymuon.Size = new System.Drawing.Size(211, 45);
             this.dateTimePicker_lpm_ngaymuon.TabIndex = 3;
-            // 
-            // cmb_madg
-            // 
-            this.cmb_madg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmb_madg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_madg.Enabled = false;
-            this.cmb_madg.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_madg.FormattingEnabled = true;
-            this.cmb_madg.Location = new System.Drawing.Point(234, 3);
-            this.cmb_madg.Name = "cmb_madg";
-            this.cmb_madg.Size = new System.Drawing.Size(364, 45);
-            this.cmb_madg.TabIndex = 1;
             // 
             // label_ctpm_ngaymuon
             // 
@@ -224,7 +136,7 @@
             // 
             this.panel_lpm.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_lpm.Controls.Add(this.listView_sach);
-            this.panel_lpm.Location = new System.Drawing.Point(3, 237);
+            this.panel_lpm.Location = new System.Drawing.Point(7, 124);
             this.panel_lpm.Name = "panel_lpm";
             this.panel_lpm.Size = new System.Drawing.Size(1044, 447);
             this.panel_lpm.TabIndex = 11;
@@ -273,19 +185,20 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.button_giahan);
             this.panel4.Controls.Add(this.button_ctpm_huy);
-            this.panel4.Location = new System.Drawing.Point(3, 688);
+            this.panel4.Location = new System.Drawing.Point(7, 577);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1044, 94);
+            this.panel4.Size = new System.Drawing.Size(1044, 76);
             this.panel4.TabIndex = 2;
             // 
             // button_ctpm_huy
             // 
-            this.button_ctpm_huy.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_ctpm_huy.BackColor = System.Drawing.Color.Orange;
             this.button_ctpm_huy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_ctpm_huy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_ctpm_huy.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ctpm_huy.Location = new System.Drawing.Point(328, 14);
+            this.button_ctpm_huy.Location = new System.Drawing.Point(609, 2);
             this.button_ctpm_huy.Name = "button_ctpm_huy";
             this.button_ctpm_huy.Size = new System.Drawing.Size(337, 67);
             this.button_ctpm_huy.TabIndex = 11;
@@ -293,13 +206,31 @@
             this.button_ctpm_huy.UseVisualStyleBackColor = false;
             this.button_ctpm_huy.Click += new System.EventHandler(this.button_ctpm_huy_Click);
             // 
+            // txt_madocgia
+            // 
+            this.txt_madocgia.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_madocgia.Location = new System.Drawing.Point(239, 5);
+            this.txt_madocgia.Name = "txt_madocgia";
+            this.txt_madocgia.ReadOnly = true;
+            this.txt_madocgia.Size = new System.Drawing.Size(354, 45);
+            this.txt_madocgia.TabIndex = 9;
+            // 
+            // txt_hoten
+            // 
+            this.txt_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_hoten.Location = new System.Drawing.Point(239, 57);
+            this.txt_hoten.Name = "txt_hoten";
+            this.txt_hoten.ReadOnly = true;
+            this.txt_hoten.Size = new System.Drawing.Size(354, 45);
+            this.txt_hoten.TabIndex = 10;
+            // 
             // Form_ChiTietPhieuMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CancelButton = this.button_ctpm_huy;
-            this.ClientSize = new System.Drawing.Size(1060, 795);
+            this.ClientSize = new System.Drawing.Size(1060, 680);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -308,8 +239,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiết Phiếu Mượn";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel_lpm.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -321,17 +252,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button_ctpm_huy;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button_giahan;
-        private System.Windows.Forms.ComboBox cmb_tensach;
-        private System.Windows.Forms.ComboBox cmb_masach;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox cmb_hoten;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker_lpm_ngaymuon;
-        private System.Windows.Forms.ComboBox cmb_madg;
         private System.Windows.Forms.Label label_ctpm_ngaymuon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_lpm;
@@ -340,5 +264,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox txt_hoten;
+        private System.Windows.Forms.TextBox txt_madocgia;
     }
 }

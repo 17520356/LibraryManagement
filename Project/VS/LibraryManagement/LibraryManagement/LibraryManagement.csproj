@@ -56,12 +56,14 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ParaDAO.cs" />
     <Compile Include="DAO\PhieuMuonDAO.cs" />
+    <Compile Include="DAO\PhieuTraDAO.cs" />
     <Compile Include="DAO\SachDAO.cs" />
     <Compile Include="DAO\TypeDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\ChiTietPhieuMuonDTO.cs" />
     <Compile Include="DTO\DocGiaDTO.cs" />
     <Compile Include="DTO\LapPhieuMuonDTO.cs" />
+    <Compile Include="DTO\PhieuTraDTO.cs" />
     <Compile Include="DTO\SachDTO.cs" />
     <Compile Include="DTO\TacGiaDTO.cs" />
     <Compile Include="DTO\User_DTO.cs" />

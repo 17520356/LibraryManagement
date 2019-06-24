@@ -270,7 +270,9 @@ namespace LibraryManagement
         private void bt_timkiemphieutra_Click(object sender, EventArgs e)
         {
             Form_TimPhieuTra f = new Form_TimPhieuTra();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void bt_lapphieutra_Click(object sender, EventArgs e)

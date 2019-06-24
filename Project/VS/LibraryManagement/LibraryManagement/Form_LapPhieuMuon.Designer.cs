@@ -91,10 +91,6 @@
             this.cmb_tensach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tensach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tensach.FormattingEnabled = true;
-            this.cmb_tensach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_tensach.Location = new System.Drawing.Point(234, 56);
             this.cmb_tensach.Name = "cmb_tensach";
             this.cmb_tensach.Size = new System.Drawing.Size(364, 45);
@@ -106,10 +102,6 @@
             this.cmb_masach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_masach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_masach.FormattingEnabled = true;
-            this.cmb_masach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_masach.Location = new System.Drawing.Point(234, 5);
             this.cmb_masach.Name = "cmb_masach";
             this.cmb_masach.Size = new System.Drawing.Size(364, 45);
@@ -183,10 +175,6 @@
             this.cmb_hoten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_hoten.FormattingEnabled = true;
-            this.cmb_hoten.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_hoten.Location = new System.Drawing.Point(234, 58);
             this.cmb_hoten.Name = "cmb_hoten";
             this.cmb_hoten.Size = new System.Drawing.Size(364, 45);
@@ -220,10 +208,6 @@
             this.cmb_lpm_madg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_lpm_madg.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_lpm_madg.FormattingEnabled = true;
-            this.cmb_lpm_madg.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_lpm_madg.Location = new System.Drawing.Point(234, 3);
             this.cmb_lpm_madg.Name = "cmb_lpm_madg";
             this.cmb_lpm_madg.Size = new System.Drawing.Size(364, 45);

@@ -30,31 +30,30 @@ namespace LibraryManagement
             textBox4.Visible = false;
             textBox5.Visible = false;
             hienthisach();
-            Binding_Sach();
-            Binding_dausach();
-
+            if (dataGridView_sach.Rows.Count > 0)
+            {
+                Binding_Sach();
+                Binding_dausach();
+            }
         }
 
         void hienthisach()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthisach");
-            if (data.Rows.Count > 0)
-            {
+
                 sach_binding.DataSource = data;
                 dataGridView_sach.DataSource = sach_binding;
-            
-            }
+
         }
 
         void hienthidausach()
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT Madausach[Mã Đầu Sách], Tendausach[Tên Đầu Sách], Ten[Thể Loại], Trigia[Trị Giá], Soluong[Số Lượng] FROM dbo.DAUSACH,dbo.THE_LOAI WHERE THE_LOAI.Matheloai = DAUSACH.Matheloai");
-            if (data.Rows.Count > 0)
-            {
+
                 dausach_binding.DataSource = data;
                 dataGridView_sach.DataSource = dausach_binding;
+            
 
-            }
         }
 
         void Binding_Sach()
@@ -106,10 +105,13 @@ namespace LibraryManagement
 
         private void bt_xemsach_Click(object sender, EventArgs e)
         {
-            hienthisach();
+            
             label5.Text = "Mã Sách";
             label3.Text = "Tình Trạng";
             label4.Text = "Nhà Xuất Bản";
+            hienthisach();
+
+
             #region visble
             textBox1.Visible = false;
             textBox2.Visible = false;
@@ -131,6 +133,8 @@ namespace LibraryManagement
             label3.Text = "Trị Giá";
             label4.Text = "Số Lượng";
             hienthidausach();
+
+
             #region visible
             textBox1.Visible = true;
             textBox2.Visible = true;

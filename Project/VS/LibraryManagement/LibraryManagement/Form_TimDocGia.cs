@@ -110,14 +110,17 @@ namespace LibraryManagement
         #endregion
 
         private void button_sachdangmuon_Click(object sender, EventArgs e)
-            
+
         {
-            int id = Convert.ToInt32(txt_madocgia.Text);
-            DataTable data = DataProvider.Instance.ExecuteQuery("SachDangMuon @madocgia = N'"+id+"'");
-            if (data.Rows.Count > 0)
-                dataGridView_docgia.DataSource = data;
-            else
-                MessageBox.Show("Độc Giả Không Có Sách Đang Mượn!");
+            if (txt_madocgia.Text != "")
+            {
+                int id = Convert.ToInt32(txt_madocgia.Text);
+                DataTable data = DataProvider.Instance.ExecuteQuery("SachDangMuon @madocgia = N'" + id + "'");
+                if (data.Rows.Count > 0)
+                    dataGridView_docgia.DataSource = data;
+                else
+                    MessageBox.Show("Độc Giả Không Có Sách Đang Mượn!");
+            }
         }
     }
 }

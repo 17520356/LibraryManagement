@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_LapPhieuTra));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Txt_TongNo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Txt_tienphat = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_tensach = new System.Windows.Forms.ComboBox();
             this.cmb_masach = new System.Windows.Forms.ComboBox();
@@ -53,17 +58,13 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel_lpm.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -77,6 +78,56 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1058, 895);
             this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.Txt_TongNo);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.Txt_tienphat);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(3, 688);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1044, 96);
+            this.panel3.TabIndex = 10;
+            // 
+            // Txt_TongNo
+            // 
+            this.Txt_TongNo.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_TongNo.Location = new System.Drawing.Point(721, 21);
+            this.Txt_TongNo.Name = "Txt_TongNo";
+            this.Txt_TongNo.Size = new System.Drawing.Size(300, 50);
+            this.Txt_TongNo.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(545, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 84);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Tổng Nợ:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txt_tienphat
+            // 
+            this.Txt_tienphat.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_tienphat.Location = new System.Drawing.Point(223, 25);
+            this.Txt_tienphat.Name = "Txt_tienphat";
+            this.Txt_tienphat.Size = new System.Drawing.Size(300, 50);
+            this.Txt_tienphat.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(211, 84);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tiền Phạt Kỳ Này";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -98,10 +149,6 @@
             this.cmb_tensach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tensach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tensach.FormattingEnabled = true;
-            this.cmb_tensach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_tensach.Location = new System.Drawing.Point(234, 56);
             this.cmb_tensach.Name = "cmb_tensach";
             this.cmb_tensach.Size = new System.Drawing.Size(364, 45);
@@ -113,10 +160,6 @@
             this.cmb_masach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_masach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_masach.FormattingEnabled = true;
-            this.cmb_masach.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_masach.Location = new System.Drawing.Point(234, 5);
             this.cmb_masach.Name = "cmb_masach";
             this.cmb_masach.Size = new System.Drawing.Size(364, 45);
@@ -190,10 +233,6 @@
             this.cmb_hoten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_hoten.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_hoten.FormattingEnabled = true;
-            this.cmb_hoten.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_hoten.Location = new System.Drawing.Point(234, 58);
             this.cmb_hoten.Name = "cmb_hoten";
             this.cmb_hoten.Size = new System.Drawing.Size(364, 45);
@@ -227,10 +266,6 @@
             this.cmb_madg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_madg.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_madg.FormattingEnabled = true;
-            this.cmb_madg.Items.AddRange(new object[] {
-            "asdsads",
-            "asdasdsad",
-            "asdsadsad"});
             this.cmb_madg.Location = new System.Drawing.Point(234, 3);
             this.cmb_madg.Name = "cmb_madg";
             this.cmb_madg.Size = new System.Drawing.Size(364, 45);
@@ -311,7 +346,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader4,
+            this.columnHeader5});
             this.listView_sach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_sach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_sach.Location = new System.Drawing.Point(0, 0);
@@ -324,75 +360,31 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã Sách";
-            this.columnHeader1.Width = 154;
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tên Sách";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 367;
+            this.columnHeader2.Width = 300;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Thể Loại";
+            this.columnHeader3.Text = "Ngày Mượn";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 180;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Tác Giả";
+            this.columnHeader4.Text = "Số Ngày Trễ";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 333;
+            this.columnHeader4.Width = 187;
             // 
-            // panel3
+            // columnHeader5
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(3, 688);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1044, 96);
-            this.panel3.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 84);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Tiền Phạt Kỳ Này";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(223, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 50);
-            this.textBox1.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(545, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 84);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Tổng Nợ:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(721, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 50);
-            this.textBox2.TabIndex = 13;
+            this.columnHeader5.Text = "Tiền Phạt";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 218;
             // 
             // Form_LapPhieuTra
             // 
@@ -407,12 +399,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập Phiếu Trả";
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel_lpm.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -444,9 +436,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Txt_TongNo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_tienphat;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

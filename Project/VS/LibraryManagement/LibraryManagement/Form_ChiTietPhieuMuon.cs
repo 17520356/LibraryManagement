@@ -24,9 +24,10 @@ namespace LibraryManagement
         #region method
         void hienthi()
         {
-            hienthicombobox();
+            hienthidocgia();
             List<ChiTietPhieuMuonDTO> chitietpm = ChiTietPhieuMuonDAO.Instance.hienthiphieumuon(maphieumuon);
             dateTimePicker_lpm_ngaymuon.Value = Convert.ToDateTime(DataProvider.Instance.ExecuteReader("SELECT Ngaymuon FROM dbo.PHIEU_MUON WHERE Maphieumuon='"+maphieumuon+"'"));
+
             foreach(ChiTietPhieuMuonDTO item in chitietpm)
             {
                 ListViewItem danhsach = new ListViewItem(item.Masach.ToString());
@@ -36,34 +37,13 @@ namespace LibraryManagement
                 listView_sach.Items.Add(danhsach);
             }
         }
-        void hienthicombobox()
+        void hienthidocgia()
         {
-            DataTable docgia = DataProvider.Instance.ExecuteQuery("SELECT Madocgia,Hoten FROM dbo.DOC_GIA WHERE tinhtrang='1'");
-            if (docgia.Rows.Count > 0)
-            {
-                cmb_madg.DisplayMember = "Madocgia";
-                cmb_madg.ValueMember = "Madocgia";
-                cmb_madg.DataSource = docgia;
-                cmb_madg.Text = DataProvider.Instance.ExecuteReader("SELECT DOC_GIA.Madocgia FROM dbo.PHIEU_MUON,dbo.DOC_GIA WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia AND Maphieumuon='"+maphieumuon+"'");
+            string madocgia = DataProvider.Instance.ExecuteReader("SELECT DOC_GIA.Madocgia FROM dbo.DOC_GIA,dbo.PHIEU_MUON WHERE Maphieumuon='" + maphieumuon + "' AND DOC_GIA.Madocgia=PHIEU_MUON.Madocgia");
+            string tendocgia = DataProvider.Instance.ExecuteReader("SELECT Hoten FROM dbo.DOC_GIA,dbo.PHIEU_MUON WHERE Maphieumuon='" + maphieumuon + "' AND DOC_GIA.Madocgia=PHIEU_MUON.Madocgia");
+            txt_hoten.Text = tendocgia;
+            txt_madocgia.Text = madocgia;
 
-                cmb_hoten.DisplayMember = "Hoten";
-                cmb_hoten.ValueMember = "Madocgia";
-                cmb_hoten.DataSource = docgia;
-                cmb_hoten.Text = DataProvider.Instance.ExecuteReader("SELECT DOC_GIA.Hoten FROM dbo.PHIEU_MUON,dbo.DOC_GIA WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia AND Maphieumuon='" + maphieumuon + "'");
-            }
-            DataTable sach = DataProvider.Instance.ExecuteQuery("SELECT Masach,Tendausach FROM dbo.CUONSACH,dbo.DAUSACH WHERE  CUONSACH.Madausach=DAUSACH.Madausach AND Matinhtrang='1'");
-            if (sach.Rows.Count > 0)
-            {
-                cmb_masach.DisplayMember = "Masach";
-                cmb_masach.ValueMember = "Masach";
-                cmb_masach.DataSource = sach;
-
-
-                cmb_tensach.DisplayMember = "Tendausach";
-                cmb_tensach.ValueMember = "Masach";
-                cmb_tensach.DataSource = sach;
-
-            }
         }
         #endregion
         #region event
@@ -71,9 +51,6 @@ namespace LibraryManagement
         {
             this.Close();
         }
-
-
-
     
 
         private void button_giahan_Click(object sender, EventArgs e)

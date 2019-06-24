@@ -19,10 +19,17 @@ namespace LibraryManagement
             InitializeComponent();
             hienthi();
         }
+
+        float tongno;
+        bool check = false;
+
         #region method
+
         void hienthi()
         {
-            DataTable docgia = DataProvider.Instance.ExecuteQuery("SELECT DISTINCT DOC_GIA.Madocgia,Hoten FROM dbo.DOC_GIA,dbo.PHIEU_MUON WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia");
+            DataTable docgia = DataProvider.Instance.ExecuteQuery("SELECT DISTINCT DOC_GIA.Madocgia,Hoten FROM dbo.DOC_GIA,dbo.PHIEU_MUON WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia AND Sosachmuon>0");
+            int madocgia = Convert.ToInt32(cmb_madg.SelectedValue);
+
             if (docgia.Rows.Count > 0)
             {
                 cmb_madg.DisplayMember = "Madocgia";
@@ -32,19 +39,29 @@ namespace LibraryManagement
                 cmb_hoten.DisplayMember = "Hoten";
                 cmb_hoten.ValueMember = "Madocgia";
                 cmb_hoten.DataSource = docgia;
-            }
-            DataTable sach = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthiphieutra @madocgia = "+Convert.ToInt32(cmb_madg.Text)+"");
-            if (sach.Rows.Count > 0)
-            {
-                cmb_masach.DisplayMember = "Masach";
-                cmb_masach.ValueMember = "Masach";
-                cmb_masach.DataSource = sach;
+                DataTable sach = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthiphieutra @madocgia = " + madocgia + "");
+                if (sach.Rows.Count > 0)
+                {
+                    cmb_masach.DisplayMember = "Masach";
+                    cmb_masach.ValueMember = "Masach";
+                    cmb_masach.DataSource = sach;
 
-                cmb_tensach.DisplayMember = "Tendausach";
-                cmb_tensach.ValueMember = "Masach";
-                cmb_tensach.DataSource = sach;
+                    cmb_tensach.DisplayMember = "Tendausach";
+                    cmb_tensach.ValueMember = "Masach";
+                    cmb_tensach.DataSource = sach;
+                }
+
+                
+                tongno = hienthitongno();
+                Txt_TongNo.Text = tongno.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Tất cả Sách đã được trả");
+                check = true;
             }
         }
+
         bool kiemtra(int masach)
         {
             if (listView_sach.Items.Count > 0)
@@ -60,27 +77,49 @@ namespace LibraryManagement
             }
             return true;
         }
-        public int getmax_phieutra()
+
+
+        void hienthitien()
         {
-            string temp = DataProvider.Instance.ExecuteReader("SELECT MAX(Maphieutra) FROM dbo.PHIEU_TRA");
-            if (temp != "")
+            if (listView_sach.Items.Count > 0)
             {
-                int rs = Convert.ToInt32(temp);
-                return rs;
+                float tienphatkynay = 0;
+                foreach (ListViewItem item in listView_sach.Items)
+                    tienphatkynay += (float)Convert.ToDouble(item.SubItems[4].Text);
+
+                tongno = hienthitongno();
+                tongno += tienphatkynay;
+                Txt_tienphat.Text = tienphatkynay.ToString();
+                Txt_TongNo.Text = tongno.ToString();
+
             }
-            return 0;
+            else
+            {
+                tongno = hienthitongno();
+                Txt_TongNo.Text = tongno.ToString();
+                Txt_tienphat.ResetText();
+            }
         }
+
+        float hienthitongno()
+        {
+            return (float)Convert.ToDouble(DataProvider.Instance.ExecuteReader("SELECT Tongno FROM dbo.DOC_GIA WHERE Madocgia='" + Convert.ToInt32(cmb_madg.SelectedValue) + "'"));
+        }
+
+
         #endregion
         #region event
+
         private void button_lpt_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion
 
         private void cmb_madg_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable sach = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthiphieutra @madocgia = " + Convert.ToInt32(cmb_madg.Text) + "");
+            int madocgia = Convert.ToInt32(cmb_madg.SelectedValue);
+
+            DataTable sach = DataProvider.Instance.ExecuteQuery("EXEC dbo.hienthiphieutra @madocgia = " + madocgia + "");
             if (sach.Rows.Count > 0)
             {
                 cmb_masach.DisplayMember = "Masach";
@@ -92,23 +131,30 @@ namespace LibraryManagement
                 cmb_tensach.DataSource = sach;
             }
             listView_sach.Items.Clear();
+
+            tongno = hienthitongno();
+            Txt_TongNo.Text = tongno.ToString();
+            Txt_tienphat.ResetText();
         }
 
         private void bt_themsach_Click(object sender, EventArgs e)
         {
             int masach = Convert.ToInt32(cmb_masach.SelectedValue);
-            if(kiemtra(masach)==true)
+            if((kiemtra(masach)==true)&&(masach.ToString()!=""))
             {
-                List<LapPhieuMuonDTO> danhsachphieutra = PhieuMuonDAO.Instance.hienthiphieumuon(masach);
-                foreach (LapPhieuMuonDTO item in danhsachphieutra)
+                List<PhieuTraDTO> danhsachphieutra = PhieuTraDAO.Instance.hienthiphieutra(masach);
+                foreach (PhieuTraDTO item in danhsachphieutra)
                 {
                     ListViewItem ds = new ListViewItem(item.Masach.ToString());
                     ds.SubItems.Add(item.Tensach);
-                    ds.SubItems.Add(item.Theloai);
-                    ds.SubItems.Add(item.Tentacgia);
+                    ds.SubItems.Add(item.Ngaymuon.ToString());
+                    ds.SubItems.Add(item.Songaymuon.ToString());
+                    ds.SubItems.Add(item.Tienphattungsach);
                     listView_sach.Items.Add(ds);
                 }
             }
+            hienthitien();
+            
         }
 
         private void bt_xoasach_Click(object sender, EventArgs e)
@@ -121,6 +167,18 @@ namespace LibraryManagement
                         item.Remove();
                 }
             }
+            hienthitien();
+        }
+
+        DateTime layngaymuon(int madocgia, int masach)
+        {
+            DateTime ngaymuon = Convert.ToDateTime(DataProvider.Instance.ExecuteReader("EXEC dbo.layngaymuon @masach = " + masach + " ,  @madocgia = " + madocgia + ""));
+            return ngaymuon;
+        }
+        int maphiemuon(int madocgia, int masach)
+        {
+            int maphiemuon = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.laymaphieumuon @masach = " + masach + " ,  @madocgia = " + madocgia + ""));
+            return maphiemuon;
         }
 
         private void button_lpm_lapphieumuon_Click(object sender, EventArgs e)
@@ -128,30 +186,26 @@ namespace LibraryManagement
             if(listView_sach.Items.Count>0)
             {
                 int madocgia = Convert.ToInt32(cmb_madg.SelectedValue);
+                float tienphatkynay = (float)Convert.ToDouble(Txt_tienphat.Text);
+                float tongnohientai = (float)Convert.ToDouble(Txt_TongNo.Text);
 
+                int rs = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.PHIEU_TRA ( Madocgia, Ngaytra, Tienphat ) VALUES  ( "+madocgia+",GETDATE(), '"+tienphatkynay+"' )");
 
-                int rs = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.PHIEU_TRA ( Madocgia, Ngaytra, Tienphat ) VALUES  ( "+madocgia+",GETDATE(), '0' )");
-
-                int result = 0, tongtienphat = 0, tienphattungsach, tinhtrang, masach,songay;
+                int result = 0, masach;
 
                 if (rs > 0)
                 {
-                    int max = getmax_phieutra();
+                    int max = PhieuTraDAO.Instance.getmax_phieutra();
                     foreach (ListViewItem item in listView_sach.Items)
                     {
-                        tienphattungsach = 0;
+                        float tienphattungsach = (float)Convert.ToDouble(item.SubItems[4].Text);
+                        int songaytre = Convert.ToInt32(item.SubItems[3].Text);
                         masach = Convert.ToInt32(item.Text);
-                        tinhtrang = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT tinhtrang FROM  dbo.CHITIET_PHIEUMUON WHERE Masach='" + masach + "'"));
 
-                        if (tinhtrang == 3)
-                        {
-                            songay = Convert.ToInt32(DataProvider.Instance.ExecuteReader("SELECT DATEDIFF(Dd,Ngayhethan,GETDATE()) FROM dbo.CHITIET_PHIEUMUON WHERE Masach='" + masach + "'"));
-                            tienphattungsach = songay * 1000;
-                        }
-                        tongtienphat += tienphattungsach;
-                        result = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.CHITIET_PHIEUTRA ( Maphieutra , Masach ,Tienphattungsach)VALUES  ( " + max + " ,  " + masach + " , '" + tienphattungsach + "' )");
+                        result = DataProvider.Instance.ExecuteNonQuery("INSERT INTO dbo.CHITIET_PHIEUTRA ( Maphieutra , Masach, Ngaymuon ,Songaytre , Tienphattungsach)VALUES  ( " + max + "  ," + masach + " ,'" + layngaymuon(madocgia, masach) + "', '" + songaytre + "', '" + tienphattungsach + "' )");
 
-                        DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.CHITIET_PHIEUMUON SET tinhtrang='1' WHERE Masach='" + masach + "'");
+                        DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.CHITIET_PHIEUMUON SET tinhtrang='1' WHERE Masach='" + masach + "'AND Maphieumuon='"+maphiemuon(madocgia,masach)+"'");
+
 
                         DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.CUONSACH SET Matinhtrang='1' WHERE Masach='" + masach + "'");
 
@@ -161,7 +215,7 @@ namespace LibraryManagement
                 {
                     DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DOC_GIA SET Sosachmuon-='" + listView_sach.Items.Count + "' WHERE Madocgia='" + madocgia + "'");
 
-                    DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DOC_GIA SET Tongno+='" + tongtienphat + "' WHERE Madocgia='" + madocgia + "'");
+                    DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.DOC_GIA SET Tongno ='" + tongnohientai + "' WHERE Madocgia='" + madocgia + "'");
 
                     MessageBox.Show("Thêm Mới Thành Công");
 
@@ -170,8 +224,12 @@ namespace LibraryManagement
                     listView_sach.Items.Clear();
 
                     hienthi();
+                    if (check == true)
+                        this.Close();
                 }
             }
         }
+
+        #endregion
     }
 }

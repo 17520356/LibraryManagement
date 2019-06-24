@@ -158,6 +158,7 @@ namespace LibraryManagement
                     foreach (ListViewItem item in listView_sach.Items)
                     {
                         result = DataProvider.Instance.ExecuteNonQuery("EXEC dbo.themchitietphieumuon @maphieumuon = " + max + ",  @masach = " + Convert.ToInt32(item.Text) + " ,   @ngayhethan = '" + ngayhethan + "' ");
+
                         DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.CUONSACH SET Matinhtrang='2' WHERE Masach='" + Convert.ToInt32(item.Text) + "'");
                     }
                 }
