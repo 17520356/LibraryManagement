@@ -163,17 +163,17 @@
     <Compile Include="Form_ThemSach.Designer.cs">
       <DependentUpon>Form_ThemSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ThongKeSachTraTre.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ThongKeSachTraTre.Designer.cs">
-      <DependentUpon>Form_ThongKeSachTraTre.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ThongKeTheoTheLoai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ThongKeTheoTheLoai.Designer.cs">
       <DependentUpon>Form_ThongKeTheoTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_thongketratre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_thongketratre.Designer.cs">
+      <DependentUpon>Form_thongketratre.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_TimDocGia.cs">
       <SubType>Form</SubType>
@@ -204,11 +204,6 @@
     </Compile>
     <Compile Include="Form_TimSach.Designer.cs">
       <DependentUpon>Form_TimSach.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LibraryManagementDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,11 +255,11 @@
     <EmbeddedResource Include="Form_ThemSach.resx">
       <DependentUpon>Form_ThemSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ThongKeSachTraTre.resx">
-      <DependentUpon>Form_ThongKeSachTraTre.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_ThongKeTheoTheLoai.resx">
       <DependentUpon>Form_ThongKeTheoTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_thongketratre.resx">
+      <DependentUpon>Form_thongketratre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_TimDocGia.resx">
       <DependentUpon>Form_TimDocGia.cs</DependentUpon>
@@ -290,18 +285,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
-    <None Include="LibraryManagementDataSet.xsc">
-      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LibraryManagementDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LibraryManagementDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LibraryManagementDataSet.xss">
-      <DependentUpon>LibraryManagementDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

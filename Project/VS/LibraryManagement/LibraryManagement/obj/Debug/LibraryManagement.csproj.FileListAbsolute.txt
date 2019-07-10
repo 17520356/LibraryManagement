@@ -49,7 +49,6 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_quidinh_theloai.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDocGia.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemSach.resources
-C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeSachTraTre.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeTheoTheLoai.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimDocGia.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimKiemPhieuThu.resources
@@ -60,7 +59,6 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
-C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
@@ -72,5 +70,5 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.cache
-C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.compiled
+C:\Users\HoàngHồngĐức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\HoàngHồngĐức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_thongketratre.resources

@@ -302,14 +302,12 @@ namespace LibraryManagement
         private void bt_tk_theloai_Click(object sender, EventArgs e)
         {
             Form_ThongKeTheoTheLoai f = new Form_ThongKeTheoTheLoai();
+            this.Close();
             f.ShowDialog();
+            this.Show();
         }
 
-        private void bt_tk_sachtratre_Click(object sender, EventArgs e)
-        {
-            Form_ThongKeSachTraTre f = new Form_ThongKeSachTraTre();
-            f.ShowDialog();
-        }
+
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -341,6 +339,14 @@ namespace LibraryManagement
         }
 
         #endregion
+
+        private void bt_tk_sachtratre_Click(object sender, EventArgs e)
+        {
+            Form_thongketratre f = new Form_thongketratre();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 
 }

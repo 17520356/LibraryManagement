@@ -8,7 +8,7 @@ GO
 --TABLE
 GO 
 
-/*
+
 CREATE TABLE LOAI_DG
 (
 	Maloaidg			Int IDENTITY PRIMARY KEY,
@@ -363,13 +363,13 @@ INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'admin', N
 INSERT INTO dbo.NGUOI_DUNG ( TenDangNhap, MatKhau, MaNhom )VALUES  ( N'staff', N'staff', 2 )
 
 GO 
-*/
+
 
 GO 
 --TRIGGER -
 GO
 
-/*
+
 CREATE TRIGGER tg_capnhatngayhethan
 ON dbo.DOC_GIA
 FOR INSERT,UPDATE
@@ -438,13 +438,13 @@ BEGIN
 	END 
 END 
 
-*/
+
 
 GO 
 --PROCEDURE
 GO
 
-/*
+
 
 CREATE PROC usp_login
 @username NVARCHAR(100),@password NVARCHAR(100)
@@ -862,4 +862,67 @@ BEGIN
 	AND Masach=@masach
 END 
 GO
-*/
+
+
+go
+create proc baocao_theloai_tongluotmuon
+@thang int,@nam int
+as
+begin
+	declare @tong int
+	
+	select @tong=count(t.Matheloai) 
+		from CHITIET_PHIEUMUON C,CUONSACH S,DAUSACH D,THE_LOAI T,PHIEU_MUON P
+		where c.Masach=s.Masach
+		and D.Madausach=s.Madausach
+		and t.Matheloai=d.Matheloai
+		and p.Maphieumuon=c.Maphieumuon
+		and month(p.Ngaymuon)=@thang
+		and YEAR(p.ngaymuon)=@nam
+
+	insert into BAOCAO_MUONSACH_THELOAI(Thang,Nam,Tongluotmuon) values (@thang,@nam,@tong)
+end
+
+
+go
+
+Create proc chitietbaocaotheotheloai
+@thang int,@nam int
+as
+begin
+	select THE_LOAI.Matheloai,a.luotmuon,test/12[tile]
+	from (
+		select t.Matheloai,Count(t.Matheloai) [luotmuon],Cast(Count(t.Matheloai) as float)[test]
+		from CHITIET_PHIEUMUON C,CUONSACH S,DAUSACH D,THE_LOAI T,PHIEU_MUON P
+		where c.Masach=s.Masach
+		and D.Madausach=s.Madausach
+		and t.Matheloai=d.Matheloai
+		and p.Maphieumuon=c.Maphieumuon
+		and month(p.Ngaymuon)=@thang
+		and YEAR(p.ngaymuon)=@nam
+		group by t.Matheloai) as a,THE_LOAI
+		where a.Matheloai=THE_LOAI.Matheloai
+end
+
+go
+create proc baocaotratre
+@Ngay int,@thang int, @nam int
+as
+begin
+select D.Tendausach[Tên Sách],P.Ngaymuon [Ngày Mượn],P.Songaytre [Số Ngày Trễ]
+from BAOCAO_SACH_TRATRE B ,CHITIET_BAOCAO_TRATRE C,CUONSACH S,DAUSACH D,CHITIET_PHIEUTRA P
+where B.Mabaocaosachtratre=C.Mabaocaosachtratre
+and C.Masach=S.Masach
+and S.Madausach=D.Madausach
+and P.Masach=S.Masach
+and B.Ngay=@Ngay
+and B.Thang=@thang
+and B.Nam=@nam
+end
+
+
+insert into CHITIET_BAOCAO_TRATRE(Mabaocaosachtratre,Masach,Ngaymuon,Songaytratre) values (1,1,'2019-07-10,3')
+
+
+
+select * from BAOCAO_SACH_TRATRE
