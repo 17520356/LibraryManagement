@@ -72,3 +72,101 @@ C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\Librar
 C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HoàngHồngĐức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\HoàngHồngĐức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_thongketratre.resources
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.cache
+C:\Users\HoàngHồngđức\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\RdlCompile.compiled
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.fLogin.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Admin.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_info_user.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuThu.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Main.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_quidinh_theloai.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeSachTraTre.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeTheoTheLoai.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimKiemPhieuThu.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+C:\Users\admin\Documents\GitHub\LibraryManagement-master\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.fLogin.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Admin.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_info_user.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuThu.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Main.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_quidinh_theloai.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeSachTraTre.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeTheoTheLoai.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimDocGia.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimKiemPhieuThu.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuMuon.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuTra.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimSach.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+C:\Users\admin\Documents\GitHub\LibraryManagement\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe.config
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.exe
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\bin\Debug\LibraryManagement.pdb
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csprojResolveAssemblyReference.cache
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.fLogin.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Admin.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDauSach.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietDocGia.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuMuon.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietPhieuTra.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ChiTietSach.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_info_user.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuMuon.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuThu.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_LapPhieuTra.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_Main.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_quidinh_theloai.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDauSach.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemDocGia.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThemSach.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeSachTraTre.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_ThongKeTheoTheLoai.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimDocGia.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimKiemPhieuThu.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuMuon.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimPhieuTra.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Form_TimSach.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.Properties.Resources.resources
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.GenerateResource.Cache
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.csproj.CoreCompileInputs.cache
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.exe
+E:\New folder\Project\VS\LibraryManagement\LibraryManagement\obj\Debug\LibraryManagement.pdb

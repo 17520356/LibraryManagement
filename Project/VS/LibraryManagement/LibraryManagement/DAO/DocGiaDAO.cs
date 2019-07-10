@@ -46,6 +46,15 @@ namespace LibraryManagement.DAO
             }
             return null;
         }
+        public DataTable search(string hoten)
+        {
+            int madocgia = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemdocgia @hoten = N'" + hoten + "'"));
+
+            string query = "EXEC dbo.timdocgiabangiD @madocgia = " + madocgia + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
 
         public bool update_docgia(int madocgia,string hoten,int maloaidg,DateTime ngaysinh,int gioitinh, string diachi=null,string sodt=null,string email=null)
         {

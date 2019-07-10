@@ -13,7 +13,6 @@ namespace LibraryManagement.DTO
         private int madausach;
         private int matinhtrang;
         private DateTime ngaynhap;
-
         #region khoitao
         public int Masach
         {
@@ -69,7 +68,7 @@ namespace LibraryManagement.DTO
         #endregion
         
 
-        public SachDTO(int masach,int madausach,int matinhtrang,DateTime ngaynhap)
+        public SachDTO(int masach,int madausach,int matinhtrang,int matheloai,DateTime ngaynhap)
         {
             this.Masach = masach;
             this.Madausach = madausach;

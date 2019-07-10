@@ -47,7 +47,13 @@ namespace LibraryManagement
         #endregion
 
         #region event
-
+        private void button_tpthu_timkiem_Click(object sender, EventArgs e)
+        {
+            if (textBox_tpthu.Text != "")
+                phieuthu.DataSource = PhieuThuDAO.Instance.search(textBox_tpthu.Text);
+            else
+                loaddata();
+        }
         private void button_tpthu_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,5 +95,12 @@ namespace LibraryManagement
                 }
             }
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

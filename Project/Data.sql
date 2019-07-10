@@ -198,6 +198,7 @@ INSERT INTO dbo.PHIEU_MUON( Madocgia, Ngaymuon )
 
 GO
 
+
 CREATE TABLE CHITIET_PHIEUMUON
 (
 	Maphieumuon			INT NOT NULL ,
@@ -926,3 +927,227 @@ insert into CHITIET_BAOCAO_TRATRE(Mabaocaosachtratre,Masach,Ngaymuon,Songaytratr
 
 
 select * from BAOCAO_SACH_TRATRE
+GO
+SELECT * FROM dbo.TACGIA_DAUSACH
+
+SELECT * FROM dbo.CUONSACH
+SELECT * FROM dbo.PHIEU_MUON
+SELECT * FROM dbo.CHITIET_PHIEUMUON
+SELECT * FROM dbo.PHIEU_TRA
+SELECT * FROM dbo.CHITIET_PHIEUTRA
+SELECT * FROM dbo.DOC_GIA
+SELECT * FROM dbo.TACGIA_DAUSACH ORDER BY Madausach
+SELECT * FROM dbo.DAUSACH
+
+/*timdocgia*/
+GO 
+CREATE PROC timdocgiabangiD
+@madocgia INT 
+AS
+BEGIN
+	SELECT Madocgia [Mã Độc Giả],Hoten [Họ Tên],Tenloai [Loại Độc Giả],Ngaylapthe[Ngày Lập Thẻ],Ngayhethan[Ngày Hết Hạn],Sosachmuon[Số Sách Mượn],Tongno [Tổng Nợ] 
+	FROM dbo.DOC_GIA,dbo.LOAI_DG 
+	WHERE DOC_GIA.Maloaidg=dbo.LOAI_DG.Maloaidg 
+	AND DOC_GIA.Madocgia=@madocgia
+END
+GO
+
+SELECT * FROM dbo.DOC_GIA
+GO 
+CREATE PROC timkiemdocgia
+@hoten NVARCHAR(100)
+AS
+BEGIN 
+SELECT Madocgia 
+FROM dbo.DOC_GIA,dbo.LOAI_DG
+WHERE dbo.DOC_GIA.Hoten=@hoten
+END 
+GO
+EXEC dbo.timkiemdocgia @hoten = N'a' -- nvarchar(100)
+
+EXEC dbo.timdocgiabangiD @madocgia = 5 -- int
+GO
+SELECT*FROM dbo.PHIEU_MUON WHERE Maphieumuon=1
+
+/*timphieumuon*/
+SELECT*FROM dbo.PHIEU_MUON
+SELECT*FROM dbo.CHITIET_PHIEUMUON
+SELECT*FROM dbo.tinhtrangsachkhimuon
+GO
+CREATE PROC timkiem
+@maphieumuon INT
+AS
+BEGIN 
+	SELECT  Maphieumuon[Mã Phiếu Mượn],DOC_GIA.Madocgia[Mã Độc Giả],Hoten [Họ Tên],Ngaymuon[Ngày Mượn] 
+	FROM dbo.PHIEU_MUON,dbo.DOC_GIA
+	 WHERE DOC_GIA.Madocgia=PHIEU_MUON.Madocgia AND dbo.PHIEU_MUON.Maphieumuon=@maphieumuon
+END 
+GO
+CREATE PROC timkiemphieumuon
+@hoten NVARCHAR(100)
+AS
+BEGIN
+SELECT PHIEU_MUON.Maphieumuon
+FROM dbo.PHIEU_MUON,dbo.DOC_GIA
+WHERE dbo.PHIEU_MUON.Madocgia=dbo.DOC_GIA.Madocgia AND dbo.DOC_GIA.Hoten=@hoten 
+END
+GO 
+EXEC dbo.timkiemphieumuon @hoten = N'Hoàng Hồng Đức' -- nvarchar(100)
+EXEC dbo.timkiem @maphieumuon = 2-- int
+
+
+/*timphieutra*/
+SELECT*FROM dbo.PHIEU_TRA
+GO
+CREATE PROC timkiempt
+@maphieutra INT
+AS
+BEGIN
+	SELECT Maphieutra[Mã Phiếu Trả],DOC_GIA.Madocgia[Mã Độc Giả],Hoten[Họ Tên],Ngaytra[Ngày Trả]
+	FROM dbo.PHIEU_TRA,dbo.DOC_GIA
+	WHERE DOC_GIA.Madocgia=PHIEU_TRA.Madocgia AND dbo.PHIEU_TRA.Maphieutra=@maphieutra
+END 
+
+GO
+CREATE PROC timkiemphieutra
+@hoten NVARCHAR(100)
+AS 
+BEGIN
+SELECT dbo.PHIEU_TRA.Maphieutra
+FROM dbo.PHIEU_TRA,dbo.DOC_GIA
+WHERE dbo.PHIEU_TRA.Madocgia=DOC_GIA.Madocgia AND dbo.DOC_GIA.Hoten=@hoten
+END
+EXEC dbo.timkiemphieutra @hoten = N'a' -- nvarchar(100)
+EXEC dbo.timkiempt @maphieutra = 1 -- int
+
+
+/*tim phiếu thu*/
+
+GO
+CREATE PROC timkiempthu
+@maphieuthu INT
+AS
+BEGIN 
+	SELECT Maphieuthu [Mã Phiếu Thu],Hoten [Họ Tên],Tongno[Tổng Nợ],Tongnolucthu[Tổng nợ lúc thu],Sotienthu [Số Tiền Thu],(Tongnolucthu-Sotienthu) [Còn Lại], ngaythu [Ngày Thu] 
+	FROM dbo.PHIEU_THU,dbo.DOC_GIA  
+	WHERE DOC_GIA.Madocgia=dbo.PHIEU_THU.Madocgia AND dbo.PHIEU_THU.Maphieuthu=@maphieuthu
+END 
+
+GO
+CREATE PROC timkiemphieuthu
+@hoten NVARCHAR(100)
+AS 
+BEGIN
+SELECT dbo.PHIEU_THU.Maphieuthu
+FROM dbo.PHIEU_THU,dbo.DOC_GIA
+WHERE dbo.PHIEU_THU.Madocgia=DOC_GIA.Madocgia AND dbo.DOC_GIA.Hoten=@hoten
+END
+EXEC dbo.timkiemphieuthu @hoten = N'a' -- nvarchar(100)
+
+EXEC dbo.timkiempthu @maphieuthu =1-- int
+
+
+
+/*timdausach*/
+SELECT*FROM dbo.DAUSACH
+SELECT*FROM dbo.CUONSACH
+SELECT*FROM dbo.THE_LOAI
+SELECT*FROM dbo.NHA_XUAT_BAN
+GO 
+CREATE PROC timdausachbangiD
+@madausach INT 
+AS
+BEGIN
+SELECT Madausach[Mã Đầu Sách], Tendausach[Tên Đầu Sách], Ten[Thể Loại], Trigia[Trị Giá], Soluong[Số Lượng]
+ FROM dbo.DAUSACH,dbo.THE_LOAI
+  WHERE dbo.THE_LOAI.Matheloai = dbo.DAUSACH.Matheloai AND dbo.DAUSACH.Madausach=@madausach
+END 
+
+GO
+CREATE PROC timkiemsachtheotends
+@tendausach NVARCHAR(100)
+AS
+BEGIN 
+SELECT dbo.DAUSACH.Madausach
+FROM dbo.DAUSACH,dbo.THE_LOAI
+WHERE dbo.DAUSACH.Tendausach=@tendausach
+END
+GO 
+CREATE PROC timsachbangiDtlds
+@matheloai INT 
+AS
+BEGIN
+SELECT Madausach[Mã Đầu Sách], Tendausach[Tên Đầu Sách], Ten[Thể Loại], Trigia[Trị Giá], Soluong[Số Lượng]
+ FROM dbo.DAUSACH,dbo.THE_LOAI
+  WHERE THE_LOAI.Matheloai = DAUSACH.Matheloai AND dbo.THE_LOAI.Matheloai=@matheloai
+END 
+
+GO
+CREATE PROC timkiemsachtheotlds
+@tentheloai NVARCHAR(100)
+AS
+BEGIN 
+SELECT dbo.THE_LOAI.Matheloai
+FROM dbo.DAUSACH,dbo.THE_LOAI
+WHERE dbo.THE_LOAI.Ten=@tentheloai
+END
+GO
+
+EXEC dbo.timdausachbangiD @madausach = 1 -- int
+EXEC dbo.timkiemsachtheotends @tendausach = N'oop' -- nvarchar(100)
+EXEC dbo.timsachbangiDtlds @matheloai = 1 -- int
+EXEC dbo.timkiemsachtheotlds @tentheloai = N'a' -- nvarchar(100)
+
+/*timsach*/
+GO 
+CREATE PROC timsachbangiD
+@madausach INT 
+AS
+BEGIN
+	SELECT C.Masach[Mã Sách],D.Tendausach[Tên Đầu Sách],T.Ten [Thể Loại],Tinhtrang [Tình Trạng],dbo.NHA_XUAT_BAN.TenNXB [Nhà Xuất Bản]
+	FROM dbo.CUONSACH C,dbo.DAUSACH D,dbo.THE_LOAI T,dbo.TINHTRANG_SACH,dbo.NHA_XUAT_BAN
+	WHERE C.Madausach=D.Madausach
+	AND T.Matheloai=D.Matheloai
+	AND dbo.TINHTRANG_SACH.Matinhtrang=C.Matinhtrang
+	AND dbo.NHA_XUAT_BAN.MaNXB=D.MaNXB
+	AND c.Madausach=@madausach
+END 
+
+GO
+CREATE PROC timkiemsachtheoten
+@tendausach NVARCHAR(100)
+AS
+BEGIN 
+SELECT dbo.CUONSACH.Madausach
+FROM dbo.DAUSACH,dbo.CUONSACH
+WHERE dbo.CUONSACH.Madausach=dbo.DAUSACH.Madausach AND dbo.DAUSACH.Tendausach=@tendausach
+END
+GO 
+CREATE PROC timsachbangiDtl
+@matheloai INT 
+AS
+BEGIN
+	SELECT C.Masach[Mã Sách],D.Tendausach[Tên Đầu Sách],T.Ten [Thể Loại],Tinhtrang [Tình Trạng],dbo.NHA_XUAT_BAN.TenNXB [Nhà Xuất Bản]
+	FROM dbo.CUONSACH C,dbo.DAUSACH D,dbo.THE_LOAI T,dbo.TINHTRANG_SACH,dbo.NHA_XUAT_BAN
+	WHERE C.Madausach=D.Madausach 
+	AND T.Matheloai=D.Matheloai
+	AND dbo.TINHTRANG_SACH.Matinhtrang=C.Matinhtrang
+	AND dbo.NHA_XUAT_BAN.MaNXB=D.MaNXB
+	AND D.Matheloai=@matheloai
+END 
+
+GO
+CREATE PROC timkiemsachtheotl
+@tentheloai NVARCHAR(100)
+AS
+BEGIN 
+SELECT dbo.THE_LOAI.Matheloai
+FROM dbo.CUONSACH,dbo.THE_LOAI
+WHERE dbo.THE_LOAI.Ten=@tentheloai
+END
+GO
+EXEC dbo.timsachbangiD @madausach = 1 -- int
+EXEC dbo.timkiemsachtheoten @tendausach = N'cơ sở dữ liệu' -- nvarchar(100)
+EXEC dbo.timsachbangiDtl @matheloai = 1 -- int
+EXEC dbo.timkiemsachtheotl @tentheloai = N'a' -- nvarchar(100) 
+GO

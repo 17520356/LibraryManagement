@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_TimSach));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.txt_tpthu_madocgia = new System.Windows.Forms.RadioButton();
             this.textBox_dg = new System.Windows.Forms.TextBox();
             this.button_dg_timkiem = new System.Windows.Forms.Button();
             this.label_tk = new System.Windows.Forms.Label();
@@ -96,7 +97,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.radioButton1);
+            this.panel4.Controls.Add(this.txt_tpthu_madocgia);
             this.panel4.Controls.Add(this.textBox_dg);
             this.panel4.Controls.Add(this.button_dg_timkiem);
             this.panel4.Controls.Add(this.label_tk);
@@ -105,21 +107,40 @@
             this.panel4.Size = new System.Drawing.Size(1081, 100);
             this.panel4.TabIndex = 3;
             // 
-            // comboBox1
+            // radioButton1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(535, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 45);
-            this.comboBox1.TabIndex = 8;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(572, 47);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(260, 53);
+            this.radioButton1.TabIndex = 9;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Thể Loại";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // txt_tpthu_madocgia
+            // 
+            this.txt_tpthu_madocgia.Checked = true;
+            this.txt_tpthu_madocgia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_tpthu_madocgia.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tpthu_madocgia.Location = new System.Drawing.Point(572, 3);
+            this.txt_tpthu_madocgia.Name = "txt_tpthu_madocgia";
+            this.txt_tpthu_madocgia.Size = new System.Drawing.Size(260, 48);
+            this.txt_tpthu_madocgia.TabIndex = 8;
+            this.txt_tpthu_madocgia.TabStop = true;
+            this.txt_tpthu_madocgia.Text = "Tên Sách";
+            this.txt_tpthu_madocgia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_tpthu_madocgia.UseVisualStyleBackColor = true;
             // 
             // textBox_dg
             // 
             this.textBox_dg.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_dg.Location = new System.Drawing.Point(237, 22);
+            this.textBox_dg.Location = new System.Drawing.Point(207, 22);
             this.textBox_dg.Name = "textBox_dg";
-            this.textBox_dg.Size = new System.Drawing.Size(273, 46);
+            this.textBox_dg.Size = new System.Drawing.Size(336, 46);
             this.textBox_dg.TabIndex = 1;
             // 
             // button_dg_timkiem
@@ -135,6 +156,7 @@
             this.button_dg_timkiem.TabIndex = 7;
             this.button_dg_timkiem.Text = "Tìm Kiếm";
             this.button_dg_timkiem.UseVisualStyleBackColor = false;
+            this.button_dg_timkiem.Click += new System.EventHandler(this.button_dg_timkiem_Click_1);
             // 
             // label_tk
             // 
@@ -586,7 +608,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox_dg;
         private System.Windows.Forms.Button button_dg_timkiem;
         private System.Windows.Forms.Label label_tk;
@@ -599,5 +620,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton txt_tpthu_madocgia;
     }
 }

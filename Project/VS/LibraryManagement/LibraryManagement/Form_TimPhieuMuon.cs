@@ -40,6 +40,14 @@ namespace LibraryManagement
         }
         #endregion
         #region event
+        private void button_tpm_timkiem_Click(object sender, EventArgs e)
+        {
+
+            if (textBox_tpm.Text != "")
+                bd_phieumuon.DataSource = PhieuMuonDAO.Instance.search(textBox_tpm.Text);
+            else
+               hienthiphieumuon();
+        }
         private void button_tpm_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -64,6 +72,7 @@ namespace LibraryManagement
 
         #endregion
 
+        
     }
 }
 

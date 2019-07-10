@@ -283,6 +283,7 @@
             this.button_tpm_timkiem.TabIndex = 4;
             this.button_tpm_timkiem.Text = "Tìm Kiếm";
             this.button_tpm_timkiem.UseVisualStyleBackColor = false;
+            this.button_tpm_timkiem.Click += new System.EventHandler(this.button_tpm_timkiem_Click);
             // 
             // label_tk
             // 
@@ -299,7 +300,7 @@
             this.textBox_tpm.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_tpm.Location = new System.Drawing.Point(274, 33);
             this.textBox_tpm.Name = "textBox_tpm";
-            this.textBox_tpm.Size = new System.Drawing.Size(325, 46);
+            this.textBox_tpm.Size = new System.Drawing.Size(401, 46);
             this.textBox_tpm.TabIndex = 1;
             // 
             // panel7

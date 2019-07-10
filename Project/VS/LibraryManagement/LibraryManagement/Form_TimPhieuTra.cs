@@ -42,7 +42,13 @@ namespace LibraryManagement
         #endregion
         #region event
 
-
+        private void button_tpm_timkiem_Click(object sender, EventArgs e)
+        {
+            if (textBox_tpm.Text != "")
+                bd_phieutra.DataSource = PhieuTraDAO.Instance.search(textBox_tpm.Text);
+            else
+                hienthi();
+        }
         private void button_xemchitiet_Click(object sender, EventArgs e)
         {
             int id;
@@ -67,5 +73,7 @@ namespace LibraryManagement
             hienthi();
         }
         #endregion
+
+       
     }
 }

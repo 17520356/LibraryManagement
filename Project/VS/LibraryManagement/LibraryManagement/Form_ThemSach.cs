@@ -102,5 +102,10 @@ namespace LibraryManagement
         }
 
         #endregion
+
+        private void Form_ThemSach_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

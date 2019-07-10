@@ -62,6 +62,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.textBox_trigia);
             this.panel3.Controls.Add(this.textBox_namxb);
             this.panel3.Controls.Add(this.textBox_ngonngu);
@@ -281,9 +282,9 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 54);
+            this.pictureBox1.Size = new System.Drawing.Size(194, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -293,7 +294,7 @@
             this.bt_them.BackColor = System.Drawing.Color.LimeGreen;
             this.bt_them.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_them.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_them.Location = new System.Drawing.Point(10, 3);
+            this.bt_them.Location = new System.Drawing.Point(3, 8);
             this.bt_them.Name = "bt_them";
             this.bt_them.Size = new System.Drawing.Size(254, 67);
             this.bt_them.TabIndex = 14;
@@ -304,7 +305,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button_thoat);
             this.panel1.Controls.Add(this.bt_them);
             this.panel1.Location = new System.Drawing.Point(285, 520);
             this.panel1.Name = "panel1";
@@ -317,7 +317,7 @@
             this.button_thoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_thoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_thoat.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_thoat.Location = new System.Drawing.Point(293, 8);
+            this.button_thoat.Location = new System.Drawing.Point(305, 8);
             this.button_thoat.Name = "button_thoat";
             this.button_thoat.Size = new System.Drawing.Size(254, 67);
             this.button_thoat.TabIndex = 15;
@@ -341,6 +341,7 @@
             this.Name = "Form_ThemSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Sách";
+            this.Load += new System.EventHandler(this.Form_ThemSach_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_soluong)).EndInit();

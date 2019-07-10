@@ -231,5 +231,10 @@ namespace LibraryManagement
         }
 
         #endregion
+
+        private void listView_sach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
