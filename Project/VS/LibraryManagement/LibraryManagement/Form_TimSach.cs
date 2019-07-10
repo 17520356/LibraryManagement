@@ -82,6 +82,40 @@ namespace LibraryManagement
 
 
         #region event
+       
+        private void button_dg_timkiem_Click_1(object sender, EventArgs e)
+        {
+            if (txt_tpthu_madocgia.Checked == true)
+            {
+                if (textBox_dg.Text != "")
+                    sach_binding.DataSource = SachDAO.Instance.timtheoten(textBox_dg.Text);
+                else
+                    hienthisach();
+            }
+            if (radioButton1.Checked == true)
+            {
+                if (textBox_dg.Text != "")
+                    sach_binding.DataSource = SachDAO.Instance.timtheotl(textBox_dg.Text);
+                else
+                    hienthisach();
+            }
+
+            if (txt_tpthu_madocgia.Checked==true)
+            {
+                if (textBox_dg.Text != "")
+                    dausach_binding.DataSource = SachDAO.Instance.timtheotends(textBox_dg.Text);
+                else
+                    hienthidausach();
+            }
+            if(radioButton1.Checked==true)
+            {           
+                if (textBox_dg.Text != "")
+                    dausach_binding.DataSource = SachDAO.Instance.timtheotlds(textBox_dg.Text);
+                else
+                    hienthidausach();
+            }
+            
+        }
         private void button_xemchitiet_Click(object sender, EventArgs e)
         {
             int id;
@@ -198,6 +232,8 @@ namespace LibraryManagement
                 }
             }
         }
+
+
         #endregion
     }
 }

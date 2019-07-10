@@ -50,12 +50,12 @@
             this.txt_maphiethu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.radioButton_tpthu_maphieuthu = new System.Windows.Forms.RadioButton();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.button_tpthu_timkiem = new System.Windows.Forms.Button();
             this.label_tk = new System.Windows.Forms.Label();
-            this.radioButton_tpthu_madocgia = new System.Windows.Forms.RadioButton();
             this.textBox_tpthu = new System.Windows.Forms.TextBox();
-            this.label_timkiem = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button_tpthu_thoat = new System.Windows.Forms.Button();
             this.button_tpthu_xemtatca = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.panel3.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel_tpthu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phiethu)).BeginInit();
@@ -300,28 +301,50 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.radioButton_tpthu_maphieuthu);
+            this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.button_tpthu_timkiem);
             this.panel8.Controls.Add(this.label_tk);
-            this.panel8.Controls.Add(this.radioButton_tpthu_madocgia);
             this.panel8.Controls.Add(this.textBox_tpthu);
-            this.panel8.Controls.Add(this.label_timkiem);
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1389, 108);
             this.panel8.TabIndex = 7;
             // 
-            // radioButton_tpthu_maphieuthu
+            // panel10
             // 
-            this.radioButton_tpthu_maphieuthu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_tpthu_maphieuthu.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_tpthu_maphieuthu.Location = new System.Drawing.Point(831, 58);
-            this.radioButton_tpthu_maphieuthu.Name = "radioButton_tpthu_maphieuthu";
-            this.radioButton_tpthu_maphieuthu.Size = new System.Drawing.Size(289, 49);
-            this.radioButton_tpthu_maphieuthu.TabIndex = 3;
-            this.radioButton_tpthu_maphieuthu.Text = "Mã Phiếu Thu";
-            this.radioButton_tpthu_maphieuthu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton_tpthu_maphieuthu.UseVisualStyleBackColor = true;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Location = new System.Drawing.Point(1, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(263, 100);
+            this.panel10.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label7.Location = new System.Drawing.Point(-2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(260, 96);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Phiếu Thu";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.Location = new System.Drawing.Point(1121, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 67);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Tìm Kiếm";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // button_tpthu_timkiem
             // 
@@ -330,54 +353,31 @@
             this.button_tpthu_timkiem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_tpthu_timkiem.Image = ((System.Drawing.Image)(resources.GetObject("button_tpthu_timkiem.Image")));
             this.button_tpthu_timkiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_tpthu_timkiem.Location = new System.Drawing.Point(1126, 24);
+            this.button_tpthu_timkiem.Location = new System.Drawing.Point(1121, 15);
             this.button_tpthu_timkiem.Name = "button_tpthu_timkiem";
-            this.button_tpthu_timkiem.Size = new System.Drawing.Size(248, 67);
+            this.button_tpthu_timkiem.Size = new System.Drawing.Size(238, 67);
             this.button_tpthu_timkiem.TabIndex = 4;
             this.button_tpthu_timkiem.Text = "Tìm Kiếm";
             this.button_tpthu_timkiem.UseVisualStyleBackColor = false;
+            this.button_tpthu_timkiem.Click += new System.EventHandler(this.button_tpthu_timkiem_Click);
             // 
             // label_tk
             // 
             this.label_tk.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tk.Location = new System.Drawing.Point(11, 3);
+            this.label_tk.Location = new System.Drawing.Point(286, 4);
             this.label_tk.Name = "label_tk";
-            this.label_tk.Size = new System.Drawing.Size(335, 107);
+            this.label_tk.Size = new System.Drawing.Size(209, 100);
             this.label_tk.TabIndex = 0;
             this.label_tk.Text = "Tìm Kiếm";
             this.label_tk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton_tpthu_madocgia
-            // 
-            this.radioButton_tpthu_madocgia.Checked = true;
-            this.radioButton_tpthu_madocgia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_tpthu_madocgia.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_tpthu_madocgia.Location = new System.Drawing.Point(831, 3);
-            this.radioButton_tpthu_madocgia.Name = "radioButton_tpthu_madocgia";
-            this.radioButton_tpthu_madocgia.Size = new System.Drawing.Size(289, 49);
-            this.radioButton_tpthu_madocgia.TabIndex = 2;
-            this.radioButton_tpthu_madocgia.TabStop = true;
-            this.radioButton_tpthu_madocgia.Text = "Mã Độc Giả";
-            this.radioButton_tpthu_madocgia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton_tpthu_madocgia.UseVisualStyleBackColor = true;
-            // 
             // textBox_tpthu
             // 
             this.textBox_tpthu.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tpthu.Location = new System.Drawing.Point(352, 34);
+            this.textBox_tpthu.Location = new System.Drawing.Point(558, 30);
             this.textBox_tpthu.Name = "textBox_tpthu";
-            this.textBox_tpthu.Size = new System.Drawing.Size(325, 46);
+            this.textBox_tpthu.Size = new System.Drawing.Size(496, 46);
             this.textBox_tpthu.TabIndex = 1;
-            // 
-            // label_timkiem
-            // 
-            this.label_timkiem.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_timkiem.Location = new System.Drawing.Point(693, 3);
-            this.label_timkiem.Name = "label_timkiem";
-            this.label_timkiem.Size = new System.Drawing.Size(132, 107);
-            this.label_timkiem.TabIndex = 0;
-            this.label_timkiem.Text = "Tìm Kiếm Theo:";
-            this.label_timkiem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
@@ -484,6 +484,7 @@
             this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel_tpthu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_phiethu)).EndInit();
@@ -495,18 +496,14 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.RadioButton radioButton_tpthu_maphieuthu;
         private System.Windows.Forms.Button button_tpthu_timkiem;
         private System.Windows.Forms.Label label_tk;
-        private System.Windows.Forms.RadioButton radioButton_tpthu_madocgia;
         private System.Windows.Forms.TextBox textBox_tpthu;
-        private System.Windows.Forms.Label label_timkiem;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button button_tpthu_thoat;
         private System.Windows.Forms.Button button_tpthu_xemtatca;
         private System.Windows.Forms.Button button_tpthu_xoa;
         private System.Windows.Forms.Panel panel_tpthu;
-        private System.Windows.Forms.DataGridView dataGridView_phiethu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.TextBox txt_maphiethu;
@@ -526,5 +523,9 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker_ngaythu;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView_phiethu;
     }
 }

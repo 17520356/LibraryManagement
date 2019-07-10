@@ -25,7 +25,7 @@ namespace LibraryManagement.DAO
                 instance = value;
             }
         }
-        public string connectionStr = @"Data Source=";
+        public string connectionStr = @"Data Source=DESKTOP-J4T5P29\SQLEXPRESS;Initial Catalog=LibraryManagement;Integrated Security=True";
         //public string connectionStr = @"Data Source=PINKGERMANY;Initial Catalog=HOTEL_MANAGER;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

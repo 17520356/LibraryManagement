@@ -196,8 +196,39 @@ namespace LibraryManagement.DAO
                 return true;
             return false;
         }
+        public DataTable timtheotends(string tendausach)
+        {
+            int madausach = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemsachtheotends @tendausach = N'" + tendausach + "'"));
+            string query = "EXEC dbo.timdausachbangiD @madausach = " + madausach + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-        
+            return data;
+        }
+        public DataTable timtheotlds(string tentheloai)
+        {
+            int matheloai = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemsachtheotlds @tentheloai = N'" + tentheloai + "'"));
+            string query = "EXEC dbo.timsachbangiDtlds @matheloai = " + matheloai + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+        public DataTable timtheoten(string tendausach)
+        {
+            int madausach = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemsachtheoten @tendausach = N'" + tendausach + "'"));
+            string query = "EXEC dbo.timsachbangiD @madausach = " + madausach + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+        public DataTable timtheotl(string tentheloai)
+        {
+            int matheloai = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemsachtheotl @tentheloai = N'" + tentheloai + "'"));
+            string query = "EXEC dbo.timsachbangiDtl @matheloai = " + matheloai + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
     }
 }
 

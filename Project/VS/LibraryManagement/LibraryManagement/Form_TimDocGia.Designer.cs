@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_TimDocGia));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox_dg = new System.Windows.Forms.TextBox();
             this.button_dg_timkiem = new System.Windows.Forms.Button();
             this.label_tk = new System.Windows.Forms.Label();
@@ -91,7 +90,6 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.textBox_dg);
             this.panel4.Controls.Add(this.button_dg_timkiem);
             this.panel4.Controls.Add(this.label_tk);
@@ -100,21 +98,12 @@
             this.panel4.Size = new System.Drawing.Size(1032, 100);
             this.panel4.TabIndex = 2;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(535, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 45);
-            this.comboBox1.TabIndex = 8;
-            // 
             // textBox_dg
             // 
             this.textBox_dg.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_dg.Location = new System.Drawing.Point(237, 22);
             this.textBox_dg.Name = "textBox_dg";
-            this.textBox_dg.Size = new System.Drawing.Size(273, 46);
+            this.textBox_dg.Size = new System.Drawing.Size(421, 46);
             this.textBox_dg.TabIndex = 1;
             // 
             // button_dg_timkiem
@@ -124,12 +113,13 @@
             this.button_dg_timkiem.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_dg_timkiem.Image = ((System.Drawing.Image)(resources.GetObject("button_dg_timkiem.Image")));
             this.button_dg_timkiem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button_dg_timkiem.Location = new System.Drawing.Point(783, 18);
+            this.button_dg_timkiem.Location = new System.Drawing.Point(767, 14);
             this.button_dg_timkiem.Name = "button_dg_timkiem";
             this.button_dg_timkiem.Size = new System.Drawing.Size(245, 67);
             this.button_dg_timkiem.TabIndex = 7;
             this.button_dg_timkiem.Text = "Tìm Kiếm";
             this.button_dg_timkiem.UseVisualStyleBackColor = false;
+            this.button_dg_timkiem.Click += new System.EventHandler(this.Button_dg_timkiem_Click);
             // 
             // label_tk
             // 
@@ -512,7 +502,6 @@
         private System.Windows.Forms.Button button_sachdangmuon;
         private System.Windows.Forms.DataGridView dataGridView_docgia;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox txt_sosachdangmuon;

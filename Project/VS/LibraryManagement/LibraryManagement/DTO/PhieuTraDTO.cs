@@ -83,7 +83,7 @@ namespace LibraryManagement.DTO
         #endregion
 
 
-        public PhieuTraDTO(int masach, string tensach, DateTime ngaymuon, int songaymuon, string tienphattungsach)
+        public PhieuTraDTO(int maphieutra, int masach, string tensach, DateTime ngaymuon, int songaymuon, string tienphattungsach)
         {
             this.Masach = masach;
             this.Tensach = tensach;

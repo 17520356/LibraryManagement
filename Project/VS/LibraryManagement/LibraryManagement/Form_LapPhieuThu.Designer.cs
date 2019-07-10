@@ -60,12 +60,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(737, 896);
+            this.panel1.Size = new System.Drawing.Size(1562, 932);
             this.panel1.TabIndex = 5;
             // 
             // panel4
@@ -73,7 +72,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.button_lptthu_huy);
             this.panel4.Controls.Add(this.button_lpthu);
-            this.panel4.Location = new System.Drawing.Point(3, 790);
+            this.panel4.Location = new System.Drawing.Point(381, 397);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(729, 90);
             this.panel4.TabIndex = 2;
@@ -108,6 +107,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.comboBox_ten);
@@ -124,13 +124,13 @@
             this.panel3.Controls.Add(this.label_ctpt_madg);
             this.panel3.Location = new System.Drawing.Point(3, 126);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(729, 648);
+            this.panel3.Size = new System.Drawing.Size(1550, 535);
             this.panel3.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(612, 442);
+            this.label5.Location = new System.Drawing.Point(1378, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 51);
             this.label5.TabIndex = 16;
@@ -139,7 +139,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(612, 336);
+            this.label4.Location = new System.Drawing.Point(1378, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 51);
             this.label4.TabIndex = 15;
@@ -151,7 +151,7 @@
             this.comboBox_ten.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_ten.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_ten.FormattingEnabled = true;
-            this.comboBox_ten.Location = new System.Drawing.Point(203, 229);
+            this.comboBox_ten.Location = new System.Drawing.Point(203, 255);
             this.comboBox_ten.Name = "comboBox_ten";
             this.comboBox_ten.Size = new System.Drawing.Size(403, 45);
             this.comboBox_ten.TabIndex = 14;
@@ -159,7 +159,7 @@
             // txt_lpthu_conlai
             // 
             this.txt_lpthu_conlai.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lpthu_conlai.Location = new System.Drawing.Point(203, 541);
+            this.txt_lpthu_conlai.Location = new System.Drawing.Point(969, 255);
             this.txt_lpthu_conlai.Name = "txt_lpthu_conlai";
             this.txt_lpthu_conlai.ReadOnly = true;
             this.txt_lpthu_conlai.Size = new System.Drawing.Size(403, 46);
@@ -168,7 +168,7 @@
             // txt_lpthu_sotienthu
             // 
             this.txt_lpthu_sotienthu.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lpthu_sotienthu.Location = new System.Drawing.Point(203, 440);
+            this.txt_lpthu_sotienthu.Location = new System.Drawing.Point(969, 143);
             this.txt_lpthu_sotienthu.Name = "txt_lpthu_sotienthu";
             this.txt_lpthu_sotienthu.Size = new System.Drawing.Size(403, 46);
             this.txt_lpthu_sotienthu.TabIndex = 12;
@@ -178,9 +178,9 @@
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 518);
+            this.label3.Location = new System.Drawing.Point(754, 229);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(720, 88);
+            this.label3.Size = new System.Drawing.Size(720, 96);
             this.label3.TabIndex = 11;
             this.label3.Text = "Còn Lại:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -189,7 +189,7 @@
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 415);
+            this.label2.Location = new System.Drawing.Point(754, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(720, 93);
             this.label2.TabIndex = 10;
@@ -200,7 +200,7 @@
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 204);
+            this.label1.Location = new System.Drawing.Point(6, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(721, 92);
             this.label1.TabIndex = 8;
@@ -210,7 +210,7 @@
             // txt_lpthu_tongno
             // 
             this.txt_lpthu_tongno.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lpthu_tongno.Location = new System.Drawing.Point(203, 334);
+            this.txt_lpthu_tongno.Location = new System.Drawing.Point(969, 25);
             this.txt_lpthu_tongno.Name = "txt_lpthu_tongno";
             this.txt_lpthu_tongno.ReadOnly = true;
             this.txt_lpthu_tongno.Size = new System.Drawing.Size(403, 46);
@@ -220,7 +220,7 @@
             // 
             this.label_ctpt_tongphat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_ctpt_tongphat.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ctpt_tongphat.Location = new System.Drawing.Point(1, 308);
+            this.label_ctpt_tongphat.Location = new System.Drawing.Point(754, 13);
             this.label_ctpt_tongphat.Name = "label_ctpt_tongphat";
             this.label_ctpt_tongphat.Size = new System.Drawing.Size(721, 95);
             this.label_ctpt_tongphat.TabIndex = 6;
@@ -233,7 +233,7 @@
             this.cmb_madg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_madg.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_madg.FormattingEnabled = true;
-            this.cmb_madg.Location = new System.Drawing.Point(203, 116);
+            this.cmb_madg.Location = new System.Drawing.Point(203, 136);
             this.cmb_madg.Name = "cmb_madg";
             this.cmb_madg.Size = new System.Drawing.Size(403, 45);
             this.cmb_madg.TabIndex = 2;
@@ -244,7 +244,7 @@
             this.dateTimePicker_lpthu_ngaythu.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
             this.dateTimePicker_lpthu_ngaythu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_lpthu_ngaythu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_lpthu_ngaythu.Location = new System.Drawing.Point(203, 13);
+            this.dateTimePicker_lpthu_ngaythu.Location = new System.Drawing.Point(203, 36);
             this.dateTimePicker_lpthu_ngaythu.Name = "dateTimePicker_lpthu_ngaythu";
             this.dateTimePicker_lpthu_ngaythu.Size = new System.Drawing.Size(403, 45);
             this.dateTimePicker_lpthu_ngaythu.TabIndex = 5;
@@ -253,9 +253,9 @@
             // 
             this.label_ctpt_ngaytra.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_ctpt_ngaytra.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ctpt_ngaytra.Location = new System.Drawing.Point(3, 4);
+            this.label_ctpt_ngaytra.Location = new System.Drawing.Point(3, 13);
             this.label_ctpt_ngaytra.Name = "label_ctpt_ngaytra";
-            this.label_ctpt_ngaytra.Size = new System.Drawing.Size(721, 67);
+            this.label_ctpt_ngaytra.Size = new System.Drawing.Size(721, 95);
             this.label_ctpt_ngaytra.TabIndex = 5;
             this.label_ctpt_ngaytra.Text = "Ngày Thu:";
             this.label_ctpt_ngaytra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,9 +264,9 @@
             // 
             this.label_ctpt_madg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label_ctpt_madg.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ctpt_madg.Location = new System.Drawing.Point(3, 86);
+            this.label_ctpt_madg.Location = new System.Drawing.Point(4, 116);
             this.label_ctpt_madg.Name = "label_ctpt_madg";
-            this.label_ctpt_madg.Size = new System.Drawing.Size(720, 103);
+            this.label_ctpt_madg.Size = new System.Drawing.Size(720, 93);
             this.label_ctpt_madg.TabIndex = 2;
             this.label_ctpt_madg.Text = "Mã Độc Giả:";
             this.label_ctpt_madg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,7 +278,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(1, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(728, 119);
+            this.panel2.Size = new System.Drawing.Size(1552, 119);
             this.panel2.TabIndex = 0;
             // 
             // label
@@ -287,7 +287,7 @@
             this.label.ForeColor = System.Drawing.Color.DarkRed;
             this.label.Location = new System.Drawing.Point(174, 12);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(555, 91);
+            this.label.Size = new System.Drawing.Size(1160, 91);
             this.label.TabIndex = 0;
             this.label.Text = "Lập Phiếu Thu";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,7 +309,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.CancelButton = this.button_lptthu_huy;
-            this.ClientSize = new System.Drawing.Size(740, 893);
+            this.ClientSize = new System.Drawing.Size(1505, 648);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

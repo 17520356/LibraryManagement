@@ -76,7 +76,7 @@
             this.panel2.Controls.Add(this.panel_lpm);
             this.panel2.Location = new System.Drawing.Point(2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1058, 895);
+            this.panel2.Size = new System.Drawing.Size(1061, 903);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -86,9 +86,9 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.Txt_tienphat);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(3, 688);
+            this.panel3.Location = new System.Drawing.Point(5, 576);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1044, 96);
+            this.panel3.Size = new System.Drawing.Size(1044, 112);
             this.panel3.TabIndex = 10;
             // 
             // Txt_TongNo
@@ -122,7 +122,7 @@
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 5);
+            this.label4.Location = new System.Drawing.Point(3, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(211, 84);
             this.label4.TabIndex = 10;
@@ -298,7 +298,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.button_lpm_thoat);
             this.panel7.Controls.Add(this.button_lpm_lapphieumuon);
-            this.panel7.Location = new System.Drawing.Point(1, 806);
+            this.panel7.Location = new System.Drawing.Point(3, 694);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1044, 81);
             this.panel7.TabIndex = 1;
@@ -335,7 +335,7 @@
             this.panel_lpm.Controls.Add(this.listView_sach);
             this.panel_lpm.Location = new System.Drawing.Point(3, 237);
             this.panel_lpm.Name = "panel_lpm";
-            this.panel_lpm.Size = new System.Drawing.Size(1044, 447);
+            this.panel_lpm.Size = new System.Drawing.Size(1044, 335);
             this.panel_lpm.TabIndex = 1;
             // 
             // listView_sach
@@ -352,10 +352,11 @@
             this.listView_sach.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_sach.Location = new System.Drawing.Point(0, 0);
             this.listView_sach.Name = "listView_sach";
-            this.listView_sach.Size = new System.Drawing.Size(1040, 443);
+            this.listView_sach.Size = new System.Drawing.Size(1040, 331);
             this.listView_sach.TabIndex = 0;
             this.listView_sach.UseCompatibleStateImageBehavior = false;
             this.listView_sach.View = System.Windows.Forms.View.Details;
+            this.listView_sach.SelectedIndexChanged += new System.EventHandler(this.listView_sach_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -384,14 +385,14 @@
             // 
             this.columnHeader5.Text = "Tiền Phạt";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 218;
+            this.columnHeader5.Width = 220;
             // 
             // Form_LapPhieuTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1066, 900);
+            this.ClientSize = new System.Drawing.Size(1066, 786);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

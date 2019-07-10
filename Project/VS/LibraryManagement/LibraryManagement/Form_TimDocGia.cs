@@ -59,6 +59,13 @@ namespace LibraryManagement
         #endregion
 
         #region event
+        private void Button_dg_timkiem_Click(object sender, EventArgs e)
+        {
+            if (textBox_dg.Text != "")
+                docgia_Data.DataSource = DocGiaDAO.Instance.search(textBox_dg.Text);
+            else
+                LoadDocGia();
+        }
 
         private void button_dg_xemtatca_Click(object sender, EventArgs e)
         {

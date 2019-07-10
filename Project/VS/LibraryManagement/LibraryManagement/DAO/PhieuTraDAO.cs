@@ -60,6 +60,14 @@ namespace LibraryManagement.DAO
             }
             return phieutra;
         }
+        public DataTable search(string hoten)
+        {
+            int maphieutra = Convert.ToInt32(DataProvider.Instance.ExecuteReader("EXEC dbo.timkiemphieutra @hoten = N'" + hoten + "'"));
 
+            string query = "EXEC dbo.timkiempt @maphieutra = " + maphieutra + " ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
     }
 }
